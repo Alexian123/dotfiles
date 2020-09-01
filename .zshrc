@@ -38,6 +38,26 @@ extr ()
 # nvim as vim
 alias vim="nvim"
 #
+#
+# package management
+#
+# apt/apltitude
+alias apts="aptitude search" # search for package
+alias apti="sudo aptitude install" # install package
+alias aptr="sudo aptitude remove" # remove package
+alias aptp="sudo aptitude purge" # remove package and configs
+alias aptu="sudo aptitude update && sudo aptitude upgrade" # update packages
+alias aptsi="apt list --installed | grep" # search installed packages
+#
+# snap
+alias snfi="snap find"
+alias snfo="snap info"
+alias snin="snap install"
+alias snli="snap list"
+alias snrm="snap remove"
+alias snre="snap refresh"
+#
+#
 # navigation
 alias ..="cd .."
 alias ...="cd ../.."
