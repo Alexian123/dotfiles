@@ -21,9 +21,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'morhetz/gruvbox'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'scrooloose/nerdTree'
 Plug 'tpope/vim-surround'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mcchrish/nnn.vim'
 
 call plug#end()
 
@@ -33,5 +33,3 @@ set background=dark
 let g:deoplete#enable_at_startup = 1
 inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
-
-nmap <C-f> :NERDTreeToggle<CR>

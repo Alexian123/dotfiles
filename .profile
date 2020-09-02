@@ -28,4 +28,9 @@ fi
 
 # default programs
 export EDITOR="nvim"
-export TERMINAL="gnome-terminal"
+export VISUAL="nvim"
+export PAGER="most"
+export TERMINAL="st"
+export FILE_MANAGER="ranger"
+export BROWSER="brave-browser"
+export SYS_MONITOR="htop"
