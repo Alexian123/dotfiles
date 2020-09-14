@@ -50,7 +50,7 @@ alias aptu="sudo aptitude update && sudo aptitude upgrade" # update packages
 alias aptsi="apt list --installed | grep" # search installed packages
 #
 # pacman/yay
-alias pacss="pacma -Ss" # search for standard package
+alias pacss="pacman -Ss" # search for standard package
 alias yayssa="yay -Ssa" # search for aur package
 alias yayss="yay -Ss" # search for any package
 alias pacs="sudo pacman -S" # install standard package
