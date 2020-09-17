@@ -65,10 +65,10 @@ alias pacqdt="pacman -Qdt" # list unneeded packages
 # snap
 alias snfi="snap find"
 alias snfo="snap info"
-alias snin="snap install"
+alias snin="sudo snap install"
 alias snli="snap list"
-alias snrm="snap remove"
-alias snre="snap refresh"
+alias snrm="sudo snap remove"
+alias snre="sudo snap refresh"
 #
 #
 # navigation
