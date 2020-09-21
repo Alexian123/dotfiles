@@ -92,7 +92,7 @@ bindsym $mod+ctrl+l resize grow width 10 px or 10 ppt
 
 # Program shortcuts
 bindsym $mod+Return exec --no-startup-id $TERMINAL # terminal
-bindsym $mod+d exec --no-startup-id dmenu_run -fn 'JetBrains Mono:pixelsize=14' # launcher
+bindsym $mod+d exec --no-startup-id dmenu_run -fn 'JetBrains Mono:pixelsize=16' # launcher
 bindsym $mod+b exec $WEB_BROWSER # browser
 bindsym $mod+f exec --no-startup-id $TERMINAL -e $FILE_MANAGER # file manager
 bindsym $mod+v exec --no-startup-id $TERMINAL -e $EDITOR # text editor
