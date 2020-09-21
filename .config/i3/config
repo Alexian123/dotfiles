@@ -4,7 +4,7 @@
 set $mod Mod4
 
 # Font
-font pango:DejaVu Sans Mono 10
+font pango:JetBrains Mono 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -92,7 +92,7 @@ bindsym $mod+ctrl+l resize grow width 10 px or 10 ppt
 
 # Program shortcuts
 bindsym $mod+Return exec --no-startup-id $TERMINAL # terminal
-bindsym $mod+d exec --no-startup-id dmenu_run # launcher
+bindsym $mod+d exec --no-startup-id dmenu_run -fn 'JetBrains Mono:pixelsize=14' # launcher
 bindsym $mod+b exec $WEB_BROWSER # browser
 bindsym $mod+f exec --no-startup-id $TERMINAL -e $FILE_MANAGER # file manager
 bindsym $mod+v exec --no-startup-id $TERMINAL -e $EDITOR # text editor
@@ -100,7 +100,7 @@ bindsym ctrl+Mod1+Delete exec --no-startup-id $TERMINAL -e $SYS_MONITOR # task m
 bindsym $mod+e exec --no-startup-id i3lock -i /usr/share/backgrounds/manjaro-gnome/illyria1.png # lock the screen
 
 # Take a screenshot
-bindsym Print exec --no-startup-id scrot -e 'mv $f ~/Pictures/screenshots/$f'
+bindsym Print exec --no-startup-id scrot -e 'mv $f ~/Pictures/$f'
 
 # Autostart
 exec --no-startup-id nitrogen --restore # set wallpaper
