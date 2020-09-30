@@ -32,6 +32,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tpope/vim-surround'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mcchrish/nnn.vim'
+Plug 'https://github.com/tikhomirov/vim-glsl.git'
 
 call plug#end()
 

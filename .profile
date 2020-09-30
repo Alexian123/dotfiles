@@ -35,3 +35,5 @@ export FILE_MANAGER="ranger"
 export WEB_BROWSER="brave"
 export SYS_MONITOR="htop"
 export QT_QPA_PLATFORMTHEME="qt5ct"
+
+export PATH="$HOME/.cargo/bin:$PATH"
