@@ -93,20 +93,18 @@ bindsym $mod+ctrl+l resize grow width 10 px or 10 ppt
 # Program shortcuts
 bindsym $mod+Return exec --no-startup-id $TERMINAL # terminal
 bindsym $mod+d exec --no-startup-id dmenu_run -fn 'JetBrains Mono:pixelsize=16' # launcher
-bindsym $mod+b exec $WEB_BROWSER # browser
-bindsym $mod+f exec --no-startup-id $TERMINAL -e $FILE_MANAGER # file manager
+bindsym $mod+b exec $GUI_WEB_BROWSER # browser
+bindsym $mod+f exec --no-startup-id $GUI_FILE_MANAGER # file manager
 bindsym $mod+v exec --no-startup-id $TERMINAL -e $EDITOR # text editor
-bindsym ctrl+Mod1+Delete exec --no-startup-id $TERMINAL -e $SYS_MONITOR # task manager
-bindsym $mod+e exec --no-startup-id i3lock -i /usr/share/backgrounds/manjaro-gnome/illyria1.png # lock the screen
+bindsym ctrl+Mod1+Delete exec --no-startup-id $TERMINAL -e htop # task manager
 
 # Take a screenshot
 bindsym Print exec --no-startup-id scrot -e 'mv $f ~/Pictures/$f'
 
 # Autostart
 exec --no-startup-id nitrogen --restore # set wallpaper
-exec --no-startup-id picom -f # compositor
+exec --no-startup-id picom # compositor
 exec --no-startup-id xrdb ~/.Xdefaults # st config
-exec_always --no-startup-id caffeine # keep display on
 exec_always --no-startup-id nm-applet # internet applet
 exec --no-startup-id pa-applet # volume applet
 exec_always --no-startup-id blueman-applet # bluetooth applet
