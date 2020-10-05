@@ -1,4 +1,4 @@
-# i3 config file
+#// i3 config file
 
 # Set modifier key to Super
 set $mod Mod4
@@ -134,8 +134,8 @@ new_window 1pixel
 new_float normal
 
 # Initial Gaps
-gaps outer 2
-gaps inner 5
+gaps outer 5
+gaps inner 10
 
 # Gap Control
 set $mode_gaps Gaps: (o)uter, (i)nner, (h)orizontal, (v)ertical, (t)op, (r)ight, (b)ottom, (l)eft
