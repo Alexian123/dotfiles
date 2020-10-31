@@ -31,7 +31,5 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 export PAGER="most"
 export TERMINAL="st"
-export GUI_FILE_MANAGER="thunar"
+export GUI_FILE_MANAGER="pcmanfm"
 export GUI_WEB_BROWSER="firefox"
-
-export PATH="$HOME/.cargo/bin:$PATH"
