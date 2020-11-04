@@ -25,11 +25,3 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
-
-# default programs
-export EDITOR="nvim"
-export VISUAL="nvim"
-export PAGER="most"
-export TERMINAL="st"
-export GUI_FILE_MANAGER="pcmanfm"
-export GUI_WEB_BROWSER="firefox"

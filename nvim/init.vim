@@ -26,13 +26,8 @@ augroup END
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'tpope/vim-surround'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'mcchrish/nnn.vim'
-Plug 'https://github.com/tikhomirov/vim-glsl.git'
 
 call plug#end()
 

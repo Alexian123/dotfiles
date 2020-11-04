@@ -50,17 +50,17 @@ alias aptu="sudo aptitude update && sudo aptitude upgrade" # update packages
 alias aptsi="apt list --installed | grep" # search installed packages
 #
 # pacman/yay
-alias pacss="pacman -Ss" # search for standard package
-alias yayssa="yay -Ssa" # search for aur package
-alias yayss="yay -Ss" # search for any package
-alias pacs="sudo pacman -S" # install standard package
-alias yays="yay -S" # install any package
-alias pacrns="sudo pacman -Rns" # remove package
-alias pacsyu="sudo pacman -Syu" # update standard packages
-alias yaysyua="yay -Syua" # update aur packages
-alias yaysyu="yay -Syu" # update all packages
-alias pacqs="pacman -Qs" # search installed packages
-alias pacqdt="pacman -Qdt" # list unneeded packages
+#alias pacss="pacman -Ss" # search for standard package
+#alias yayssa="yay -Ssa" # search for aur package
+#alias yayss="yay -Ss" # search for any package
+#alias pacs="sudo pacman -S" # install standard package
+#alias yays="yay -S" # install any package
+#alias pacrns="sudo pacman -Rns" # remove package
+#alias pacsyu="sudo pacman -Syu" # update standard packages
+#alias yaysyua="yay -Syua" # update aur packages
+#alias yaysyu="yay -Syu" # update all packages
+#alias pacqs="pacman -Qs" # search installed packages
+#alias pacqdt="pacman -Qdt" # list unneeded packages
 #
 # snap
 alias snfi="snap find"
