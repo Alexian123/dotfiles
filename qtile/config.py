@@ -54,6 +54,9 @@ keys = [
 
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "d", lazy.spawn('dmenu_run -fn "MesloLGS NF" -sb "#A4412D"'), desc="Launch dmenu"),
+    Key([mod], "f", lazy.spawn('pcmanfm'), desc="Launch file manager"),
+    Key([mod], "b", lazy.spawn('firefox'), desc="Launch web browser"),
+    Key([mod], "v", lazy.spawn('st -e nvim'), desc="Launch vim"),
 
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod, "shift"], "q", lazy.window.kill(), desc="Kill focused window"),
@@ -68,7 +71,7 @@ keys = [
     Key("", "XF86AudioMute", lazy.spawn("pamixer -t"), desc="Toggle mute"),
 ]
 
-groups = [Group(i) for i in "12345"]
+groups = [Group(i) for i in "123456789"]
 
 for i in groups:
     keys.extend([
