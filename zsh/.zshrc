@@ -42,33 +42,33 @@ alias vim="nvim"
 # package management
 #
 # apt/apltitude
-alias apts="aptitude search" # search for package
-alias apti="sudo aptitude install" # install package
-alias aptr="sudo aptitude remove" # remove package
-alias aptp="sudo aptitude purge" # remove package and configs
-alias aptu="sudo aptitude update && sudo aptitude upgrade" # update packages
-alias aptsi="apt list --installed | grep" # search installed packages
+#alias apts="aptitude search" # search for package
+#alias apti="sudo aptitude install" # install package
+#alias aptr="sudo aptitude remove" # remove package
+#alias aptp="sudo aptitude purge" # remove package and configs
+#alias aptu="sudo aptitude update && sudo aptitude upgrade" # update packages
+#alias aptsi="apt list --installed | grep" # search installed packages
 #
 # pacman/yay
-#alias pacss="pacman -Ss" # search for standard package
-#alias yayssa="yay -Ssa" # search for aur package
-#alias yayss="yay -Ss" # search for any package
-#alias pacs="sudo pacman -S" # install standard package
-#alias yays="yay -S" # install any package
-#alias pacrns="sudo pacman -Rns" # remove package
-#alias pacsyu="sudo pacman -Syu" # update standard packages
-#alias yaysyua="yay -Syua" # update aur packages
-#alias yaysyu="yay -Syu" # update all packages
-#alias pacqs="pacman -Qs" # search installed packages
-#alias pacqdt="pacman -Qdt" # list unneeded packages
+alias pacss="pacman -Ss" # search for standard package
+alias yayssa="yay -Ssa" # search for aur package
+alias yayss="yay -Ss" # search for any package
+alias pacs="sudo pacman -S" # install standard package
+alias yays="yay -S" # install any package
+alias pacrns="sudo pacman -Rns" # remove package
+alias pacsyu="sudo pacman -Syu" # update standard packages
+alias yaysyua="yay -Syua" # update aur packages
+alias yaysyu="yay -Syu" # update all packages
+alias pacqs="pacman -Qs" # search installed packages
+alias pacqdt="pacman -Qdt" # list unneeded packages
 #
 # snap
-alias snfi="snap find"
-alias snfo="snap info"
-alias snin="sudo snap install"
-alias snli="snap list"
-alias snrm="sudo snap remove"
-alias snre="sudo snap refresh"
+#alias snfi="snap find"
+#alias snfo="snap info"
+#alias snin="sudo snap install"
+#alias snli="snap list"
+#alias snrm="sudo snap remove"
+#alias snre="sudo snap refresh"
 #
 # flatpak
 alias flatin="sudo flatpak install"
@@ -142,13 +142,13 @@ echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 # Plugins
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 # Theme
-source ~/.local/share/powerlevel10k/powerlevel10k.zsh-theme
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+
+pfetch
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-pfetch
