@@ -100,7 +100,7 @@ alias fgrep="fgrep --color=auto"
 #
 # flags
 alias cp="cp -i"    # confirm before overwriting
-alias df="df -h"    # more readable output
+alias df="df -h"    # human readable output
 
 # Basic auto/tab complete:
 autoload -U compinit

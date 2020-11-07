@@ -6,8 +6,7 @@
 # Copyright (c) 2013 horsik Copyright (c) 2013 Tao Sauvage
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
+# of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights
 # to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 # copies of the Software, and to permit persons to whom the Software is
 # furnished to do so, subject to the following conditions:
@@ -30,10 +29,8 @@ from typing import List  # noqa: F401
 from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Screen
 from libqtile.lazy import lazy
-from libqtile.utils import guess_terminal
 
 mod = "mod4"
-terminal = guess_terminal()
 
 keys = [
     Key([mod], "h", lazy.layout.left()),
@@ -51,9 +48,9 @@ keys = [
     Key([mod], "n", lazy.layout.normalize()),
     Key([mod, "shift"], "space", lazy.layout.flip()),
 
-    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    Key([mod], "Return", lazy.spawn('st'), desc="Launch terminal"),
     Key([mod], "d", lazy.spawn('dmenu_run -fn "MesloLGS NF" -sb "#A4412D"'), desc="Launch dmenu"),
-    Key([mod], "f", lazy.spawn('pcmanfm'), desc="Launch file manager"),
+    Key([mod], "f", lazy.spawn('thunar'), desc="Launch file manager"),
     Key([mod], "b", lazy.spawn('firefox'), desc="Launch web browser"),
     Key([mod], "v", lazy.spawn('st -e nvim'), desc="Launch vim"),
 
@@ -64,11 +61,12 @@ keys = [
     Key([mod, "control"], "e", lazy.shutdown(), desc="Shutdown qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
 
-    Key("", "Print", lazy.spawn("scrot '%Y-%m-%d_$wx$h_scrot.png' -e 'mv $f ~/Pictures/screenshots/'"), desc="Screenshot"),
     Key("", "XF86Calculator", lazy.spawn("st -e 'ufccalc'"), desc="Launch ufccalc"),
     Key("", "XF86AudioRaiseVolume", lazy.spawn("pamixer -i 5"), desc="Increase volume"),
-    Key("", "XF86AudioLowerVolume", lazy.spawn("pamixer -d 5"), desc="Decrease volume"),
-    Key("", "XF86AudioMute", lazy.spawn("pamixer -t"), desc="Toggle mute"),
+    Key("", "XF86AudioLowerVolume", lazy.spawn("pamixer -d 5"), desc="Lower volume"),
+    Key("", "XF86AudioMicMute", lazy.spawn("pamixer -t"), desc="Toggle mute"),
+    Key("", "XF86MonBrightnessUp", lazy.spawn("xbacklight -inc 5"), desc="Increase brightness"),
+    Key("", "XF86MonBrightnessDown", lazy.spawn("xbacklight -dec 5"), desc="Increase brightness"),
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -106,7 +104,7 @@ screens = [
                 widget.Notify(),
                 widget.Sep(),
                 widget.Image(filename='~/Pictures/bar_icons/kbd.png'),
-                widget.CapsNumLockIndicator(),
+                widget.KeyboardLayout(configured_keyboards=['us', 'ro std']),
                 widget.Sep(),
                 widget.Image(filename='~/Pictures/bar_icons/ram.png'),
                 widget.Memory(),
