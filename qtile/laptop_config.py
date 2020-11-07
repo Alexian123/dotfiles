@@ -62,6 +62,7 @@ keys = [
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
 
     Key("", "XF86Calculator", lazy.spawn("st -e 'ufccalc'"), desc="Launch ufccalc"),
+    Key("", "XF86Display", lazy.spawn("xfce4-display-settings"), desc="Launch display settings:"),
     Key("", "XF86AudioRaiseVolume", lazy.spawn("pamixer -i 5"), desc="Increase volume"),
     Key("", "XF86AudioLowerVolume", lazy.spawn("pamixer -d 5"), desc="Lower volume"),
     Key("", "XF86AudioMicMute", lazy.spawn("pamixer -t"), desc="Toggle mute"),
