@@ -83,5 +83,3 @@ alias ll="ls -l --color=auto"
 alias lal="ls -al --color=auto"
 
 #set -o vi
-
-pfetch
