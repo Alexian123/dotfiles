@@ -53,7 +53,7 @@ keys = [
 
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "d", lazy.spawn('dmenu_run -fn "MesloLGS NF" -sb "#A4412D"'), desc="Launch dmenu"),
-    Key([mod], "f", lazy.spawn('pcmanfm'), desc="Launch file manager"),
+    Key([mod], "f", lazy.spawn('st -e vifm'), desc="Launch file manager"),
     Key([mod], "b", lazy.spawn('firefox'), desc="Launch web browser"),
     Key([mod], "v", lazy.spawn('st -e nvim'), desc="Launch vim"),
 

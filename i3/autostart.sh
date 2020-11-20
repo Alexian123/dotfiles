@@ -1,11 +1,7 @@
 #!/bin/sh
-
+xrdb -merge ~/.Xresources &
 nm-applet &
-mate-settings-daemon &
-compton -f &
+picom -f &
 blueman-applet &
 nitrogen --restore &
-mate-power-manager &
-redshift-gtk &
 pasystray &
-caffeine-indicator &
