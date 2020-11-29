@@ -1,5 +1,7 @@
 *.font: MesloLGS NF:pixelsize=14:antialias=true:autohint=true;
 *.alpha: 0.8
+xterm*faceName: MesloLGS NF
+xterm*faceSize: 12
 XTerm*background:  #000000
 XTerm*foreground:  #9f9f9f
 XTerm*color0:      #000000

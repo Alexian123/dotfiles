@@ -7,7 +7,7 @@ set $mod Mod4
 
 # default programs
 set $web_browser firefox
-set $file_manager pcmanfm
+set $file_manager nemo
 set $text_editor "st -e 'nvim'"
 set $system_monitor "st -e 'htop'"
 
@@ -15,10 +15,11 @@ set $system_monitor "st -e 'htop'"
 font pango:DejaVu Sans Mono 12
 
 # autostart
+exec --no-startup-id "~/.screenlayout/extend_right.sh" # screen layout
 exec --no-startup-id "xrdb -merge '~/.Xresources'" # x settings
 exec --no-startup-id nm-applet # network connections manager
-exec --no-startup-id "picom -f" # compositor
-exec --no-startup-id blueman-applet # bluetooth manager
+exec --no-startup-id "picom -cf --inactive-opacity=1.0 --menu-opacity=1.0" # compositor
+exec --no-startup-id blueman-tray # bluetooth manager
 exec --no-startup-id "nitrogen --restore" # wallpapers
 exec --no-startup-id pa-applet # volume
 exec --no-startup-id xfce4-power-manager # power settings and events
@@ -28,11 +29,13 @@ exec --no-startup-id redshift-gtk # color temperature adjuster
 exec --no-startup-id "xss-lock i3lock-fancy-multimonitor" # screen lock
 exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd # notifications
 exec --no-startup-id gxkb # kbd layout switcher
+exec --no-startup-id /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 # polkit
 
-# Use pactl to adjust volume in PulseAudio.
+# Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioPlay exec --no-startup-id "playerctl play-pause"
 
 # Brightness function keys
 bindsym XF86MonBrightnessUp exec --no-startup-id "xbacklight -inc 10"
@@ -40,6 +43,9 @@ bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 10"
 
 # Display function key
 bindsym XF86Display exec --no-startup-id arandr
+
+# Calculator function key
+bindsym XF86Calculator exec --no-startup-id galculator
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -68,6 +74,12 @@ bindsym $mod+a mode "$quick_launch"
 
 # screenshot
 bindsym Print exec --no-startup-id "scrot '%Y-%m-%d_$wx$h_scrot.png' -e 'mv $f ~/Pictures/screenshots/'"
+
+# focus parent window
+bindsym $mod+m focus parent
+
+# focus child window
+bindsym $mod+Shift+m focus child
 
 # change focus
 bindsym $mod+h focus left
@@ -133,7 +145,9 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Escape exec "i3-msg exit"
+bindsym $mod+Shift+Escape exec "i3-msg exit"
+# lock screen
+bindsym $mod+Escape exec --no-startup-id "i3lock-fancy-multimonitor"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -149,9 +163,14 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+# program specific rules
+for_window [class="Galculator"] floating enable
+for_window [class="XTerm"] floating enable
+for_window [title="video0 - mpv"] floating enable
+
 # borders
 hide_edge_borders smart
-new_window 1pixel
+new_window pixel 2
 
 # gaps
 gaps inner 2
@@ -159,6 +178,7 @@ gaps inner 5
 
 # status bar
 bar {
+        tray_output eDP1
         position top
         status_command i3blocks
 }
