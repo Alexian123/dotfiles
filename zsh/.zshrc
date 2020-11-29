@@ -56,6 +56,7 @@ alias yayss="yay -Ss" # search for any package
 alias pacs="sudo pacman -S" # install standard package
 alias yays="yay -S" # install any package
 alias pacrns="sudo pacman -Rns" # remove package
+alias yayrns="yay -Rns" # remove any package
 alias pacsyu="sudo pacman -Syu" # update standard packages
 alias yaysyua="yay -Syua" # update aur packages
 alias yaysyu="yay -Syu" # update all packages
