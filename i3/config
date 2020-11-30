@@ -164,14 +164,17 @@ bindsym $mod+r mode "resize"
 
 # program specific rules
 for_window [class="Galculator"] floating enable
+for_window [class="XTerm"] border normal 2
 for_window [class="XTerm"] floating enable
 for_window [title="video0 - mpv"] floating enable
 for_window [class="Steam"] floating enable
 for_window [class="screengrab"] floating enable
 
-# borders
+# title & borders
+title_align center
 hide_edge_borders smart
-new_window pixel 2
+default_border pixel 2
+default_floating_border normal 2
 
 # gaps
 gaps inner 5
