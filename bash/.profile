@@ -26,4 +26,9 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# add ghc binaries to path
+if [ -d "$HOME/.ghcup/bin" ] ; then
+    PATH="$HOME/.ghcup/bin:$PATH"
+fi
+
 export EDITOR="nvim"

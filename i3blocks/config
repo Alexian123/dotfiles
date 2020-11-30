@@ -47,7 +47,7 @@ markup=none
 # The type defaults to "mem" if the instance is not specified.
 [memory]
 label=MEM
-separator=false
+#separator=false
 interval=30
 
 #[memory]
@@ -61,10 +61,10 @@ interval=30
 # The directory defaults to $HOME if the instance is not specified.
 # The script may be called with a optional argument to set the alert
 # (defaults to 10 for 10%).
-[disk]
-label=HOME 
-#DIR=/mnt/data
-interval=30
+#[disk]
+#label=HOME 
+##DIR=/mnt/data
+#interval=30
 
 # Network interface monitoring
 #
@@ -86,24 +86,29 @@ interval=30
 ##INTERFACE=eth0
 #interval=5
 
-# CPU usage
-#
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
 [cpu_usage]
 label=CPU 
-interval=10
-min_width=CPU 100.00%
-#separator=false
+interval=5
+min_width=CPU 100%
+separator=false
 
 [load_average]
 label=LOAD 
 interval=10
 
-[rpi_temp]
-label=T: 
-command=raspi_temp
+# Temperature
+#
+# Support multiple chips, though lm-sensors.
+# The script may be called with -w and -c switches to specify thresholds,
+# see the script for details.
+[temperature]
+label=TEMP 
 interval=10
+
+# CPU usage
+#
 
 # Battery indicator
 #
@@ -134,26 +139,17 @@ interval=5
 #[openvpn]
 #interval=20
 
-# Temperature
-#
-# Support multiple chips, though lm-sensors.
-# The script may be called with -w and -c switches to specify thresholds,
-# see the script for details.
-#[temperature]
-#label=TEMP
-#interval=10
-
 # Key indicators
 #
 # Add the following bindings to i3 config file:
 #
 # bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 # bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
-[keyindicator]
-KEY=CAPS
-markup=pango
-interval=once
-signal=11
+#[keyindicator]
+#KEY=CAPS
+#markup=pango
+#interval=once
+#signal=11
 
 #[keyindicator]
 #KEY=NUM
