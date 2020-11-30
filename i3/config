@@ -15,7 +15,7 @@ set $system_monitor "st -e 'htop'"
 font pango:DejaVu Sans Mono 12
 
 # autostart
-exec --no-startup-id "~/.screenlayout/extend_right.sh" # screen layout
+exec --no-startup-id "~/.screenlayout/default" # screen layout
 exec --no-startup-id "xrdb -merge '~/.Xresources'" # x settings
 exec --no-startup-id nm-applet # network connections manager
 exec --no-startup-id "picom -cf --inactive-opacity=1.0 --menu-opacity=1.0" # compositor
@@ -26,7 +26,7 @@ exec --no-startup-id xfce4-power-manager # power settings and events
 exec --no-startup-id "udiskie -t" # device auto mounter
 exec --no-startup-id caffeine # disable power saving temporarely
 exec --no-startup-id redshift-gtk # color temperature adjuster
-exec --no-startup-id "xss-lock i3lock-fancy-multimonitor" # screen lock
+exec --no-startup-id "xss-lock -l i3lock-fancy-multimonitor" # screen lock
 exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd # notifications
 exec --no-startup-id gxkb # kbd layout switcher
 exec --no-startup-id /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 # polkit
@@ -179,7 +179,21 @@ gaps outer 3
 
 # status bar
 bar {
-        tray_output eDP1
-        position top
         status_command i3blocks
+        position top
+        tray_output eDP1
+
+        colors {
+			separator #268bd2
+			background #002b36
+			statusline #839496
+			focused_workspace #fdf6e3 #6c71c4 #fdf6e3
+			active_workspace #fdf6e3 #6c71c4 #fdf6e3
+			inactive_workspace #002b36 #586e75 #002b36
+			urgent_workspace #d33682 #d33682 #fdf6e3
+	  }
 }
+client.focused #6c71c4 #6c71c4 #fdf6e3 #6c71c4
+client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
+client.unfocused #073642 #073642 #93a1a1 #586e75
+client.urgent #d33682 #d33682 #fdf6e3 #dc322f

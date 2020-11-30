@@ -46,7 +46,7 @@ markup=none
 #
 # The type defaults to "mem" if the instance is not specified.
 [memory]
-label=MEM
+label=⛃ 
 #separator=false
 interval=30
 
@@ -89,13 +89,13 @@ interval=30
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
 [cpu_usage]
-label=CPU 
+label=☭ 
 interval=5
 min_width=CPU 100%
-separator=false
+#separator=false
 
 [load_average]
-label=LOAD 
+label=☢ 
 interval=10
 
 # Temperature
@@ -104,7 +104,7 @@ interval=10
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
 [temperature]
-label=TEMP 
+label=♨ 
 interval=10
 
 # CPU usage
@@ -121,6 +121,7 @@ interval=10
 # Date Time
 #
 [time]
+label= 
 command=date '+%Y-%m-%d %H:%M:%S'
 interval=5
 
