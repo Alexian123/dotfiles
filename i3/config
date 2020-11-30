@@ -167,7 +167,7 @@ for_window [class="Galculator"] floating enable
 for_window [class="XTerm"] floating enable
 for_window [title="video0 - mpv"] floating enable
 for_window [class="Steam"] floating enable
-for_window [class="VirtualBox Machine"] floating enable
+for_window [class="screengrab"] floating enable
 
 # borders
 hide_edge_borders smart

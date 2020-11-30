@@ -31,4 +31,6 @@ if [ -d "$HOME/.ghcup/bin" ] ; then
     PATH="$HOME/.ghcup/bin:$PATH"
 fi
 
-export EDITOR="nvim"
+export VISUAL=nvim
+export EDITOR=nvim
+export PAGER=less

@@ -48,7 +48,7 @@ markup=none
 [memory]
 label=⛃ 
 #separator=false
-interval=30
+interval=5
 
 #[memory]
 #label=SWAP
@@ -96,7 +96,7 @@ min_width=CPU 100%
 
 [load_average]
 label=☢ 
-interval=10
+interval=5
 
 # Temperature
 #
@@ -105,7 +105,7 @@ interval=10
 # see the script for details.
 [temperature]
 label=♨ 
-interval=10
+interval=5
 
 # CPU usage
 #
