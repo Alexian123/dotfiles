@@ -8,14 +8,13 @@ set $mod Mod4
 # default programs
 set $web_browser firefox
 set $file_manager nemo
-set $text_editor "st -e 'nvim'"
+set $text_editor notepadqq
 set $system_monitor "st -e 'htop'"
 
 # font
 font pango:DejaVu Sans Mono 12
 
 # autostart
-exec --no-startup-id "~/.screenlayout/default" # screen layout
 exec --no-startup-id "xrdb -merge '~/.Xresources'" # x settings
 exec --no-startup-id nm-applet # network connections manager
 exec --no-startup-id "picom -cf --inactive-opacity=1.0 --menu-opacity=1.0" # compositor
@@ -167,7 +166,8 @@ bindsym $mod+r mode "resize"
 for_window [class="Galculator"] floating enable
 for_window [class="XTerm"] floating enable
 for_window [title="video0 - mpv"] floating enable
-for_window [title="Steam"] floating enable
+for_window [class="Steam"] floating enable
+for_window [class="VirtualBox Machine"] floating enable
 
 # borders
 hide_edge_borders smart
@@ -193,7 +193,7 @@ bar {
 			urgent_workspace #d33682 #d33682 #fdf6e3
 	  }
 }
-client.focused #6c71c4 #6c71c4 #fdf6e3 #6c71c4
+client.focused #6c71c4 #6c71c4 #fdf6e3 #6c31a4
 client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
 client.unfocused #073642 #073642 #93a1a1 #586e75
 client.urgent #d33682 #d33682 #fdf6e3 #dc322f
