@@ -72,12 +72,12 @@ alias pacqdt="pacman -Qdt" # list unneeded packages
 #alias snre="sudo snap refresh"
 #
 # flatpak
-alias flatin="sudo flatpak install"
-alias flatun="sudo flatpak uninstall"
-alias flatup="sudo flatpak update"
-alias flats="flatpak search"
-alias flatl="flatpak list"
-alias flatinf="flatpak info"
+#alias flatin="sudo flatpak install"
+#alias flatun="sudo flatpak uninstall"
+#alias flatup="sudo flatpak update"
+#alias flats="flatpak search"
+#alias flatl="flatpak list"
+#alias flatinf="flatpak info"
 #
 # navigation
 alias ..="cd .."
