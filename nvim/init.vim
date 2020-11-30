@@ -25,10 +25,8 @@ augroup numbertoggle
 augroup END
 
 call plug#begin('~/.local/share/nvim/plugged')
-
 Plug 'joshdick/onedark.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
 call plug#end()
 
 colorscheme onedark
