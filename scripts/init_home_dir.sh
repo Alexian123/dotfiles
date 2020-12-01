@@ -18,6 +18,7 @@ mkdir ~/.cache/nvim/undodir -p
 # .local
 mkdir ~/.local/bin -p
 mkdir ~/.local/share/applications -p
+mkdir ~/.local/share/fonts
 
 # .screenlayout
 mkdir ~/.screenlayout

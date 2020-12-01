@@ -63,3 +63,11 @@ ln -sf $DOTFILES/scripts/reset_wallpaper ~/.local/bin/
 ln -sf $DOTFILES/screenlayout/single_display.sh ~/.local/bin/
 ln -sf $DOTFILES/screenlayout/single_external_display.sh ~/.local/bin/
 ln -sf $DOTFILES/screenlayout/extend_right.sh ~/.local/bin/
+
+# .local/share
+ln -sf $DOTFILES/launchers/st.desktop ~/.local/share/applications/
+ln -sf $DOTFILES/launchers/ob_menu.desktop ~/.local/share/applications/
+ln -sf $DOTFILES/fonts/MesloLGS\ NF\ Regular.ttf ~/.local/share/fonts/
+ln -sf $DOTFILES/fonts/MesloLGS\ NF\ Bold.ttf ~/.local/share/fonts/
+ln -sf $DOTFILES/fonts/MesloLGS\ NF\ Italic.ttf ~/.local/share/fonts/
+ln -sf $DOTFILES/fonts/MesloLGS\ NF\ Bold\ Italic.ttf ~/.local/share/fonts/
