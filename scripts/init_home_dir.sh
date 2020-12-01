@@ -3,7 +3,7 @@
 # Initializes directories from $HOME
 
 # .config
-mkdir ~/.config/nvim
+mkdir ~/.config/nvim -p
 mkdir ~/.config/i3
 mkdir ~/.config/i3blocks
 mkdir ~/.config/qtile
@@ -15,10 +15,21 @@ mkdir ~/.config/tint2
 # .cache
 mkdir ~/.cache/nvim/undodir -p
 
+# .local
+mkdir ~/.local/bin -p
+mkdir ~/.local/share/applications -p
+
+# .screenlayout
+mkdir ~/.screenlayout
+
 # Projects
 mkdir ~/Projects/CodeBlocks -p
 mkdir ~/Projects/Eclipse
 mkdir ~/Projects/VSCode
 
 # Source
-mkdir ~/Source/personal -p
+mkdir ~/Source/personal/dotfiles -p
+
+# VMs
+mkdir ~/VirtManager VMs
+mkdir ~/VirtualBox VMs
