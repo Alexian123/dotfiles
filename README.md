@@ -1,7 +1,7 @@
 # dotfiles
 <br>
 This is a work-in-progress setup of Arch Linux on a laptop with 3 window managers: i3, Qtile and OpenBox.
-<br>
+<br><br>
 Run ./install.sh to set up your system (preferably on a fresh Arch Linux install).
 <br>
 Enter your password when asked (required to install dependencies).
