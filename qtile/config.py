@@ -53,6 +53,7 @@ keys = [
     Key([mod], "f", lazy.spawn('nemo'), desc="Launch file manager"),
     Key([mod], "b", lazy.spawn('firefox'), desc="Launch web browser"),
     Key([mod], "v", lazy.spawn('st -e nvim'), desc="Launch vim"),
+    Key([mod], "a", lazy.spawn('/bin/bash -c ~/Source/personal/dotfiles/scripts/dmenu/quicklaunch.sh')),
 
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod, "shift"], "q", lazy.window.kill(), desc="Kill focused window"),

@@ -5,12 +5,6 @@
 # modifier key
 set $mod Mod4
 
-# default programs
-set $web_browser firefox
-set $file_manager nemo
-set $text_editor notepadqq
-set $system_monitor "st -e 'htop'"
-
 # font
 font pango:DejaVu Sans Mono 12
 
@@ -58,18 +52,8 @@ bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run -fn "DejaVu Sans Mono:pixelsize=18"
 
-# quick launch mode
-set $quick_launch Quick launch: web [b]rowser, [f]ile manager, text [e]ditor, [s]ystem monitor
-mode "$quick_launch" {
-    bindsym b exec --no-startup-id $web_browser
-    bindsym f exec --no-startup-id $file_manager
-    bindsym e exec --no-startup-id $text_editor
-    bindsym s exec --no-startup-id $system_monitor
-
-    bindsym Escape mode "default"
-    bindsym Return mode "default"
-}
-bindsym $mod+a mode "$quick_launch"
+# dmenu quick launch script
+bindsym $mod+a exec --no-startup-id ~/Source/personal/dotfiles/scripts/dmenu/quicklaunch.sh
 
 # screenshot
 bindsym Print exec --no-startup-id "scrot '%Y-%m-%d_$wx$h_scrot.png' -e 'mv $f ~/Pictures/screenshots/'"
@@ -175,6 +159,10 @@ title_align center
 hide_edge_borders smart
 default_border pixel 2
 default_floating_border normal 2
+# enable title bar
+bindsym $mod+t border normal 2
+# disable title bar
+bindsym $mod+Shift+t border pixel 2 
 
 # gaps
 gaps inner 5
