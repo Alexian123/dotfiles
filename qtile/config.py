@@ -63,7 +63,7 @@ keys = [
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
 
     Key("", "XF86Calculator", lazy.spawn("galculator"), desc="Launch ufccalc"),
-    Key("", "XF86Display", lazy.spawn("arandr"), desc="Launch display settings:"),
+    Key("", "XF86Display", lazy.spawn("bash -c ~/Source/personal/dotfiles/scripts/dmenu/change_display_layout.sh"), desc="Launch display settings:"),
     Key("", "XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ +10%"), desc="Increase volume"),
     Key("", "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ -10%"), desc="Lower volume"),
     Key("", "XF86AudioMicMute", lazy.spawn("pactl set-source-mute @DEFAULT_SOURCE@ toggle"), desc="Toggle mute"),

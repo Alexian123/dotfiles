@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=Menu
+Comment=Application Menu
+Exec=xdotool key super+a
+Icon=open-menu-symbolic
+Terminal=false
+Categories=System;

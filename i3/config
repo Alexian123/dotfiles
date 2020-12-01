@@ -35,7 +35,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id "xbacklight -inc 10"
 bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 10"
 
 # Display function key
-bindsym XF86Display exec --no-startup-id arandr
+bindsym XF86Display exec --no-startup-id ~/Source/personal/dotfiles/scripts/dmenu/change_display_layout.sh
 
 # Calculator function key
 bindsym XF86Calculator exec --no-startup-id galculator
@@ -50,7 +50,7 @@ bindsym $mod+Return exec --no-startup-id st
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run -fn "DejaVu Sans Mono:pixelsize=18"
+bindsym $mod+d exec --no-startup-id dmenu_run -fn "MesloLGS NF:pixelsize=18" -sb "#6c71c4" -nb "#002b36"
 
 # dmenu quick launch script
 bindsym $mod+a exec --no-startup-id ~/Source/personal/dotfiles/scripts/dmenu/quicklaunch.sh
