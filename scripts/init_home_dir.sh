@@ -11,6 +11,7 @@ mkdir ~/.config/openbox
 mkdir ~/.config/ranger
 mkdir ~/.config/gxkb
 mkdir ~/.config/tint2
+mkdir ~/.config/codeblocks
 
 # .cache
 mkdir ~/.cache/nvim/undodir -p
@@ -32,5 +33,5 @@ mkdir ~/Projects/VSCode
 mkdir ~/Source/personal/dotfiles -p
 
 # VMs
-mkdir ~/VirtManager VMs
-mkdir ~/VirtualBox VMs
+mkdir ~/VirtManager\ VMs
+mkdir ~/VirtualBox\ VMs
