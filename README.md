@@ -17,7 +17,8 @@ Enable multilib.<br>
 Do not run the install script as root!<br>
 Do not move, delete or rename the ~/Source/personal/dotfiles directory or its parents, as all the system configs will be linked to it.<br>
 Your monitor setup will most likely be different from mine, so replace the files from ./screenlayout with ones that work properly for your setup. You can generate those using arandr, just make sure to save them in the right place (~/Source/personal/dotfiles/screenlayout).<br>
-You likely need different video drivers (by default, only intel drivers are installed). Make sure you look through the OPTIONAL section at the top of ./package_list.txt and replace what you don't need with what you do need. Unless you know what you're doing, do not modify other sections.<br><br>
+You likely need different video drivers (by default, only intel drivers are installed). Make sure you look through the OPTIONAL section at the top of ./package_list.txt and replace what you don't need with what you do need. Unless you know what you're doing, do not modify other sections.<br>
+Aappend 'QT_QPA_PLATFORMTHEME=qt5ct' to /etc/environment to be able to set the qt theme with qt5ct.<br><br>
 
 To update, run 'cd  ~/Source/personal/dotfiles && git pull'.<br><br>
 
