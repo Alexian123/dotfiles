@@ -7,7 +7,7 @@
 ./scripts/install_dependencies.sh
 
 # copy the dotfiles repo to the correct place
-cp -r ./* $HOME/Source/personal/dotfiles/
+cp -r ./ $HOME/Source/personal/dotfiles/
 
 # link the dotfiles to their expected places
 ./scripts/deploy_dotfiles.sh
