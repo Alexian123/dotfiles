@@ -13,6 +13,7 @@ Run the following commands in a tty:<br>
 Enter your password when asked (required to install dependencies).
 <br><br>
 IMPORTANT<br>
+Enable multilib.<br>
 Do not run the install script as root!<br>
 Do not move, delete or rename the ~/Source/personal/dotfiles directory or its parents, as all the system configs will be linked to it.<br>
 Your monitor setup will most likely be different from mine, so replace the files from ./screenlayout with ones that work properly for your setup. You can generate those using arandr, just make sure to save them in the right place (~/Source/personal/dotfiles/screenlayout).<br>

@@ -23,7 +23,7 @@ sudo wget 'http://download1477.mediafire.com/3d0ec90zfqdg/ekfhhsoy617ci69/image_
 tar xpvf ~/Downloads/image_pack.tar.gz
 mv ~/Downloads/image_pack/wallpapers ~/Pictures/
 mv ~/Downloads/image_pack/bar_icons ~/Pictures/
-sudo mv ~/Downloads/image_pack/helmet.jpg /usr/share/avatar/
+sudo mv ~/Downloads/image_pack/helmet.jpg /usr/share/avatars/
 sudo mv ~/Downloads/image_pack/login.jpg /usr/share/wallpapers/
 
 # cleanup

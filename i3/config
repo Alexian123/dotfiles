@@ -172,6 +172,7 @@ gaps outer 3
 bar {
         status_command i3blocks
         position top
+        separator_symbol "/"
 
         colors {
 			separator #268bd2
