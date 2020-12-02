@@ -208,7 +208,6 @@ ttf-dejavu
 ttf-ms-fonts
 
 # misc
-base-devel
 bluez
 dnsmasq
 dosfstools
