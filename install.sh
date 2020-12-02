@@ -1,10 +1,10 @@
 #!/bin/bash
 
+# create required directories
+./scripts/init_dirs.sh
+
 # install all dependencies
 ./scripts/install_dependencies.sh
-
-# create required directories in $HOME
-./scripts/init_dirs.sh
 
 # copy the dotfiles repo to the correct place
 cp -r ./* $HOME/Source/personal/dotfiles/

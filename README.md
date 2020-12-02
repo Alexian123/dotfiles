@@ -4,7 +4,7 @@ This is a work-in-progress setup of Arch Linux on a laptop with 3 window manager
 It is meant to be used on a fresh install of Arch Linux, with a user account and networking already configured(the networkmanager package must be installed and the NetworkManager service must be enabled).<br>
 I might make an install script for the OS itself in the future.<br>
 <br>
-INSTALLATION (requires git, grep, systemd and an internet connection; other dependencies will be installed automatically)<br>
+INSTALLATION (requires git, base-devel, systemd and an internet connection; other dependencies will be installed automatically)<br>
 Run the following commands in a tty:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;git clone https://github.com/Alexian123/dotfiles<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cd ./dotfiles<br>
