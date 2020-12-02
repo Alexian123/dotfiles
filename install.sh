@@ -17,6 +17,9 @@ sudo systemctl enable lightdm.service
 sudo systemctl enable bluetooth.service
 sudo systemctl enable ufw.service
 
+# required for qt5ct
+sudo echo "QT_QPA_PLATFORMTHEME=qt5ct" >> /etc/environment
+
 # download and install wallpaper, avatar and qtile bar icons
 cd ~/Downloads
 sudo wget 'http://download1477.mediafire.com/3d0ec90zfqdg/ekfhhsoy617ci69/image_pack.tar.gz'
