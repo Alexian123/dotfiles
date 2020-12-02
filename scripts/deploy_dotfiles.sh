@@ -10,11 +10,11 @@ ln -sf $DOTFILES/screenlayout/extend_right.sh ~/.screenlayout/
 
 # bash
 ln -sf $DOTFILES/bash/.bashrc ~/
-ln -sf $DOTFILES/bash/.bash_profile ~/
+ln -sf $DOTFILES/bash/.profile ~/
 
 # zsh
 ln -sf $DOTFILES/zsh/.zshrc ~/
-ln -sf ~/.bash_profile ~/.zprofile
+ln -sf ~/.profile ~/.zprofile
 ln -sf $DOTFILES/zsh/.p10k.zsh ~/
 
 # Xresources
