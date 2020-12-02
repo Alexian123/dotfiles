@@ -3,7 +3,7 @@
 # Simple dmenu prompt for launching programs
 
 BROWSER=firefox
-FILE_MANAGER=nemo
+FILE_MANAGER=pcmanfm
 EDITOR=notepadqq
 MONITOR="st -e htop"
 

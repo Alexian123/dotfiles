@@ -1,0 +1,228 @@
+# [ --------------- OPTIONAL --------------- ]
+# Comment out what you don't need and add what you do need.
+
+# video drivers
+xf86-video-intel
+vulkan-intel
+lib32-vulkan-intel
+vulkan-tools
+
+# IDE's and code editors
+codeblocks
+eclipse-java
+visual-studio-code-bin
+
+# graphics
+blender
+gimp
+gpick
+
+# internet
+chromium
+discord
+transmission-gtk
+openssh
+
+# jdk
+jdk11-openjdk
+jdk8-openjdk
+
+# office
+libreoffice-fresh
+
+# virtual machines
+qemu
+virt-manager
+virtualbox
+virt-viewer
+
+# gaming and emulation
+wine-staging
+steam
+lutris
+tlauncher
+
+# utilities
+rpi-imager
+dxvk-bin
+atool
+pavucontrol
+screengrab
+
+# misc
+cmatrix
+neofetch
+
+
+
+# [ ------------- NON-OPTIONAL ------------- ]
+# Do not modify!
+
+# video drivers
+xf86-video-vesa
+mesa
+
+# display server
+xorg-bdftopcf
+xorg-docs
+xorg-fonts-100dpi
+xorg-fonts-75dpi
+xorg-fonts-encodings
+xorg-font-util
+xorg-iceauth
+xorg-mkfontscale
+xorg-server
+xorg-server-common
+xorg-server-devel
+xorg-server-xephyr
+xorg-server-xnest
+xorg-server-xvfb
+xorg-server-xwayland
+xorg-sessreg
+xorg-setxkbmap
+xorg-smproxy
+xorg-x11perf
+xorg-xauth
+xorg-xbacklight
+xorg-xcmsdb
+xorg-xcursorgen
+xorg-xdpyinfo
+xorg-xdriinfo
+xorg-xev
+xorg-xgamma
+xorg-xhost
+xorg-xinput
+xorg-xkbcomp
+xorg-xkbevd
+xorg-xkbutils
+xorg-xkill
+xorg-xlsatoms
+xorg-xlsclients
+xorg-xmodmap
+xorg-xpr
+xorg-xprop
+xorg-xrandr
+xorg-xrdb
+xorg-xrefresh
+xorg-xset
+xorg-xsetroot
+xorg-xvinfo
+xorg-xwd
+xorg-xwininfo
+xorg-xwud
+
+# display manager
+lightdm
+lightdm-gtk-greeter
+lightdm-gtk-greeter-settings
+
+# wm's and related packages
+i3-gaps
+i3blocks
+i3blocks-contrib
+i3lock-fancy-multimonitor
+obconf
+openbox
+tint2
+menumaker
+qtile
+
+# system tray programs
+blueman
+caffeine-ng
+network-manager-applet
+xfce4-power-manager
+udiskie
+redshift
+pa-applet-git
+gxkb
+
+# system themes and theme setters
+breeze-gtk
+breeze-icons
+xcursor-themes
+lxappearance-gtk3
+qt5ct
+
+# zsh
+zsh
+zsh-autosuggestions
+zsh-completions
+zsh-syntax-highlighting
+zsh-theme-powerlevel10k
+
+# text editors
+neovim
+python-pynvim
+neovim-qt
+notepadqq
+
+# sound and video
+playerctl
+pulseaudio
+pulseaudio-bluetooth
+pulseaudio-jack
+mpv
+smplayer
+
+# terminal emulators
+st-luke-git
+xterm
+
+# other gui programs
+arandr
+dmenu
+file-roller
+firefox
+galculator
+nemo
+nitrogen
+lxinput-gtk3
+ristretto
+gufw
+timeshift
+zathura
+zathura-pdf-mupdf
+
+# other cli programs
+acpi
+curl
+exa
+ghcup-hs-bin
+mlocate
+man-db
+man-pages
+trash-cli
+scrot
+w3m
+wget
+xdotool
+unrar
+unzip
+htop
+pfetch-git
+ranger
+
+# fonts
+ttf-dejavu
+ttf-ms-fonts
+
+# misc
+base-devel
+bluez
+dnsmasq
+dosfstools
+ebtables
+ffmpegthumbnailer
+hdparm
+linux-headers
+mate-polkit
+ntfs-3g
+picom
+python-pip
+sysstat
+tumbler
+ueberzug
+xapp
+xfce4-notifyd
+xss-lock

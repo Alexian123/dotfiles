@@ -2,6 +2,9 @@
 
 DOTFILES=$HOME/Source/personal/dotfiles
 
+# lightdm
+sudo ln -sf $DOTFILES/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/
+
 # screen layout
 ln -sf $DOTFILES/screenlayout/single_display.sh ~/.screenlayout/default
 ln -sf $DOTFILES/screenlayout/single_display.sh ~/.screenlayout/
@@ -20,6 +23,14 @@ ln -sf $DOTFILES/zsh/.p10k.zsh ~/
 # Xresources
 ln -sf $DOTFILES/x/.Xresources ~/
 
+# gtk theme
+ln -sf $DOTFILES/gtk-2.0/gtkfilechooser.ini ~/.config/gtk-2.0/
+ln -sf $DOTFILES/gtk-3.0/settings.ini ~/.config/gtk-3.0/
+
+# qt theme
+sudo echo "QT_QPA_PLATFORMTHEME=qt5ct" >> /etc/environment
+ln -sf $DOTFILES/qt5ct/qt5ct.conf ~/.config/qt5ct/
+
 # CodeBlocks
 ln -sf $DOTFILES/codeblocks/default.conf ~/.config/codeblocks/
 
@@ -36,7 +47,7 @@ ln -sf $DOTFILES/qtile/autostart.sh ~/.config/qtile/
 # openbox
 ln -sf $DOTFILES/openbox/rc.xml ~/.config/openbox/
 ln -sf $DOTFILES/openbox/autostart ~/.config/openbox/
-mmaker -v OpenBox3
+mmaker -v OpenBox3 -f
 
 # tint2
 ln -sf $DOTFILES/tint2/tint2rc ~/.config/tint2/

@@ -1,6 +1,8 @@
 #!/bin/bash
 
-# Initializes directories from $HOME
+# /usr/share
+sudo mkdir /usr/share/avatars
+sudo mkdir /usr/share/wallpapers
 
 # .config
 mkdir ~/.config/nvim -p
@@ -12,6 +14,10 @@ mkdir ~/.config/ranger
 mkdir ~/.config/gxkb
 mkdir ~/.config/tint2
 mkdir ~/.config/codeblocks
+mkdir ~/.config/gtk-2.0
+mkdir ~/.config/gtk-3.0
+mkdir ~/.config/qt5ct/colors -p
+mkdir ~/.config/qt5ct/qss
 
 # .cache
 mkdir ~/.cache/nvim/undodir -p
@@ -35,3 +41,12 @@ mkdir ~/Source/personal/dotfiles -p
 # VMs
 mkdir ~/VirtManager\ VMs
 mkdir ~/VirtualBox\ VMs
+
+# Pictures
+mkdir ~/Pictures/screenshots -p
+
+# Documents
+mkdir ~/Documents
+
+# Downloads
+mkdir ~/Downloads

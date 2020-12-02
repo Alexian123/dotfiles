@@ -50,7 +50,7 @@ keys = [
 
     Key([mod], "Return", lazy.spawn('st'), desc="Launch terminal"),
     Key([mod], "d", lazy.spawn('dmenu_run -fn "MesloLGS NF" -sb "#A4412D"'), desc="Launch dmenu"),
-    Key([mod], "f", lazy.spawn('nemo'), desc="Launch file manager"),
+    Key([mod], "f", lazy.spawn('pcmanfm'), desc="Launch file manager"),
     Key([mod], "b", lazy.spawn('firefox'), desc="Launch web browser"),
     Key([mod], "v", lazy.spawn('st -e nvim'), desc="Launch vim"),
     Key([mod], "a", lazy.spawn('/bin/bash -c ~/Source/personal/dotfiles/scripts/dmenu/quicklaunch.sh')),
