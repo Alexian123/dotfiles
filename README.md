@@ -16,11 +16,13 @@ IMPORTANT<br>
 Enable multilib.<br>
 Do not run the install script as root!<br>
 Do not move, delete or rename the ~/Source/personal/dotfiles directory or its parents, as all the system configs will be linked to it.<br>
-Your monitor setup will most likely be different from mine, so replace the files from ./screenlayout with ones that work properly for your setup. You can generate those using arandr, just make sure to save them in the right place (~/Source/personal/dotfiles/screenlayout).<br>
+Your monitor setup will most likely be different from mine, so replace the files from ./screenlayout with ones that work properly for your setup. You can generate those using arandr, just make sure to save them in the right place (~/Source/personal/dotfiles/screenlayout). You may need to set up lightdm to use one of those files in case it doesn't use the correct resolution by default.<br>
 You likely need different video drivers (by default, only intel drivers are installed). Make sure you look through the OPTIONAL section at the top of ./package_list.txt and replace what you don't need with what you do need. Unless you know what you're doing, do not modify other sections.<br>
 Aappend 'QT_QPA_PLATFORMTHEME=qt5ct' to /etc/environment to be able to set the qt theme with qt5ct.<br><br>
 
 To update, run 'cd  ~/Source/personal/dotfiles && git pull'.<br><br>
 
-You may also need to use different keyboard layouts, so modify the gxkb config file (~/Source/personal/dotfiles/gxkb/gxkb.cfg).
-Don't forget to set your wallpaper with nitrogen. You can find some pre-installed wallpapers in ~/Pictures/wallpapers.
+You may also need to use different keyboard layouts, so modify the gxkb config file (~/Source/personal/dotfiles/gxkb/gxkb.cfg).<br>
+Don't forget to set your wallpaper with nitrogen. You can find some pre-installed wallpapers in ~/Pictures/wallpapers.<br>
+The first time you run nvim you should run ':PlugInstall'.<br>
+Lastly, consider changing your default shell to zsh using 'chsh'.
