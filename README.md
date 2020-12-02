@@ -23,3 +23,4 @@ Aappend 'QT_QPA_PLATFORMTHEME=qt5ct' to /etc/environment to be able to set the q
 To update, run 'cd  ~/Source/personal/dotfiles && git pull'.<br><br>
 
 You may also need to use different keyboard layouts, so modify the gxkb config file (~/Source/personal/dotfiles/gxkb/gxkb.cfg).
+Don't forget to set your wallpaper with nitrogen. You can find some pre-installed wallpapers in ~/Pictures/wallpapers.
