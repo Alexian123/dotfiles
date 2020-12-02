@@ -1,5 +1,5 @@
 # Arch Linux Dotfiles 
-<img src="/icons/arch.png" width="50"/>
+<img src="/icons/arch.png" width="100"/> &nbsp;&nbsp;&nbsp; <img src="/icons/i3.png" width="100"/> &nbsp;&nbsp;&nbsp; <img src="/icons/qtile.png" width="100"/> &nbsp;&nbsp;&nbsp; <img src="/icons/openbox.jpg" width="100"/>
 <h2>DESCRIPTION</h2> 
 <p>This is a work-in-progress setup of Arch Linux on a laptop with 3 window managers: i3, Qtile and OpenBox.</p>
 <p>It is meant to be used on a fresh install of Arch Linux, with a user account and networking already configured (the networkmanager package must be installed and the NetworkManager service must be enabled).</p>
