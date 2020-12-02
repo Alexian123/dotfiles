@@ -3,7 +3,7 @@
 DOTFILES=$HOME/Source/personal/dotfiles
 
 # lightdm
-sudo ln -sf $DOTFILES/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/
+sudo cp $DOTFILES/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/
 
 # screen layout
 ln -sf $DOTFILES/screenlayout/single_display.sh ~/.screenlayout/default
