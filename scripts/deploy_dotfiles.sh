@@ -28,7 +28,6 @@ ln -sf $DOTFILES/gtk-2.0/gtkfilechooser.ini ~/.config/gtk-2.0/
 ln -sf $DOTFILES/gtk-3.0/settings.ini ~/.config/gtk-3.0/
 
 # qt theme
-sudo echo "QT_QPA_PLATFORMTHEME=qt5ct" >> /etc/environment
 ln -sf $DOTFILES/qt5ct/qt5ct.conf ~/.config/qt5ct/
 
 # CodeBlocks
