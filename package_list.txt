@@ -73,6 +73,7 @@ lightdm-gtk-greeter-settings
 # wm's and related packages
 i3-gaps
 i3blocks
+python-i3ipc
 i3blocks-contrib
 i3lock-fancy-multimonitor
 obconf
