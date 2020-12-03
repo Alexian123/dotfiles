@@ -125,12 +125,18 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+Escape exec "i3-msg exit"
+
 # lock screen
 bindsym $mod+Escape exec --no-startup-id "i3lock-fancy-multimonitor"
+
+# power options
+bindsym $mod+Shift+p exec --no-startup-id power_options
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

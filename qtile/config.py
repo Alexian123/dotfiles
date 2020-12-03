@@ -61,6 +61,7 @@ keys = [
     Key([mod, "control"], "r", lazy.restart(), desc="Restart qtile"),
     Key([mod, "control"], "e", lazy.shutdown(), desc="Shutdown qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    Key([mod, "shift"], "p", lazy.spawn("/bin/bash -c power_options")),
 
     Key("", "XF86Calculator", lazy.spawn("galculator"), desc="Launch ufccalc"),
     Key("", "XF86Display", lazy.spawn("bash -c ~/Source/personal/dotfiles/scripts/dmenu/change_display_layout.sh"), desc="Launch display settings:"),

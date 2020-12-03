@@ -70,9 +70,7 @@ ln -sf $DOTFILES/ranger/scope.sh ~/.config/ranger/
 # .local/bin
 ln -sf $DOTFILES/scripts/webcam ~/.local/bin/
 ln -sf $DOTFILES/scripts/reset_wallpaper ~/.local/bin/
-ln -sf $DOTFILES/screenlayout/single_display.sh ~/.local/bin/
-ln -sf $DOTFILES/screenlayout/single_external_display.sh ~/.local/bin/
-ln -sf $DOTFILES/screenlayout/extend_right.sh ~/.local/bin/
+ln -sf $DOTFILES/scripts/dmenu/power_options.sh ~/.local/bin/power_options
 
 # .local/share
 ln -sf $DOTFILES/launchers/st.desktop ~/.local/share/applications/

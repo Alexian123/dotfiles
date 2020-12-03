@@ -325,6 +325,15 @@
         <command>st</command>
       </action>
     </keybind>
+    <keybind key="C-A-Delete">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>false</enabled>
+          <name>Power Options</name>
+        </startupnotify>
+        <command>power_options</command>
+      </action>
+    </keybind>
     <keybind key="W-space">
       <action name="Execute">
         <startupnotify>
