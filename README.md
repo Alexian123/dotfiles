@@ -23,7 +23,7 @@
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;./install.sh</p>
 <p>Enter your password when asked (required to install dependencies).</p>
 
-<h2>POST-INSTALATION</h2>
+<h2>POST-INSTALLATION</h2>
 <p>To get the latest configs, run 'cd  ~/Source/personal/dotfiles && git pull'.</p>
 <p>You may also need to use different keyboard layouts, so modify the gxkb config file (~/Source/personal/dotfiles/gxkb/gxkb.cfg).</p>
 <p>Don't forget to set your wallpaper with nitrogen. You can find some pre-installed wallpapers in ~/Pictures/wallpapers.</p>
