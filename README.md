@@ -5,15 +5,7 @@
 <p>It is meant to be used on a fresh install of Arch Linux, with a user account and networking already configured (the networkmanager package must be installed and the NetworkManager service must be enabled).</p>
 <p>I might make an install script for the OS itself in the future.</p>
 
-<h2>INSTALLATION</h2> 
-<h3>Requirements: git, base-devel, systemd and an internet connection</h3>
-<p>Run the following commands in a tty:</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;git clone https://github.com/Alexian123/dotfiles</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cd ./dotfiles</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;./install.sh</p>
-<p>Enter your password when asked (required to install dependencies).</p>
-
-<h2>IMPORTANT INFORMATION</h2><br>
+<h2>PRE-INSTALLATION</h2><br>
 <ul>
     <li>Enable multilib.</li>
     <li>Do not run the install script as root!</li>
@@ -23,7 +15,15 @@
     <li>Aappend 'QT_QPA_PLATFORMTHEME=qt5ct' to /etc/environment to be able to set the qt theme with qt5ct.</li>
 </ul>
 
-<h2>POST INSTALATION</h2>
+<h2>INSTALLATION</h2> 
+<h3>Requirements: git, base-devel, systemd and an internet connection</h3>
+<p>Run the following commands in a tty:</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;git clone https://github.com/Alexian123/dotfiles</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cd ./dotfiles</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;./install.sh</p>
+<p>Enter your password when asked (required to install dependencies).</p>
+
+<h2>POST-INSTALATION</h2>
 <p>To get the latest configs, run 'cd  ~/Source/personal/dotfiles && git pull'.</p>
 <p>You may also need to use different keyboard layouts, so modify the gxkb config file (~/Source/personal/dotfiles/gxkb/gxkb.cfg).</p>
 <p>Don't forget to set your wallpaper with nitrogen. You can find some pre-installed wallpapers in ~/Pictures/wallpapers.</p>
