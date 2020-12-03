@@ -2,9 +2,9 @@
 
 <img src="/icons/arch.png" width="100"/> &nbsp;&nbsp;&nbsp; <img src="/icons/i3.png" width="100"/> &nbsp;&nbsp;&nbsp; <img src="/icons/qtile.png" width="100"/> &nbsp;&nbsp;&nbsp; <img src="/icons/openbox.jpg" width="100"/>
 
-# Contents
+## Contents
   * [Description](#description)
-  * [Important Info](#important-information)
+  * [Important Information](#important-information)
   * [Installation](#installation)
   * [Post-installation](#post-installation)
   * [Gallery](#gallery)
@@ -17,7 +17,7 @@
 <p>It is meant to be used on a fresh install of Arch Linux, with a user account and networking already configured (the networkmanager package must be installed and the NetworkManager service must be enabled).</p>
 <p>I might make an install script for the OS itself in the future.</p>
 
-## Important Info
+## Important Information
 <ul>
     <li>Enable multilib before starting the installation (see /etc/pacman.conf).</li>
     <li>Do not run the install script as root!</li>
@@ -43,9 +43,12 @@
 <p>Lastly, consider changing your default shell to zsh using 'chsh'.</p>
 
 ## Gallery
-### i3
-<img src="screenshots/i3.png"/>
-### Qtile
-<img src="screenshots/qtile.png"/>
-### OpenBox
-<img src="screenshots/openbox.png"/>
+
+## i3
+<img src="screenshots/i3.png">
+
+## Qtile
+<img src="screenshots/qtile.png">
+
+## OpenBox
+<img src="screenshots/openbox.png">
