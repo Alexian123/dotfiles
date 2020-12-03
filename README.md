@@ -3,16 +3,14 @@
 <img src="/icons/arch.png" width="100"/> &nbsp;&nbsp;&nbsp; <img src="/icons/i3.png" width="100"/> &nbsp;&nbsp;&nbsp; <img src="/icons/qtile.png" width="100"/> &nbsp;&nbsp;&nbsp; <img src="/icons/openbox.jpg" width="100"/>
 
 # Contents
-<ol>
-    <li href="#">Description</li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-</ol>
+  * [Description](#description)
+  * [Important Info](#important-information)
+  * [Installation](#installation)
+  * [Post-installation](#post-installation)
+  * [Gallery](#gallery)
+      * [i3](#i3)
+      * [Qtile](#qtile)
+      * [OpenBox](#openbox)
 
 ## Description
 <p>This is a work-in-progress setup of Arch Linux on a laptop with 3 window managers: i3, Qtile and OpenBox.</p>
