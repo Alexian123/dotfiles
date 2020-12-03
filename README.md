@@ -1,11 +1,25 @@
 # Arch Linux Dotfiles 
+
 <img src="/icons/arch.png" width="100"/> &nbsp;&nbsp;&nbsp; <img src="/icons/i3.png" width="100"/> &nbsp;&nbsp;&nbsp; <img src="/icons/qtile.png" width="100"/> &nbsp;&nbsp;&nbsp; <img src="/icons/openbox.jpg" width="100"/>
-<h2>DESCRIPTION</h2> 
+
+# Contents
+<ol>
+    <li href="#">Description</li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ol>
+
+## Description
 <p>This is a work-in-progress setup of Arch Linux on a laptop with 3 window managers: i3, Qtile and OpenBox.</p>
 <p>It is meant to be used on a fresh install of Arch Linux, with a user account and networking already configured (the networkmanager package must be installed and the NetworkManager service must be enabled).</p>
 <p>I might make an install script for the OS itself in the future.</p>
 
-<h2>IMPORTANT INFORMATION</h2><br>
+## Important Info
 <ul>
     <li>Enable multilib before starting the installation (see /etc/pacman.conf).</li>
     <li>Do not run the install script as root!</li>
@@ -15,7 +29,7 @@
     <li>Append 'QT_QPA_PLATFORMTHEME=qt5ct' to /etc/environment to be able to set the qt theme with qt5ct.</li>
 </ul>
 
-<h2>INSTALLATION</h2> 
+## Installation
 <h3>Requirements: git, base-devel, systemd and an internet connection</h3>
 <p>Run the following commands in a tty:</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;git clone https://github.com/Alexian123/dotfiles</p>
@@ -23,17 +37,17 @@
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;./install.sh</p>
 <p>Enter your password when asked (required to install dependencies).</p>
 
-<h2>POST-INSTALLATION</h2>
+## Post-installation
 <p>To get the latest configs, run 'cd  ~/Source/personal/dotfiles && git pull'.</p>
 <p>You may also need to use different keyboard layouts, so modify the gxkb config file (~/Source/personal/dotfiles/gxkb/gxkb.cfg).</p>
 <p>Don't forget to set your wallpaper with nitrogen. You can find some pre-installed wallpapers in ~/Pictures/wallpapers.</p>
 <p>The first time you run nvim you should run ':PlugInstall'.</p>
 <p>Lastly, consider changing your default shell to zsh using 'chsh'.</p>
 
-<h1>GALLERY</h1>
-<h2>i3</h2>
+## Gallery
+### i3
 <img src="screenshots/i3.png"/>
-<h2>Qtile</h2>
+### Qtile
 <img src="screenshots/qtile.png"/>
-<h2>OpenBox</h2>
+### OpenBox
 <img src="screenshots/openbox.png"/>
