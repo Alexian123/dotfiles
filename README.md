@@ -12,7 +12,7 @@
     <li>Do not move, delete or rename the ~/Source/personal/dotfiles directory or its parents, as all the system configs will be linked to it.</li>
     <li>Your monitor setup will most likely be different from mine, so replace the files from ./screenlayout with ones that work properly for your setup. You can generate those using arandr, just make sure to save them in the right place (~/Source/personal/dotfiles/screenlayout). You may need to set up lightdm to use one of those files in case it doesn't use the correct resolution by default.</li>
     <li>You likely need different video drivers (by default, only intel drivers are installed). Make sure you look through the OPTIONAL section at the top of           ./package_list.txt and replace what you don't need with what you do need. Unless you know what you're doing, do not modify other sections.</li>
-    <li>Aappend 'QT_QPA_PLATFORMTHEME=qt5ct' to /etc/environment to be able to set the qt theme with qt5ct.</li>
+    <li>Append 'QT_QPA_PLATFORMTHEME=qt5ct' to /etc/environment to be able to set the qt theme with qt5ct.</li>
 </ul>
 
 <h2>INSTALLATION</h2> 
