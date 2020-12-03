@@ -5,9 +5,9 @@
 <p>It is meant to be used on a fresh install of Arch Linux, with a user account and networking already configured (the networkmanager package must be installed and the NetworkManager service must be enabled).</p>
 <p>I might make an install script for the OS itself in the future.</p>
 
-<h2>PRE-INSTALLATION</h2><br>
+<h2>IMPORTANT INFORMATION</h2><br>
 <ul>
-    <li>Enable multilib.</li>
+    <li>Enable multilib before starting the installation (see /etc/pacman.conf).</li>
     <li>Do not run the install script as root!</li>
     <li>Do not move, delete or rename the ~/Source/personal/dotfiles directory or its parents, as all the system configs will be linked to it.</li>
     <li>Your monitor setup will most likely be different from mine, so replace the files from ./screenlayout with ones that work properly for your setup. You can generate those using arandr, just make sure to save them in the right place (~/Source/personal/dotfiles/screenlayout). You may need to set up lightdm to use one of those files in case it doesn't use the correct resolution by default.</li>
