@@ -30,7 +30,7 @@
 <p>The first time you run nvim you should run ':PlugInstall'.</p>
 <p>Lastly, consider changing your default shell to zsh using 'chsh'.</p>
 
-<h1>GALERY</h1>
+<h1>GALLERY</h1>
 <h2>i3</h2>
 <img src="screenshots/i3.png"/>
 <h2>Qtile</h2>
