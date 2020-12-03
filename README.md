@@ -1,6 +1,6 @@
 # Arch Linux Dotfiles 
 
-<img src="/icons/arch.png" width="100"/> &nbsp;&nbsp;&nbsp; <img src="/icons/i3.png" width="100"/> &nbsp;&nbsp;&nbsp; <img src="/icons/qtile.png" width="100"/> &nbsp;&nbsp;&nbsp; <img src="/icons/openbox.jpg" width="100"/>
+<a href="https://www.archlinux.org"><img src="/icons/arch.png" width="100"/></a> &nbsp;&nbsp;&nbsp; <a href="https://github.com/Airblader/i3"><img src="/icons/i3.png" width="100"/></a> &nbsp;&nbsp;&nbsp; <a href="http://www.qtile.org"><img src="/icons/qtile.png" width="100"/></a> &nbsp;&nbsp;&nbsp; <a href="http://openbox.org/wiki/Main_Page"><img src="/icons/openbox.jpg" width="100"/></a>
 
 ## Contents
   * [Description](#description)
@@ -8,12 +8,12 @@
   * [Installation](#installation)
   * [Post-installation](#post-installation)
   * [Gallery](#gallery)
-      * [i3](#i3)
+      * [i3-gaps](#i3-gaps)
       * [Qtile](#qtile)
       * [OpenBox](#openbox)
 
 ## Description
-<p>This is a work-in-progress setup of Arch Linux on a laptop with 3 window managers: i3, Qtile and OpenBox.</p>
+<p>This is a work-in-progress setup of Arch Linux on a laptop with 3 window managers: i3-gaps, Qtile and OpenBox.</p>
 <p>It is meant to be used on a fresh install of Arch Linux, with a user account and networking already configured (the networkmanager package must be installed and the NetworkManager service must be enabled).</p>
 <p>I might make an install script for the OS itself in the future.</p>
 
@@ -44,7 +44,7 @@
 
 ## Gallery
 
-## i3
+## i3-gaps
 <img src="screenshots/i3.png">
 
 ## Qtile
