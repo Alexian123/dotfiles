@@ -20,7 +20,7 @@
 ## Installation
 ### Requirements
 <ul>
- <li>enable nultilib support</li>
+ <li>enable multilib support</li>
  <li>install git</li>
  <li>install base-devel</li>
  <li>make sure your distro uses systemd</li>
