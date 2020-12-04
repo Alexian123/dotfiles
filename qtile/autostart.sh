@@ -7,6 +7,7 @@ blueman-tray &
 pa-applet &
 caffeine &
 xfce4-power-manager &
+/usr/lib/xfce4/notifyd/xfce4-notifyd &
 redshift-gtk &
 gxkb &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &

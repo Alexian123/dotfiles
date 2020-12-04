@@ -1,0 +1,18 @@
+# Configuration for Alacritty, the GPU enhanced terminal emulator.
+
+window:
+  padding:
+    x: 5
+    y: 10
+
+
+font:
+  normal:
+    family: MesloLGS NF
+    style: Bold
+
+  size: 10.0
+  draw_bold_text_with_bright_colors: false
+
+
+background_opacity: 0.9

@@ -30,7 +30,11 @@ from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Screen
 from libqtile.lazy import lazy
 
+# constants
 mod = "mod4"
+terminal = "st"
+calculator = "galculator"
+execute = "/usr/bin/bash -c"
 
 keys = [
     # movement
@@ -44,9 +48,9 @@ keys = [
     Key([mod, "shift"], "k", lazy.layout.shuffle_up()),
 
     # window manipulation
-    Key([mod, "shift"], "space", lazy.layout.flip()),
-    Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod, "shift"], "q", lazy.window.kill(), desc="Kill focused window"),
+    Key([mod, "shift"], "space", lazy.window.toggle_floating()),
+    Key([mod], "Tab", lazy.next_layout()),
+    Key([mod, "shift"], "q", lazy.window.kill()),
 
     # resize
     Key([mod, "control"], "h", lazy.layout.shrink_main()),
@@ -56,27 +60,27 @@ keys = [
     Key([mod], "n", lazy.layout.normalize()),
 
     # launch programs/scripts
-    Key([mod], "Return", lazy.spawn('st'), desc="Launch terminal"),
-    Key([mod], "d", lazy.spawn('dmenu_run -fn "MesloLGS NF" -sb "#A4412D"'), desc="Launch dmenu"),
-    Key([mod], "a", lazy.spawn('/bin/bash -c ~/Source/personal/dotfiles/scripts/dmenu/quicklaunch.sh')),
-    Key([mod], "c", lazy.spawn('/bin/bash -c edit_configs')),
-    Key([mod, "shift"], "p", lazy.spawn("/bin/bash -c power_options")),
+    Key([mod], "Return", lazy.spawn(terminal)),
+    Key([mod], "d", lazy.spawn('dmenu_run -fn "MesloLGS NF" -sb "#6c71c4" -nb "#002b36"')),
+    Key([mod], "a", lazy.spawn(execute + '~/Source/personal/dotfiles/scripts/dmenu/quicklaunch.sh')),
+    Key([mod], "c", lazy.spawn(execute + 'edit_configs')),
+    Key([mod, "shift"], "p", lazy.spawn(execute + 'power_options')),
 
     # qtile options
-    Key([mod, "shift"], "r", lazy.restart(), desc="Restart qtile"),
-    Key([mod, "shift"], "Escape", lazy.shutdown(), desc="Shutdown qtile"),
-    Key([mod], "Escape", lazy.spawn("i3lock-fancy-multimonitor"), desc="Lock Screen"),
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    Key([mod, "shift"], "r", lazy.restart()),
+    Key([mod, "shift"], "Escape", lazy.shutdown()),
+    Key([mod], "Escape", lazy.spawn('i3lock-fancy-multimonitor')),
+    Key([mod], "r", lazy.spawncmd()),
 
     # XF86 keys
-    Key("", "XF86Calculator", lazy.spawn("galculator"), desc="Launch ufccalc"),
-    Key("", "XF86Display", lazy.spawn("bash -c ~/Source/personal/dotfiles/scripts/dmenu/change_display_layout.sh"), desc="Launch display settings:"),
-    Key("", "XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ +10%"), desc="Increase volume"),
-    Key("", "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ -10%"), desc="Lower volume"),
-    Key("", "XF86AudioMicMute", lazy.spawn("pactl set-source-mute @DEFAULT_SOURCE@ toggle"), desc="Toggle mute"),
-    Key("", "XF86AudioPlay", lazy.spawn("playerctl play-pause"), desc="Toggle mute"),
-    Key("", "XF86MonBrightnessUp", lazy.spawn("xbacklight -inc 5"), desc="Increase brightness"),
-    Key("", "XF86MonBrightnessDown", lazy.spawn("xbacklight -dec 5"), desc="Increase brightness"),
+    Key("", "XF86Calculator", lazy.spawn(calculator)),
+    Key("", "XF86Display", lazy.spawn(execute + '~/Source/personal/dotfiles/scripts/dmenu/change_display_layout.sh')),
+    Key("", "XF86AudioRaiseVolume", lazy.spawn('pactl set-sink-volume @DEFAULT_SINK@ +10%')),
+    Key("", "XF86AudioLowerVolume", lazy.spawn('pactl set-sink-volume @DEFAULT_SINK@ -10%')),
+    Key("", "XF86AudioMicMute", lazy.spawn('pactl set-source-mute @DEFAULT_SOURCE@ toggle')),
+    Key("", "XF86AudioPlay", lazy.spawn('playerctl play-pause')),
+    Key("", "XF86MonBrightnessUp", lazy.spawn('xbacklight -inc 5')),
+    Key("", "XF86MonBrightnessDown", lazy.spawn('xbacklight -dec 5')),
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -104,27 +108,75 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
+colors = ['#002b36', '#268bd2']
+
 screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.GroupBox(),
-                widget.Prompt(),
-                widget.WindowName(),
-                widget.Notify(),
-                widget.Sep(),
-                widget.Image(filename='~/Pictures/bar_icons/ram.png'),
-                widget.Memory(),
-                widget.Sep(),
-                widget.Image(filename='~/Pictures/bar_icons/cpu.png'),
-                widget.CPU(),
-                widget.Sep(),
-                widget.Systray(),
-                widget.Sep(),
-                widget.Image(filename='~/Pictures/bar_icons/cal.png'),
-                widget.Clock(format='%d-%m-%Y %a %I:%M %p'),
-                widget.Sep(),
-                widget.CurrentLayoutIcon(),
+                widget.GroupBox(
+                    background = colors[0],
+                    disable_drag = True,
+                    hide_unused = True,
+                    highlight_color = ['#6c71c4', '#d33682'],
+                    highlight_method = 'line'
+                    ),
+                widget.Prompt(
+                    background = colors[0]
+
+                    ),
+                widget.WindowName(
+                    background = colors[0]
+                    ),
+                widget.Sep(
+                    foreground = colors[0], 
+                    background = colors[0],
+                    linewidth = 5
+                    ),
+                widget.Image(
+                    filename = '~/Pictures/bar_icons/ram.png',
+                    background = colors[0]
+                    ),
+                widget.Memory(
+                    background = colors[0]
+                    ),
+                widget.Sep(
+                    foreground = colors[1],
+                    background = colors[0]
+                    ),
+                widget.Image(
+                    filename = '~/Pictures/bar_icons/cpu.png',
+                    background = colors[0]
+                    ),
+                widget.CPU(
+                    background = colors[0]
+                    ),
+                widget.Sep(
+                    foreground = colors[1],
+                    background = colors[0]
+                    ),
+                widget.Systray(
+                    background = colors[0]
+                    ),
+                widget.Sep(
+                    foreground = colors[1],
+                    background = colors[0]
+                    ),
+                widget.Image(
+                    filename = '~/Pictures/bar_icons/cal.png',
+                    background = colors[0]
+                    ),
+                widget.Clock(
+                    format = '%d-%m-%Y %a %I:%M %p',
+                    background = colors[0]
+                    ),
+                widget.Sep(
+                    foreground = colors[1],
+                    background = colors[0]
+                    ),
+                widget.CurrentLayoutIcon(
+                    background = colors[0]
+                    ),
             ],
             24,
         ),

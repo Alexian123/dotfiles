@@ -3,8 +3,7 @@
 
 # video drivers
 xf86-video-intel
-vulkan-intel
-lib32-vulkan-intel
+vulkan-intel lib32-vulkan-intel
 vulkan-tools
 
 # IDE's and code editors
@@ -123,6 +122,7 @@ smplayer
 # terminal emulators
 st-luke-git
 xterm
+alacritty
 
 # other gui programs
 arandr

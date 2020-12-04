@@ -67,6 +67,9 @@ ln -sf $DOTFILES/ranger/rc.conf ~/.config/ranger/
 ln -sf $DOTFILES/ranger/rifle.conf ~/.config/ranger/
 ln -sf $DOTFILES/ranger/scope.sh ~/.config/ranger/
 
+# alacritty
+ln -sf $DOTFILES/alacritty/alacritty.yml ~/.config/alacritty/
+
 # .local/bin
 ln -sf $DOTFILES/scripts/webcam ~/.local/bin/
 ln -sf $DOTFILES/scripts/reset_wallpaper ~/.local/bin/

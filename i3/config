@@ -64,7 +64,10 @@ exec_always --no-startup-id ~/Source/personal/dotfiles/scripts/i3-alternating-la
 
 # [ ------------- Keybindings ------------ ]
 
+# constants
 set $mod Mod4
+set $terminal st
+set $calculator
 
 # toggle title bar
 bindsym $mod+t border normal 2
@@ -78,7 +81,7 @@ bindsym XF86AudioPlay exec --no-startup-id "playerctl play-pause"
 bindsym XF86MonBrightnessUp exec --no-startup-id "xbacklight -inc 10"
 bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 10"
 bindsym XF86Display exec --no-startup-id ~/Source/personal/dotfiles/scripts/dmenu/change_display_layout.sh
-bindsym XF86Calculator exec --no-startup-id galculator
+bindsym XF86Calculator exec --no-startup-id $calculator
 
 # dmenu scripts
 bindsym $mod+d exec --no-startup-id dmenu_run -fn "MesloLGS NF:pixelsize=18" -sb "#6c71c4" -nb "#002b36"
@@ -125,7 +128,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # launch programs
-bindsym $mod+Return exec --no-startup-id st
+bindsym $mod+Return exec --no-startup-id $terminal
 bindsym Print exec --no-startup-id "scrot '%Y-%m-%d_$wx$h_scrot.png' -e 'mv $f ~/Pictures/screenshots/'"
 
 # i3 options

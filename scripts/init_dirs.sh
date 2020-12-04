@@ -18,6 +18,7 @@ mkdir ~/.config/gtk-2.0
 mkdir ~/.config/gtk-3.0
 mkdir ~/.config/qt5ct/colors -p
 mkdir ~/.config/qt5ct/qss
+mkdir ~/.config/alacritty
 
 # .cache
 mkdir ~/.cache/nvim/undodir -p
