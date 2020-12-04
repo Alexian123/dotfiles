@@ -75,6 +75,7 @@ ln -sf $DOTFILES/scripts/webcam ~/.local/bin/
 ln -sf $DOTFILES/scripts/reset_wallpaper ~/.local/bin/
 ln -sf $DOTFILES/scripts/dmenu/power_options.sh ~/.local/bin/power_options
 ln -sf $DOTFILES/scripts/dmenu/edit_configs.sh ~/.local/bin/edit_configs
+ln -sf $DOTFILES/scripts/sync_dotfiles.sh ~/.local/bin/sync_dotfiles
 
 # .local/share
 ln -sf $DOTFILES/launchers/st.desktop ~/.local/share/applications/

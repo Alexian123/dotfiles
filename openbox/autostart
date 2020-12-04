@@ -1,5 +1,4 @@
 xrdb -merge '~/.Xresources' &
-nitrogen --restore &
 picom -cf --inactive-opacity=1.0 --menu-opacity=1.0 &
 nm-applet &
 blueman-tray &
@@ -13,3 +12,4 @@ gxkb &
 xss-lock -l i3lock-fancy-multimonitor &
 udiskie -t &
 tint2 &
+pcmanfm --desktop &
