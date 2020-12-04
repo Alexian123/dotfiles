@@ -45,24 +45,24 @@ for_window [class="screengrab"] floating enable
 
 # [ ------------- Autostart ------------ ]
 
-exec --no-startup-id "xrdb -merge '~/.Xresources'" # x settings
-exec --no-startup-id nm-applet # network connections manager
-exec --no-startup-id "picom -cf --inactive-opacity=1.0 --menu-opacity=1.0" # compositor
-exec --no-startup-id blueman-tray # bluetooth manager
-exec --no-startup-id "nitrogen --restore" # wallpapers
-exec --no-startup-id pa-applet # volume
-exec --no-startup-id xfce4-power-manager # power settings and events
-exec --no-startup-id "udiskie -t" # device auto mounter
-exec --no-startup-id caffeine # disable power saving temporarely
-exec --no-startup-id redshift-gtk # color temperature adjuster
-exec --no-startup-id "xss-lock -l i3lock-fancy-multimonitor" # screen lock
-exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd # notifications
-exec --no-startup-id gxkb # kbd layout switcher
-exec --no-startup-id /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 # polkit
+exec --no-startup-id "xrdb -merge '~/.Xresources'"
+exec --no-startup-id nm-applet
+exec --no-startup-id "picom -cf --inactive-opacity=1.0 --menu-opacity=1.0"
+exec --no-startup-id blueman-tray
+exec --no-startup-id "nitrogen --restore"
+exec --no-startup-id pa-applet
+exec --no-startup-id xfce4-power-manager
+exec --no-startup-id "udiskie -t"
+exec --no-startup-id caffeine
+exec --no-startup-id redshift-gtk
+exec --no-startup-id "xss-lock -l i3lock-fancy-multimonitor"
+exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
+exec --no-startup-id gxkb
+exec --no-startup-id /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
 
 # tiling layout scripts (only enable one)
-#exec_always --no-startup-id ~/Source/personal/dotfiles/scripts/i3-alternating-layouts/alternating_layouts.py
-exec_always --no-startup-id ~/Source/personal/dotfiles/scripts/i3-master-and-stack/autolayout.py
+exec_always --no-startup-id ~/Source/personal/dotfiles/scripts/i3-alternating-layouts/alternating_layouts.py
+#exec_always --no-startup-id ~/Source/personal/dotfiles/scripts/i3-master-and-stack/autolayout.py
 
 
 # [ ------------- Keybindings ------------ ]
