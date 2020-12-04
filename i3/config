@@ -1,14 +1,50 @@
 # / --------------------------------------------------------------------- \
-#                           i3 config file 
+#|                           i3 config file                                |
 # \ --------------------------------------------------------------------- /
 
-# modifier key
-set $mod Mod4
+# [ ------------ Appearance ------------ ]
 
-# font
 font pango:DejaVu Sans Mono 12
 
-# autostart
+title_align center
+hide_edge_borders smart
+default_border pixel 2
+default_floating_border normal 2
+
+gaps inner 5
+gaps outer 3
+
+client.focused #6c71c4 #6c71c4 #fdf6e3 #6c31a4
+client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
+client.unfocused #073642 #073642 #93a1a1 #586e75
+client.urgent #d33682 #d33682 #fdf6e3 #dc322f
+
+bar {
+        status_command i3blocks
+        position top
+        separator_symbol "/"
+
+        colors {
+			separator #268bd2
+			background #002b36
+			statusline #839496
+			focused_workspace #fdf6e3 #6c71c4 #fdf6e3
+			active_workspace #fdf6e3 #6c71c4 #fdf6e3
+			inactive_workspace #002b36 #586e75 #002b36
+			urgent_workspace #d33682 #d33682 #fdf6e3
+	  }
+}
+
+for_window [class="Galculator"] floating enable
+for_window [class="XTerm"] border normal 2
+for_window [class="XTerm"] floating enable
+for_window [title="video0 - mpv"] floating enable
+for_window [class="Steam"] floating enable
+for_window [class="screengrab"] floating enable
+
+
+# [ ------------- Autostart ------------ ]
+
 exec --no-startup-id "xrdb -merge '~/.Xresources'" # x settings
 exec --no-startup-id nm-applet # network connections manager
 exec --no-startup-id "picom -cf --inactive-opacity=1.0 --menu-opacity=1.0" # compositor
@@ -25,77 +61,78 @@ exec --no-startup-id gxkb # kbd layout switcher
 exec --no-startup-id /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 # polkit
 exec_always --no-startup-id ~/Source/personal/dotfiles/scripts/i3-alternating-layouts/alternating_layouts.py # tiling layout
 
-# Audio controls
+
+# [ ------------- Keybindings ------------ ]
+
+set $mod Mod4
+
+# toggle title bar
+bindsym $mod+t border normal 2
+bindsym $mod+Shift+t border pixel 2
+
+# XF86 keys
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 bindsym XF86AudioPlay exec --no-startup-id "playerctl play-pause"
-
-# Brightness function keys
 bindsym XF86MonBrightnessUp exec --no-startup-id "xbacklight -inc 10"
 bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 10"
-
-# Display function key
 bindsym XF86Display exec --no-startup-id ~/Source/personal/dotfiles/scripts/dmenu/change_display_layout.sh
-
-# Calculator function key
 bindsym XF86Calculator exec --no-startup-id galculator
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
-# start a terminal
-bindsym $mod+Return exec --no-startup-id st
-
-# kill focused window
-bindsym $mod+Shift+q kill
-
-# start dmenu (a program launcher)
+# dmenu scripts
 bindsym $mod+d exec --no-startup-id dmenu_run -fn "MesloLGS NF:pixelsize=18" -sb "#6c71c4" -nb "#002b36"
-
-# dmenu quick launch script
 bindsym $mod+a exec --no-startup-id ~/Source/personal/dotfiles/scripts/dmenu/quicklaunch.sh
+bindsym $mod+c exec --no-startup-id edit_configs
+bindsym $mod+Shift+p exec --no-startup-id power_options
 
-# screenshot
-bindsym Print exec --no-startup-id "scrot '%Y-%m-%d_$wx$h_scrot.png' -e 'mv $f ~/Pictures/screenshots/'"
-
-# focus parent window
-bindsym $mod+m focus parent
-
-# focus child window
-bindsym $mod+Shift+m focus child
-
-# change focus
+# movement
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-
-# move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
+bindsym $mod+space focus mode_toggle # switch between floating and tiled windows
+bindsym $mod+m focus parent
+bindsym $mod+Shift+m focus child
 
-# split in horizontal orientation
-bindsym $mod+x split h
-
-# split in vertical orientation
-bindsym $mod+z split v
-
-# enter fullscreen mode for the focused container
+# window manipulation
+bindsym $mod+Shift+q kill
+floating_modifier $mod 
 bindsym $mod+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+x split h
+bindsym $mod+z split v
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+# resize window
+mode "resize" {
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# launch programs
+bindsym $mod+Return exec --no-startup-id st
+bindsym Print exec --no-startup-id "scrot '%Y-%m-%d_$wx$h_scrot.png' -e 'mv $f ~/Pictures/screenshots/'"
+
+# i3 options
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+Escape exec "i3-msg exit" # log out
+bindsym $mod+Escape exec --no-startup-id "i3lock-fancy-multimonitor" # lock screen
 
 # set workspace numbers
 set $ws1 1
@@ -123,78 +160,3 @@ bindsym $mod+Shift+4 move container to workspace number $ws4
 bindsym $mod+Shift+5 move container to workspace number $ws5
 bindsym $mod+Shift+6 move container to workspace number $ws6
 bindsym $mod+Shift+7 move container to workspace number $ws7
-
-# edit configs dmenu script
-bindsym $mod+c exec edit_configs
-
-# reload the configuration file
-bindsym $mod+Shift+c reload
-
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+Escape exec "i3-msg exit"
-
-# lock screen
-bindsym $mod+Escape exec --no-startup-id "i3lock-fancy-multimonitor"
-
-# power options
-bindsym $mod+Shift+p exec --no-startup-id power_options
-
-# resize window (you can also use the mouse for that)
-mode "resize" {
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
-}
-bindsym $mod+r mode "resize"
-
-# program specific rules
-for_window [class="Galculator"] floating enable
-for_window [class="XTerm"] border normal 2
-for_window [class="XTerm"] floating enable
-for_window [title="video0 - mpv"] floating enable
-for_window [class="Steam"] floating enable
-for_window [class="screengrab"] floating enable
-
-# title & borders
-title_align center
-hide_edge_borders smart
-default_border pixel 2
-default_floating_border normal 2
-# enable title bar
-bindsym $mod+t border normal 2
-# disable title bar
-bindsym $mod+Shift+t border pixel 2 
-
-# gaps
-gaps inner 5
-gaps outer 3
-
-# status bar
-bar {
-        status_command i3blocks
-        position top
-        separator_symbol "/"
-
-        colors {
-			separator #268bd2
-			background #002b36
-			statusline #839496
-			focused_workspace #fdf6e3 #6c71c4 #fdf6e3
-			active_workspace #fdf6e3 #6c71c4 #fdf6e3
-			inactive_workspace #002b36 #586e75 #002b36
-			urgent_workspace #d33682 #d33682 #fdf6e3
-	  }
-}
-client.focused #6c71c4 #6c71c4 #fdf6e3 #6c31a4
-client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
-client.unfocused #073642 #073642 #93a1a1 #586e75
-client.urgent #d33682 #d33682 #fdf6e3 #dc322f

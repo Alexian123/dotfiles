@@ -33,6 +33,7 @@ from libqtile.lazy import lazy
 mod = "mod4"
 
 keys = [
+    # movement
     Key([mod], "h", lazy.layout.left()),
     Key([mod], "l", lazy.layout.right()),
     Key([mod], "j", lazy.layout.down()),
@@ -41,29 +42,33 @@ keys = [
     Key([mod, "shift"], "l", lazy.layout.swap_right()),
     Key([mod, "shift"], "j", lazy.layout.shuffle_down()),
     Key([mod, "shift"], "k", lazy.layout.shuffle_up()),
+
+    # window manipulation
+    Key([mod, "shift"], "space", lazy.layout.flip()),
+    Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
+    Key([mod, "shift"], "q", lazy.window.kill(), desc="Kill focused window"),
+
+    # resize
     Key([mod, "control"], "h", lazy.layout.shrink_main()),
     Key([mod, "control"], "l", lazy.layout.grow_main()),
     Key([mod, "control"], "k", lazy.layout.grow()),
     Key([mod, "control"], "j", lazy.layout.shrink()),
     Key([mod], "n", lazy.layout.normalize()),
-    Key([mod, "shift"], "space", lazy.layout.flip()),
 
+    # launch programs/scripts
     Key([mod], "Return", lazy.spawn('st'), desc="Launch terminal"),
     Key([mod], "d", lazy.spawn('dmenu_run -fn "MesloLGS NF" -sb "#A4412D"'), desc="Launch dmenu"),
-    Key([mod], "f", lazy.spawn('pcmanfm'), desc="Launch file manager"),
-    Key([mod], "b", lazy.spawn('firefox'), desc="Launch web browser"),
-    Key([mod], "v", lazy.spawn('st -e nvim'), desc="Launch vim"),
     Key([mod], "a", lazy.spawn('/bin/bash -c ~/Source/personal/dotfiles/scripts/dmenu/quicklaunch.sh')),
     Key([mod], "c", lazy.spawn('/bin/bash -c edit_configs')),
-
-    Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod, "shift"], "q", lazy.window.kill(), desc="Kill focused window"),
-
-    Key([mod, "control"], "r", lazy.restart(), desc="Restart qtile"),
-    Key([mod, "control"], "e", lazy.shutdown(), desc="Shutdown qtile"),
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([mod, "shift"], "p", lazy.spawn("/bin/bash -c power_options")),
 
+    # qtile options
+    Key([mod, "shift"], "r", lazy.restart(), desc="Restart qtile"),
+    Key([mod, "shift"], "Escape", lazy.shutdown(), desc="Shutdown qtile"),
+    Key([mod], "Escape", lazy.spawn("i3lock-fancy-multimonitor"), desc="Lock Screen"),
+    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+
+    # XF86 keys
     Key("", "XF86Calculator", lazy.spawn("galculator"), desc="Launch ufccalc"),
     Key("", "XF86Display", lazy.spawn("bash -c ~/Source/personal/dotfiles/scripts/dmenu/change_display_layout.sh"), desc="Launch display settings:"),
     Key("", "XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ +10%"), desc="Increase volume"),
