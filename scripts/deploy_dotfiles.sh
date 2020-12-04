@@ -83,3 +83,6 @@ ln -sf $DOTFILES/fonts/MesloLGS\ NF\ Regular.ttf ~/.local/share/fonts/
 ln -sf $DOTFILES/fonts/MesloLGS\ NF\ Bold.ttf ~/.local/share/fonts/
 ln -sf $DOTFILES/fonts/MesloLGS\ NF\ Italic.ttf ~/.local/share/fonts/
 ln -sf $DOTFILES/fonts/MesloLGS\ NF\ Bold\ Italic.ttf ~/.local/share/fonts/
+
+# scripts dir
+ln -sf $DOTFILES/scripts ~/Projects/
