@@ -23,7 +23,7 @@ exec --no-startup-id "xss-lock -l i3lock-fancy-multimonitor" # screen lock
 exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd # notifications
 exec --no-startup-id gxkb # kbd layout switcher
 exec --no-startup-id /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 # polkit
-exec --no-startup-id ~/Source/personal/dotfiles/scripts/i3-alternating-layouts/alternating_layouts.py # tiling layout
+exec_always --no-startup-id ~/Source/personal/dotfiles/scripts/i3-alternating-layouts/alternating_layouts.py # tiling layout
 
 # Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
@@ -123,6 +123,9 @@ bindsym $mod+Shift+4 move container to workspace number $ws4
 bindsym $mod+Shift+5 move container to workspace number $ws5
 bindsym $mod+Shift+6 move container to workspace number $ws6
 bindsym $mod+Shift+7 move container to workspace number $ws7
+
+# edit configs dmenu script
+bindsym $mod+c exec edit_configs
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
