@@ -8,7 +8,7 @@ set smartindent
 set nu
 set rnu
 set nowrap
-set smartcase
+set ignorecase
 set noswapfile
 set nobackup
 set undodir=~/.cache/nvim/undodir

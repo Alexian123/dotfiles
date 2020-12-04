@@ -59,7 +59,10 @@ exec --no-startup-id "xss-lock -l i3lock-fancy-multimonitor" # screen lock
 exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd # notifications
 exec --no-startup-id gxkb # kbd layout switcher
 exec --no-startup-id /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 # polkit
-exec_always --no-startup-id ~/Source/personal/dotfiles/scripts/i3-alternating-layouts/alternating_layouts.py # tiling layout
+
+# tiling layout scripts (only enable one)
+#exec_always --no-startup-id ~/Source/personal/dotfiles/scripts/i3-alternating-layouts/alternating_layouts.py
+exec_always --no-startup-id ~/Source/personal/dotfiles/scripts/i3-master-and-stack/autolayout.py
 
 
 # [ ------------- Keybindings ------------ ]
@@ -98,7 +101,7 @@ bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
-bindsym $mod+space focus mode_toggle # switch between floating and tiled windows
+bindsym $mod+space focus mode_toggle
 bindsym $mod+m focus parent
 bindsym $mod+Shift+m focus child
 
