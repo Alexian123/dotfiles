@@ -64,6 +64,9 @@ ln -sf $DOTFILES/ranger/scope.sh ~/.config/ranger/
 # alacritty
 ln -sf $DOTFILES/alacritty/alacritty.yml ~/.config/alacritty/
 
+# htop
+ln -sf $DOTFILES/htop/htoprc ~/.config/htop/
+
 # .local/bin
 ln -sf $DOTFILES/scripts/webcam ~/.local/bin/
 ln -sf $DOTFILES/scripts/reset_wallpaper ~/.local/bin/
