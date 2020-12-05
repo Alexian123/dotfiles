@@ -1,7 +1,8 @@
 # [ --------------- OPTIONAL --------------- ]
 # Comment out what you don't need and add what you do need.
 
-# video drivers
+# drivers
+xf86-input-synaptic
 xf86-video-intel
 vulkan-intel lib32-vulkan-intel
 vulkan-tools
