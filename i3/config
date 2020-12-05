@@ -97,8 +97,8 @@ bindsym Print exec --no-startup-id "scrot '%Y-%m-%d_$wx$h_scrot.png' -e 'mv $f ~
 # i3 options
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+Escape exec "i3-msg exit" # log out
-bindsym $mod+Escape exec --no-startup-id "i3lock-fancy-multimonitor" # lock screen
+bindsym $mod+Shift+Escape exec "i3-msg exit"
+bindsym $mod+Escape exec --no-startup-id "i3lock-fancy-multimonitor"
 
 # set workspace numbers
 set $ws1 1
@@ -168,5 +168,4 @@ for_window [class="XTerm"] floating enable
 for_window [title="video0 - mpv"] floating enable
 for_window [class="Steam"] floating enable
 for_window [class="screengrab"] floating enable
-
 
