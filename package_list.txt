@@ -139,6 +139,7 @@ gufw
 timeshift
 zathura
 zathura-pdf-mupdf
+seahorse
 
 # other cli programs
 acpi
@@ -181,3 +182,5 @@ ueberzug
 xapp
 xfce4-notifyd
 xss-lock
+gnome-keyring
+libsecret
