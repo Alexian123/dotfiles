@@ -92,6 +92,7 @@ pa-applet-git
 gxkb
 
 # system themes and theme setters
+breeze
 breeze-gtk
 breeze-icons
 xcursor-themes
