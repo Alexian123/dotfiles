@@ -133,12 +133,13 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 font pango:DejaVu Sans Mono 12
 
 title_align center
-hide_edge_borders smart
 default_border pixel 2
 default_floating_border normal 2
 
-gaps inner 5
-gaps outer 3
+gaps inner 6
+smart_gaps on
+smart_borders no_gaps
+hide_edge_borders smart_no_gaps
 
 client.focused #6c71c4 #6c71c4 #fdf6e3 #6c31a4
 client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
