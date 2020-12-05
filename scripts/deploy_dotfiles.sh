@@ -2,14 +2,11 @@
 
 DOTFILES=$HOME/Source/personal/dotfiles
 
-# lightdm
-sudo cp $DOTFILES/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/
-
 # screen layout
-ln -sf $DOTFILES/screenlayout/single_display.sh ~/.screenlayout/default
-ln -sf $DOTFILES/screenlayout/single_display.sh ~/.screenlayout/
-ln -sf $DOTFILES/screenlayout/single_external_display.sh ~/.screenlayout/
-ln -sf $DOTFILES/screenlayout/extend_right.sh ~/.screenlayout/
+ln -sf $DOTFILES/screenlayout/layout0.sh ~/.screenlayout/default
+ln -sf $DOTFILES/screenlayout/layout0.sh ~/.screenlayout/
+ln -sf $DOTFILES/screenlayout/layout2.sh ~/.screenlayout/
+ln -sf $DOTFILES/screenlayout/layout1.sh ~/.screenlayout/
 
 # bash
 ln -sf $DOTFILES/bash/.bashrc ~/
@@ -46,7 +43,6 @@ ln -sf $DOTFILES/qtile/autostart.sh ~/.config/qtile/
 # openbox
 ln -sf $DOTFILES/openbox/rc.xml ~/.config/openbox/
 ln -sf $DOTFILES/openbox/autostart ~/.config/openbox/
-mmaker -v OpenBox3 -f
 
 # tint2
 ln -sf $DOTFILES/tint2/tint2rc ~/.config/tint2/
@@ -55,8 +51,6 @@ ln -sf $DOTFILES/tint2/tint2rc ~/.config/tint2/
 ln -sf $DOTFILES/gxkb/gxkb.cfg ~/.config/gxkb/
 
 # neovim
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ln -sf $DOTFILES/nvim/init.vim ~/.config/nvim
 
 # ranger
@@ -76,6 +70,9 @@ ln -sf $DOTFILES/scripts/reset_wallpaper ~/.local/bin/
 ln -sf $DOTFILES/scripts/dmenu/power_options.sh ~/.local/bin/power_options
 ln -sf $DOTFILES/scripts/dmenu/edit_configs.sh ~/.local/bin/edit_configs
 ln -sf $DOTFILES/scripts/sync_dotfiles.sh ~/.local/bin/sync_dotfiles
+ln -sf $DOTFILES/screenlayout/layout0.sh ~/.local/bin/display_layout0
+ln -sf $DOTFILES/screenlayout/layout1.sh ~/.local/bin/display_layout1
+ln -sf $DOTFILES/screenlayout/layout2.sh ~/.local/bin/display_layout2
 
 # .local/share
 ln -sf $DOTFILES/launchers/st.desktop ~/.local/share/applications/

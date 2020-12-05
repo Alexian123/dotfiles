@@ -12,6 +12,16 @@ cp -r ./ $HOME/Source/personal/dotfiles/
 # link the dotfiles to their expected places
 ./scripts/deploy_dotfiles.sh
 
+# kightdm greeter
+sudo cp $DOTFILES/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/
+
+# generate openbox menu
+mmaker -v OpenBox3 -f
+
+# neovim plugin manager
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
 # enable required services
 sudo systemctl enable lightdm.service
 sudo systemctl enable bluetooth.service
