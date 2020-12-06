@@ -33,7 +33,7 @@ exec_always --no-startup-id ~/Source/personal/dotfiles/scripts/i3-swallow.py
 # constants
 set $mod Mod4
 set $terminal st
-set $calculator
+set $calculator galculator
 
 # toggle title bar
 bindsym $mod+t border normal 2

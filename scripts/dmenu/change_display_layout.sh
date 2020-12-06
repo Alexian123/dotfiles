@@ -4,7 +4,7 @@
 
 OPTIONS="Laptop Only\nExtend Right\nExternal Only"
 
-CHOICE=$(echo -e $OPTIONS | dmenu -i -p "Display layouts: " -fn "MesloLGS NF" -sb "#A4412D")
+CHOICE=$(echo -e $OPTIONS | dmenu -i -p "Display layouts: " -fn "MesloLGS NF:pixelsize=18" -sb "#A4412D")
 
 case $CHOICE in
 
