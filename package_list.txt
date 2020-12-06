@@ -5,8 +5,7 @@
 xf86-input-synaptic
 xf86-video-intel
 vulkan-intel lib32-vulkan-intel
-vulkan-tools
-
+vulkan-tools 
 # IDE's and code editors
 codeblocks
 eclipse-java
@@ -26,6 +25,9 @@ openssh
 # jdk
 jdk11-openjdk
 jdk8-openjdk
+
+# .NET Core
+dotnet-sdk-bin
 
 # office
 libreoffice-fresh
@@ -160,6 +162,7 @@ unzip
 htop
 pfetch-git
 ranger
+xtitle
 
 # fonts
 ttf-dejavu
