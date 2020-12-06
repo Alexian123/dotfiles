@@ -27,6 +27,8 @@ augroup END
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'joshdick/onedark.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 colorscheme onedark
@@ -34,3 +36,6 @@ colorscheme onedark
 let g:deoplete#enable_at_startup = 1
 inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
+
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'owo'

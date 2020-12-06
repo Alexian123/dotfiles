@@ -24,6 +24,9 @@ exec --no-startup-id /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
 exec_always --no-startup-id ~/Source/personal/dotfiles/scripts/i3-alternating-layouts/alternating_layouts.py
 #exec_always --no-startup-id ~/Source/personal/dotfiles/scripts/i3-master-and-stack/autolayout.py
 
+# window swallow function
+exec_always --no-startup-id ~/Source/personal/dotfiles/scripts/i3-swallow.py
+
 
 # [ ------------- Keybindings ------------ ]
 
@@ -47,7 +50,8 @@ bindsym XF86Display exec --no-startup-id ~/Source/personal/dotfiles/scripts/dmen
 bindsym XF86Calculator exec --no-startup-id $calculator
 
 # dmenu scripts
-bindsym $mod+d exec --no-startup-id dmenu_run -fn "MesloLGS NF:pixelsize=18" -sb "#6c71c4" -nb "#002b36"
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'MesloLGS NF:pixelsize=18' -sb '#6c71c4' -nb '#002b36'"
+bindsym $mod+Shift+d exec --no-startup-id "dmenu_run -i -fn 'MesloLGS NF:pixelsize=18' -sb '#6c71c4' -nb '#002b36'"
 bindsym $mod+a exec --no-startup-id ~/Source/personal/dotfiles/scripts/dmenu/quicklaunch.sh
 bindsym $mod+c exec --no-startup-id edit_configs
 bindsym $mod+Shift+p exec --no-startup-id power_options

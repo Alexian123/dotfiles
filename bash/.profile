@@ -37,7 +37,9 @@ if [ -n "$DESKTOP_SESSION" ];then
     export SSH_AUTH_SOCK
 fi
 
+# Vars
 export VISUAL=nvim
 export EDITOR=nvim
 export PAGER=less
 export DOTFILES=~/Source/personal/dotfiles
+export TERMINAL=st

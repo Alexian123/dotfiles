@@ -2,7 +2,7 @@
 
 # Open most oftenly edited config files
 
-EDIT_CMD="st -e nvim"
+EDIT_CMD="$TERMINAL -e /usr/bin/nvim"
 OPTIONS="i3\ni3blocks\nqtile\nqtile_autostart\nopenbox\nopenbox_autostart\nzsh\nprofile\nnvim"
 
 CHOICE=$(echo -e $OPTIONS | dmenu -i -p "Edit Config" -fn "MesloLGS NF:pixelsize=18" -sb "#A4412D")
