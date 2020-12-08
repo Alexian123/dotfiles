@@ -12,9 +12,6 @@ cp -r ./ $HOME/Source/personal/dotfiles/
 # link the dotfiles to their expected places
 ./scripts/deploy_dotfiles.sh
 
-# kightdm greeter
-sudo cp $DOTFILES/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/
-
 # generate openbox menu
 mmaker -v OpenBox3 -f
 
@@ -27,18 +24,21 @@ sudo systemctl enable lightdm.service
 sudo systemctl enable bluetooth.service
 sudo systemctl enable ufw.service
 
+# lightdm greeter
+sudo cp $DOTFILES/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/
+
 # download and install wallpaper, avatar and qtile bar icons
 cd ~/Downloads
-sudo wget 'http://download1477.mediafire.com/3d0ec90zfqdg/ekfhhsoy617ci69/image_pack.tar.gz'
-tar xpvf ~/Downloads/image_pack.tar.gz
-mv ~/Downloads/image_pack/wallpapers ~/Pictures/
-mv ~/Downloads/image_pack/bar_icons ~/Pictures/
-sudo mv ~/Downloads/image_pack/helmet.jpg /usr/share/avatars/
-sudo mv ~/Downloads/image_pack/login.jpg /usr/share/wallpapers/
+git clone 'https://github.com/Alexian123/image_pack'
+cd image_pack
+tar xpvf image_pack.tar.gz
+mv image_pack/wallpapers ~/Pictures/
+mv image_pack/bar_icons ~/Pictures/
+sudo mv image_pack/helmet.jpg /usr/share/avatars/
+sudo mv image_pack/login.jpg /usr/share/wallpapers/
 
 # cleanup
 rm -rf ~/Downloads/image_pack 
-rm -rf ~/Downloads/image_pack.tar.gz
 rm -rf ~/Downloads/yay
 
 # update the database so you can use locate to search for files
