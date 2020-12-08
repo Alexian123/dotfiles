@@ -31,7 +31,8 @@
 
 <p>git clone https://github.com/Alexian123/dotfiles</p>
 <p>cd dotfiles</p>
-<p># Now edit package_list.txt with your terminal text editor of choice and modify the OPTIONAL section. Make sure to add apropriate drivers for your hardware. Empty lines and lines which start with "#" are regarded as comments and therefore ignored by the script.</p>
+<p>cp package_list.txt.def package_list.txt<p>
+<p># Now edit package_list.txt with your terminal text editor of choice and modify the OPTIONAL section. Make sure to add apropriate drivers for your hardware. Empty lines and lines which start with "#" are regarded as comments and therefore ignored by the script.Do not edit package_list.txt.def, as that's the one which I update.</p>
 <p>./install.sh</p>
 <p># DO NOT RUN THE SCRIPT AS ROOT! If you do so, it should be obvious that your personal user won't have access to any of the dotfiles. The script will automatically ask for sudo privileges when it needs to install packages or modify system files, so just enter your password when prompted. It is always best to examine what a script does before running it on your system! Notice that it will download an archive of images from MediaFire. You can comment out those lines in case you do not trust the site!<p>
 
