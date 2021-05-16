@@ -42,26 +42,26 @@ alias vim="nvim"
 # package management
 #
 # apt/apltitude
-#alias apts="aptitude search" # search for package
-#alias apti="sudo aptitude install" # install package
-#alias aptr="sudo aptitude remove" # remove package
-#alias aptp="sudo aptitude purge" # remove package and configs
-#alias aptu="sudo aptitude update && sudo aptitude upgrade" # update packages
-#alias aptsi="apt list --installed | grep" # search installed packages
+alias apts="aptitude search" # search for package
+alias apti="sudo aptitude install" # install package
+alias aptr="sudo aptitude remove" # remove package
+alias aptp="sudo aptitude purge" # remove package and configs
+alias aptu="sudo aptitude update && sudo aptitude upgrade" # update packages
+alias aptsi="apt list --installed | grep" # search installed packages
 #
 # pacman/yay
-alias pacss="pacman -Ss" # search for standard package
-alias yayssa="yay -Ssa" # search for aur package
-alias yayss="yay -Ss" # search for any package
-alias pacs="sudo pacman -S" # install standard package
-alias yays="yay -S" # install any package
-alias pacrns="sudo pacman -Rns" # remove package
-alias yayrns="yay -Rns" # remove any package
-alias pacsyu="sudo pacman -Syu" # update standard packages
-alias yaysyua="yay -Syua" # update aur packages
-alias yaysyu="yay -Syu" # update all packages
-alias pacqs="pacman -Qs" # search installed packages
-alias pacqdt="pacman -Qdt" # list unneeded packages
+#alias pacss="pacman -Ss" # search for standard package
+#alias yayssa="yay -Ssa" # search for aur package
+#alias yayss="yay -Ss" # search for any package
+#alias pacs="sudo pacman -S" # install standard package
+#alias yays="yay -S" # install any package
+#alias pacrns="sudo pacman -Rns" # remove package
+#alias yayrns="yay -Rns" # remove any package
+#alias pacsyu="sudo pacman -Syu" # update standard packages
+#alias yaysyua="yay -Syua" # update aur packages
+#alias yaysyu="yay -Syu" # update all packages
+#alias pacqs="pacman -Qs" # search installed packages
+#alias pacqdt="pacman -Qdt" # list unneeded packages
 #
 # snap
 #alias snfi="snap find"
@@ -72,12 +72,12 @@ alias pacqdt="pacman -Qdt" # list unneeded packages
 #alias snre="sudo snap refresh"
 #
 # flatpak
-#alias flatin="sudo flatpak install"
-#alias flatun="sudo flatpak uninstall"
-#alias flatup="sudo flatpak update"
-#alias flats="flatpak search"
-#alias flatl="flatpak list"
-#alias flatinf="flatpak info"
+alias flatin="sudo flatpak install"
+alias flatun="sudo flatpak uninstall"
+alias flatup="sudo flatpak update"
+alias flats="flatpak search"
+alias flatl="flatpak list"
+alias flatinf="flatpak info"
 #
 # navigation
 alias ..="cd .."
@@ -87,12 +87,19 @@ alias .4="cd ../../../.."
 alias .5="cd ../../../../.."
 alias _="cd -"
 #
+# colorized ls output
+alias ls="ls --color=always --group-directories-first"
+alias la="ls -a --color=always --group-directories-first"
+alias ll="ls -l --color=always --group-directories-first"
+alias lal="ls -al --color=always --group-directories-first"
+alias l.="ls -a --color=always --group-directories-first | egrep '^\.'"
+#
 # replace ls with exa
-alias ls="exa --color=always --group-directories-first" # basic listing
-alias la="exa -a --color=always --group-directories-first" # list all
-alias ll="exa -l --color=always --group-directories-first" # long listing
-alias lal="exa -la --color=always --group-directories-first" # long list all
-alias l.='exa -a | egrep "^\."' # list only hidden files
+#alias ls="exa --color=always --group-directories-first" # basic listing
+#alias la="exa -a --color=always --group-directories-first" # list all
+#alias ll="exa -l --color=always --group-directories-first" # long listing
+#alias lal="exa -la --color=always --group-directories-first" # long list all
+#alias l.='exa -a | egrep "^\."' # list only hidden files
 #
 # colorize grep output
 alias grep="grep --color=auto"
@@ -103,6 +110,9 @@ alias fgrep="fgrep --color=auto"
 alias cp="cp -i"    # confirm before overwriting
 alias df="df -h"    # human readable output
 alias du="du -h"    # human readable output
+#
+# dotfiles bare repo
+#alias dotgit='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 # Basic auto/tab complete:
 autoload -U compinit
@@ -144,11 +154,11 @@ echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 # Plugins
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Theme
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+# prompt
+eval "$(starship init zsh)"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# sys info
+pfetch

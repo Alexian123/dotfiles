@@ -26,20 +26,4 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-# add ghc binaries to path
-if [ -d "$HOME/.ghcup/bin" ] ; then
-    PATH="$HOME/.ghcup/bin:$PATH"
-fi
-
-# keyring
-if [ -n "$DESKTOP_SESSION" ];then
-    eval $(gnome-keyring-daemon --start)
-    export SSH_AUTH_SOCK
-fi
-
-# Vars
-export VISUAL=nvim
-export EDITOR=nvim
-export PAGER=less
-export DOTFILES=~/Source/personal/dotfiles
-export TERMINAL=st
+export DOTFILES="$HOME/Documents/dotfiles"
