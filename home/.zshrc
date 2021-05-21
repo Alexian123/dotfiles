@@ -88,18 +88,18 @@ alias .5="cd ../../../../.."
 alias _="cd -"
 #
 # colorized ls output
-alias ls="ls --color=always --group-directories-first"
-alias la="ls -a --color=always --group-directories-first"
-alias ll="ls -l --color=always --group-directories-first"
-alias lal="ls -al --color=always --group-directories-first"
-alias l.="ls -a --color=always --group-directories-first | egrep '^\.'"
+#alias ls="ls --color=always --group-directories-first"
+#alias la="ls -a --color=always --group-directories-first"
+#alias ll="ls -l --color=always --group-directories-first"
+#alias lal="ls -al --color=always --group-directories-first"
+#alias l.="ls -a --color=always --group-directories-first | egrep '^\.'"
 #
 # replace ls with exa
-#alias ls="exa --color=always --group-directories-first" # basic listing
-#alias la="exa -a --color=always --group-directories-first" # list all
-#alias ll="exa -l --color=always --group-directories-first" # long listing
-#alias lal="exa -la --color=always --group-directories-first" # long list all
-#alias l.='exa -a | egrep "^\."' # list only hidden files
+alias ls="exa --color=always --group-directories-first" # basic listing
+alias la="exa -a --color=always --group-directories-first" # list all
+alias ll="exa -l --color=always --group-directories-first" # long listing
+alias lal="exa -la --color=always --group-directories-first" # long list all
+alias l.='exa -a | egrep "^\."' # list only hidden files
 #
 # colorize grep output
 alias grep="grep --color=auto"

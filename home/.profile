@@ -27,3 +27,4 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 export DOTFILES="$HOME/Documents/dotfiles"
+. "$HOME/.cargo/env"
