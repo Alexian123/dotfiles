@@ -53,7 +53,7 @@ autorunApps =
    "/usr/lib/xfce4/notifyd/xfce4-notifyd",
    "xrdb -merge ~/.Xresources",
    "xss-lock -- i3lock-fancy-multimonitor",
-   "picom",
+   "picom --experimental-backends",
    "nm-applet",
    "blueman-tray",
    "launch_volumeicon",
@@ -122,7 +122,7 @@ configmenu = {
    { "xresources", editor_cmd .. " " .. user_home .. "/.Xresources" }
 }
 
-mymainmenu = awful.menu({ items = { { "configs", configmenu, beautiful.awesome_icon },
+mymainmenu = awful.menu({ items = { { "configs", configmenu },
                                     { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
                                     { "open terminal", terminal },
                                     { "restart", awesome.restart },

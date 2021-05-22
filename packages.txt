@@ -212,7 +212,7 @@ pciutils
 perl
 perl-file-mimeinfo
 pfetch
-picom
+picom-git
 pidgin
 pkgconf
 playerctl
