@@ -5,6 +5,7 @@ adobe-source-han-sans-cn-fonts
 adobe-source-han-sans-jp-fonts
 adobe-source-han-sans-kr-fonts
 adobe-source-sans-pro-fonts
+alacritty
 alsa-firmware
 alsa-utils
 android-tools
@@ -127,6 +128,7 @@ lib32-vulkan-intel
 lib32-vulkan-radeon
 libdvdcss
 libgsf
+libisoburn
 libopenraw
 libreoffice-fresh
 libva-intel-driver
@@ -139,6 +141,7 @@ lightdm-gtk-greeter
 lightdm-gtk-greeter-settings
 linux-firmware
 linux510
+linux510-virtualbox-host-modules
 logrotate
 lsb-release
 lvm2
@@ -176,6 +179,7 @@ mlocate
 mobile-broadband-provider-info
 modemmanager
 mousepad
+mtools
 mtpfs
 mugshot
 nano
@@ -233,7 +237,6 @@ shadow
 snapd
 snapd-glib
 spectre-meltdown-checker
-st-luke-git
 steam-manjaro
 sudo
 sysfsutils
@@ -248,6 +251,7 @@ thunar-media-tags-plugin
 thunar-volman
 thunderbird
 timeshift
+tldr
 tlp
 ttf-dejavu
 ttf-droid
@@ -284,6 +288,7 @@ xdg-utils
 xf86-input-elographics
 xf86-input-evdev
 xf86-input-libinput
+xf86-input-synaptics
 xf86-input-void
 xf86-video-amdgpu
 xf86-video-ati
@@ -335,6 +340,7 @@ xorg-twm
 xorg-xbacklight
 xorg-xev
 xorg-xinit
+xorg-xinput
 xorg-xkill
 xss-lock
 xterm
