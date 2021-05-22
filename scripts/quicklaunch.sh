@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Simple dmenu prompt for launching programs
 

@@ -48,6 +48,7 @@ end
 autorun = true
 autorunApps = 
 { 
+   "detect_monitors",
    "/usr/lib/mate-polkit/polkit-mate-authentication-agent-1",
    "/usr/lib/xfce4/notifyd/xfce4-notifyd",
    "xrdb -merge ~/.Xresources",
@@ -73,7 +74,7 @@ end
 beautiful.init("~/.config/awesome/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "st"
+terminal = "alacritty"
 editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 user_home = "/home/alexian"
@@ -112,6 +113,7 @@ awful.layout.layouts = {
 configmenu = {
    { "rc.lua", editor_cmd .. " " .. awesome.conffile },
    { "theme", editor_cmd .. " " .. user_home .. "/.config/awesome/theme.lua" },
+   { "alacritty", editor_cmd .. " " .. user_home .. "/.config/alacritty/alacritty.yml" },
    { "neovim", editor_cmd .. " " .. user_home .. "/.config/nvim/init.vim" },
    { "zsh", editor_cmd .. " " .. user_home .. "/.zshrc" },
    { "aliases", editor_cmd .. " " .. user_home .. "/.aliasrc" },

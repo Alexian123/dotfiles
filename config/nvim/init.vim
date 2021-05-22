@@ -65,3 +65,5 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ }
 
 let g:NERDTreeGitStatusUseNerdFonts = 1
+
+autocmd VimEnter * :silent exec "!kill -s SIGWINCH $PPID"
