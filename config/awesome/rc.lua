@@ -14,6 +14,7 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
+local freedesktop = require("freedesktop")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
@@ -59,8 +60,6 @@ autorunApps =
    "launch_volumeicon",
    "pamac-tray",
    "xfce4-power-manager",
-   "keepassxc",
-   "qbittorrent"
 }
 if autorun then
    for app = 1, #autorunApps do
@@ -122,13 +121,21 @@ configmenu = {
    { "xresources", editor_cmd .. " " .. user_home .. "/.Xresources" }
 }
 
-mymainmenu = awful.menu({ items = { { "configs", configmenu },
-                                    { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
-                                    { "open terminal", terminal },
-                                    { "restart", awesome.restart },
-                                    { "quit", function() awesome.quit() end }
-                                  }
-                        })
+myawesomemenu = { 
+    { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
+    { "restart", awesome.restart },
+    { "quit", function() awesome.quit() end }
+}
+-- freedesktop menu
+mymainmenu = freedesktop.menu.build({
+    before = {
+        { "Awesome", myawesomemenu, beautiful.awesome_icon },
+        { "Configs", configmenu, user_home .. "/.config/awesome/configmenu.svg"},
+    },
+    after = {
+        { "Open terminal", terminal },
+    }
+})
 
 -- mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
 --                                     menu = mymainmenu })
@@ -555,6 +562,7 @@ awful.rules.rules = {
           "Wpa_gui",
           "Galculator",
           "veromix",
+          "Xfce4-terminal",
           "xtightvncviewer"},
 
         -- Note that the name property shown in xprop might be set slightly after creation of the client

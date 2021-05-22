@@ -82,5 +82,5 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # prompt
 eval "$(starship init zsh)"
 
-# sys info
+# launch script
 pfetch
