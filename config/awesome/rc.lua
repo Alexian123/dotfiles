@@ -64,7 +64,7 @@ autorunApps =
 }
 if autorun then
    for app = 1, #autorunApps do
-       awful.util.spawn(autorunApps[app])
+       awful.util.spawn(autorunApps[app], false)
    end
 end
 
@@ -318,7 +318,7 @@ globalkeys = gears.table.join(
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
-    awful.key({ modkey,           }, "a", function () awful.spawn("quicklaunch") end,
+    awful.key({ modkey,           }, "a", function () awful.util.spawn("quicklaunch", false) end,
               {description = "open quicklaunch menu", group = "launcher"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
@@ -371,35 +371,35 @@ globalkeys = gears.table.join(
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"}),
-    awful.key({ modkey }, "d", function() awful.spawn('dmenu_run -i -l 5 -fn "Droid Sans Mono:pixelsize=16" -sb "#A4412D"') end,
+    awful.key({ modkey }, "d", function() awful.util.spawn('dmenu_run -i -l 5 -fn "Droid Sans Mono:pixelsize=16" -sb "#A4412D"', false) end,
               {description = "run dmenu", group = "launcher"}),
 
     -- Switch kbd layout
-    awful.key({ modkey, "Shift" }, "a", function() awful.spawn("setxkbmap us") end,
+    awful.key({ modkey, "Shift" }, "a", function() awful.util.spawn("setxkbmap us", false) end,
               {description = "us layout", group = "keyboard"}),
-    awful.key({ modkey, "Shift" }, "s", function() awful.spawn("setxkbmap ro std") end,
+    awful.key({ modkey, "Shift" }, "s", function() awful.util.spawn("setxkbmap ro std", false) end,
               {description = "ro std layout", group = "keyboard"}),
 
     -- XF86 keys
-    awful.key( {}, "XF86AudioRaiseVolume", function() awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ +10%") end,
+    awful.key( {}, "XF86AudioRaiseVolume", function() awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ +10%", false) end,
               {description = "raise volume", group = "XF86"}),
-    awful.key( {}, "XF86AudioLowerVolume", function() awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ -10%") end,
+    awful.key( {}, "XF86AudioLowerVolume", function() awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ -10%", false) end,
               {description = "lower volume", group = "XF86"}),
-    awful.key( {}, "XF86AudioMute", function() awful.spawn("amixer set Master toggle") end,
+    awful.key( {}, "XF86AudioMute", function() awful.util.spawn("amixer set Master toggle", false) end,
               {description = "mute volume", group = "XF86"}),
-    awful.key( {}, "XF86AudioMicMute", function() awful.spawn("pactl set-source-mute @DEFAULT_SOURCE@ toggle") end,
+    awful.key( {}, "XF86AudioMicMute", function() awful.util.spawn("pactl set-source-mute @DEFAULT_SOURCE@ toggle", false) end,
               {description = "mute mic", group = "XF86"}),
-    awful.key( {}, "XF86AudioPlay", function() awful.spawn("playerctl play-pause") end,
+    awful.key( {}, "XF86AudioPlay", function() awful.util.spawn("playerctl play-pause", false) end,
               {description = "play/pause audio", group = "XF86"}),
     awful.key( {}, "XF86Calculator", function() awful.spawn("galculator") end,
               {description = "open calculator", group = "XF86"}),
     awful.key( {}, "XF86Display", function() awful.spawn("arandr") end,
               {description = "open arandr", group = "XF86"}),
-    awful.key( {}, "XF86Sleep", function() awful.spawn("power_options") end,
+    awful.key( {}, "XF86Sleep", function() awful.util.spawn("power_options", false) end,
               {description = "open power menu", group = "XF86"}),
 
     -- Screenshot
-    awful.key({}, "Print", function() awful.spawn("xfce4-screenshooter -f -s Pictures/screenshots") end,
+    awful.key({}, "Print", function() awful.util.spawn("xfce4-screenshooter -f -s Pictures/screenshots", false) end,
               {description = "take a screenshot", group = "screen"})
 )
 
@@ -407,7 +407,7 @@ clientkeys = gears.table.join(
     awful.key({ modkey,           }, "f",
         function (c)
             c.fullscreen = not c.fullscreen
-            ::raise()
+            c:raise()
         end,
         {description = "toggle fullscreen", group = "client"}),
     awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end,
