@@ -396,14 +396,18 @@ globalkeys = gears.table.join(
     awful.key( {}, "XF86Display", function() awful.spawn("arandr") end,
               {description = "open arandr", group = "XF86"}),
     awful.key( {}, "XF86Sleep", function() awful.spawn("power_options") end,
-              {description = "open power menu", group = "XF86"})
+              {description = "open power menu", group = "XF86"}),
+
+    -- Screenshot
+    awful.key({}, "Print", function() awful.spawn("xfce4-screenshooter -f -s Pictures/screenshots") end,
+              {description = "take a screenshot", group = "screen"})
 )
 
 clientkeys = gears.table.join(
     awful.key({ modkey,           }, "f",
         function (c)
             c.fullscreen = not c.fullscreen
-            c:raise()
+            ::raise()
         end,
         {description = "toggle fullscreen", group = "client"}),
     awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end,
@@ -596,8 +600,6 @@ awful.rules.rules = {
     { rule = { class = "krita" },
       properties = { tag = desktops[6] } },
     { rule = { class = "libreoffice" },
-      properties = { tag = desktops[7] } },
-    { rule = { class = "KeePassXC" },
       properties = { tag = desktops[7] } },
     { rule = { class = "obs" },
       properties = { tag = desktops[8] } },
