@@ -15,7 +15,7 @@ theme.font          = "Droid Sans Mono 11"
 
 theme.bg_normal     = "#1F6275"
 theme.bg_focus      = "#023141"
-theme.bg_urgent     = "#09862B"
+theme.bg_urgent     = "#35BF5C"
 theme.bg_minimize   = "#4F96AA"
 theme.bg_systray    = theme.bg_normal
 
@@ -27,7 +27,7 @@ theme.fg_minimize   = "#ffffff"
 theme.useless_gap   = dpi(5)
 theme.border_width  = dpi(1)
 theme.border_normal = "#000000"
-theme.border_focus  = "#13D147"
+theme.border_focus  = "#35BF5C"
 theme.border_marked = "#91231c"
 
 -- There are other variable sets

@@ -57,6 +57,7 @@ autorunApps =
    "nm-applet",
    "blueman-tray",
    "launch_volumeicon",
+   "pamac-tray",
    "xfce4-power-manager",
    "keepassxc",
    "qbittorrent"
@@ -129,7 +130,9 @@ mymainmenu = awful.menu({ items = { { "configs", configmenu, beautiful.awesome_i
                                   }
                         })
 
-mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
+-- mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
+--                                     menu = mymainmenu })
+mylauncher = awful.widget.launcher({ image = user_home .. "/.config/awesome/manjaro_logo.svg",
                                      menu = mymainmenu })
 
 -- Menubar configuration
@@ -368,7 +371,7 @@ globalkeys = gears.table.join(
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"}),
-    awful.key({ modkey }, "d", function() awful.spawn("dmenu_run") end,
+    awful.key({ modkey }, "d", function() awful.spawn('dmenu_run -i -l 5 -fn "Droid Sans Mono:pixelsize=16" -sb "#A4412D"') end,
               {description = "run dmenu", group = "launcher"}),
 
     -- Switch kbd layout
@@ -389,7 +392,11 @@ globalkeys = gears.table.join(
     awful.key( {}, "XF86AudioPlay", function() awful.spawn("playerctl play-pause") end,
               {description = "play/pause audio", group = "XF86"}),
     awful.key( {}, "XF86Calculator", function() awful.spawn("galculator") end,
-              {description = "open calculator", group = "XF86"})
+              {description = "open calculator", group = "XF86"}),
+    awful.key( {}, "XF86Display", function() awful.spawn("arandr") end,
+              {description = "open arandr", group = "XF86"}),
+    awful.key( {}, "XF86Sleep", function() awful.spawn("power_options") end,
+              {description = "open power menu", group = "XF86"})
 )
 
 clientkeys = gears.table.join(
@@ -577,6 +584,8 @@ awful.rules.rules = {
     { rule = { class = "Eclipse" },
       properties = { tag = desktops[4] } },
     { rule = { class = "VirtualBox Manager" },
+      properties = { tag = desktops[5] } },
+    { rule = { class = "VirtualBox Machine" },
       properties = { tag = desktops[5] } },
     { rule = { class = "Gimp" },
       properties = { tag = desktops[6] } },
