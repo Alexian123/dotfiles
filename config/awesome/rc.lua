@@ -51,7 +51,6 @@ autorunApps =
 { 
    "detect_monitors",
    "/usr/lib/mate-polkit/polkit-mate-authentication-agent-1",
-   "/usr/lib/xfce4/notifyd/xfce4-notifyd",
    "xrdb -merge ~/.Xresources",
    "xss-lock -- i3lock-fancy-multimonitor",
    "picom --experimental-backends",
@@ -599,6 +598,8 @@ awful.rules.rules = {
       properties = { tag = desktops[5] } },
     { rule = { class = "VirtualBox Machine" },
       properties = { tag = desktops[5] } },
+    { rule = { class = "Blender" },
+      properties = { tag = desktops[6] } },
     { rule = { class = "Gimp" },
       properties = { tag = desktops[6] } },
     { rule = { class = "kdenlive" },
