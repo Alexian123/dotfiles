@@ -23,6 +23,7 @@ b43-fwcutter
 bash-completion
 binutils
 bison
+blender
 blueman
 brave
 btrfs-progs
@@ -42,7 +43,7 @@ device-mapper
 dhclient
 dhcpcd
 diffutils
-dmenu
+dmenu-ah-git
 dmidecode
 dmraid
 dnsmasq
@@ -141,6 +142,7 @@ lightdm-gtk-greeter
 lightdm-gtk-greeter-settings
 linux-firmware
 linux510
+linux510-headers
 linux510-virtualbox-host-modules
 logrotate
 lsb-release
@@ -182,6 +184,7 @@ mousepad
 mtools
 mtpfs
 mugshot
+namcap
 nano
 neofetch
 neovim
@@ -234,6 +237,7 @@ samba
 screenfetch
 sed
 shadow
+shell-color-scripts
 snapd
 snapd-glib
 spectre-meltdown-checker
@@ -253,6 +257,7 @@ thunderbird
 timeshift
 tldr
 tlp
+trash-cli
 ttf-dejavu
 ttf-droid
 ttf-inconsolata
@@ -266,6 +271,7 @@ unrar
 usb_modeswitch
 usbutils
 util-linux
+v4l2loopback-dkms
 vi
 viewnior
 vim

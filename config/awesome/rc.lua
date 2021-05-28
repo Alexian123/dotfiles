@@ -377,7 +377,7 @@ globalkeys = gears.table.join(
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"}),
-    awful.key({ modkey }, "d", function() awful.util.spawn('dmenu_run -i -l 5 -fn "Droid Sans Mono:pixelsize=16" -sb "#A4412D"', false) end,
+    awful.key({ modkey }, "d", function() awful.util.spawn('dmenu_run -i -c -l 12', false) end,
               {description = "run dmenu", group = "launcher"}),
 
     -- Switch kbd layout

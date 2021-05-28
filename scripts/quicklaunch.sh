@@ -9,7 +9,7 @@ MONITOR="$TERMINAL -e htop"
 
 OPTIONS="Web Browser\nFile Manager\nText Editor\nSystem Monitor"
 
-CHOICE=$(echo -e $OPTIONS | dmenu -b -l 4 -i -p "Quick Launch" -fn "Droid Sans Mono" -sb "#A4412D")
+CHOICE=$(echo -e $OPTIONS | dmenu -c -bw 3 -b -l 10 -i -p "Quick Launch")
 
 case $CHOICE in
 

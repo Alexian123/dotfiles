@@ -18,3 +18,14 @@ XTerm*color12:     #4186be
 XTerm*color13:     #cf9ebe
 XTerm*color14:     #71bebe
 XTerm*color15:     #ffffff
+
+! dmenu
+dmenu.font: Droid Sans Mono:pixelsize=14
+dmenu.background: #1f6275
+dmenu.foreground: #cccccc
+dmenu.selbackground: #023141
+dmenu.selforeground: #ffffff
+dmenu.hibackground: #cccccc
+dmenu.hiforeground: #023141
+dmenu.selhibackground: #033F54
+dmenu.selhiforeground: #cccccc

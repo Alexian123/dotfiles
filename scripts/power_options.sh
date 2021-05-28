@@ -5,7 +5,7 @@
 OPTIONS="Lock Screen\nPower Off\nReboot"
 LOCK_CMD="i3lock-fancy-multimonitor"
 
-CHOICE=$(echo -e $OPTIONS | dmenu -b -i -p "Power Menu" -fn "Droid Sans Mono" -sb "#A4412D")
+CHOICE=$(echo -e $OPTIONS | dmenu -bw 3 -h 20 -i -p "Power Menu")
 
 case $CHOICE in
 

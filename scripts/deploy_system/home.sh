@@ -1,16 +1,10 @@
 # !/bin/bash
 
-# Deploy dotfiles create required dirs
+# Symlink dotfiles and create required dirs in $HOME
 
-# get full path of this script
-FILE_PATH="$(readlink -f "$0")"
+# DO NOT RUN INDIVIDUALLY!
 
-# get the parent dir of this script
-SCRIPTS_DIR="$(dirname "$FILE_PATH")"
-
-# get the parent of the scripts dir (aka the main dir)
-DOTFILES_DIR="$(dirname "$SCRIPTS_DIR")"
-
+DOTFILES_DIR=$1
 
 # link $HOME dotfiles
 ln -sfv $DOTFILES_DIR/home/.aliasrc $HOME/
