@@ -28,6 +28,7 @@ ln -sfv $DOTFILES_DIR/config/codeblocks ~/.config/
 ln -sfv $DOTFILES_DIR/config/htop ~/.config/
 ln -sfv $DOTFILES_DIR/config/picom.conf ~/.config/
 ln -sfv $DOTFILES_DIR/config/starship.toml ~/.config/
+ln -sfv $DOTFILES_DIR/config/volumeicon ~/.config/
 
 
 # link ~/.local/bin

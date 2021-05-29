@@ -387,12 +387,12 @@ globalkeys = gears.table.join(
               {description = "ro std layout", group = "keyboard"}),
 
     -- XF86 keys
-    awful.key( {}, "XF86AudioRaiseVolume", function() awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ +10%", false) end,
-              {description = "raise volume", group = "XF86"}),
-    awful.key( {}, "XF86AudioLowerVolume", function() awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ -10%", false) end,
-              {description = "lower volume", group = "XF86"}),
-    awful.key( {}, "XF86AudioMute", function() awful.util.spawn("amixer set Master toggle", false) end,
-              {description = "mute volume", group = "XF86"}),
+--    awful.key( {}, "XF86AudioRaiseVolume", function() awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ +10%", false) end,
+--              {description = "raise volume", group = "XF86"}),
+--    awful.key( {}, "XF86AudioLowerVolume", function() awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ -10%", false) end,
+--              {description = "lower volume", group = "XF86"}),
+--    awful.key( {}, "XF86AudioMute", function() awful.util.spawn("amixer set Master toggle", false) end,
+--              {description = "mute volume", group = "XF86"}),
     awful.key( {}, "XF86AudioMicMute", function() awful.util.spawn("pactl set-source-mute @DEFAULT_SOURCE@ toggle", false) end,
               {description = "mute mic", group = "XF86"}),
     awful.key( {}, "XF86AudioPlay", function() awful.util.spawn("playerctl play-pause", false) end,
