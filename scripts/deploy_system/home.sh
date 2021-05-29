@@ -14,6 +14,7 @@ ln -sfv $DOTFILES_DIR/home/.profile $HOME/
 ln -sfv $DOTFILES_DIR/home/.vimrc $HOME/
 ln -sfv $DOTFILES_DIR/home/.Xresources $HOME/
 ln -sfv $DOTFILES_DIR/home/.zshrc $HOME/
+ln -sfv $DOTFILES_DIR/home/.gtkrc-2.0 $HOME/
 echo "Done."
 
 
@@ -32,6 +33,8 @@ ln -sfv $DOTFILES_DIR/config/htop ~/.config/
 ln -sfv $DOTFILES_DIR/config/picom.conf ~/.config/
 ln -sfv $DOTFILES_DIR/config/starship.toml ~/.config/
 ln -sfv $DOTFILES_DIR/config/volumeicon ~/.config/
+ln -sfv $DOTFILES_DIR/config/gtk-2.0 ~/.config/
+ln -sfv $DOTFILES_DIR/config/gtk-3.0 ~/.config/
 echo "Done."
 
 

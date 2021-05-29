@@ -21,6 +21,7 @@ awesome
 awesome-freedesktop
 b43-fwcutter
 bash-completion
+bat
 binutils
 bison
 blender
@@ -257,6 +258,7 @@ thunderbird
 timeshift
 tldr
 tlp
+tokei
 trash-cli
 ttf-dejavu
 ttf-droid
