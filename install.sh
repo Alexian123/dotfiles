@@ -1,5 +1,5 @@
 #! /bin/bash
 
-# Install my Arch Linux configuration
+# Install my Manjaro configuration
 
 ./scripts/deploy_system/deploy.sh

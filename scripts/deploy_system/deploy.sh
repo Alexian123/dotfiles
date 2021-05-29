@@ -1,6 +1,6 @@
 #! /bin/bash
 
-# Deploy Arch system
+# Deploy system
 
 # DO NOT RUN INDIVIDUALLY!
 
@@ -16,7 +16,7 @@ DOTFILES_DIR="$(dirname "$SCRIPTS_DIR")"
 DOTFILES_DIR="$(dirname "$DOTFILES_DIR")"
 
 # install yay (rquires git and base-devel)
-if [ ! -d "$HOME/.cache" ]
+if [ ! -d "$HOME/.cache" ]; then
     mkdir $HOME/.cache
     echo "Created .cache dir."
 fi
@@ -25,11 +25,14 @@ rm -rf yay
 git clone https://aur.archlinux.org/yay.git
 cd yay && makepkg -si
 
-# $HOME config (requires fontconfig)
+# $HOME config
 $DOTFILES_DIR/scripts/deploy_system/home.sh $DOTFILES_DIR
 
-# System config
+# system config
 sudo $DOTFILES_DIR/scripts/deploy_system/system.sh $DOTFILES_DIR
 
-# Dependencies
+# sependencies
 $DOTFILES_DIR/scripts/deploy_system/deps.sh $DOTFILES_DIR
+
+# post-install
+$DOTFILES_DIR/scripts/deploy_system/post.sh

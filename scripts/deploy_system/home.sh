@@ -62,9 +62,6 @@ fi
 
 ln -sfv $DOTFILES_DIR/fonts/NerdFonts/Droid\ Sans\ Mono\ Nerd\ Font\ Complete\ Mono.otf ~/.local/share/fonts/
 
-fc-cache -f
-echo "Updated font cache."
-
 
 # create undodir for nvim/vim
 if [ ! -d "$HOME/.vim/undodir" ]; then
