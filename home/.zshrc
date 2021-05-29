@@ -83,4 +83,4 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 eval "$(starship init zsh)"
 
 # launch script
-pfetch
+colorscript -r
