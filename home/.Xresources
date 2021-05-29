@@ -1,5 +1,6 @@
 ! xterm
-Xterm*faceSize: 16
+XTerm*faceName: x:fixed, xft:Droid Sans Mono
+XTerm*faceSize: 12.0
 XTerm*background:  #000000
 XTerm*foreground:  #9f9f9f
 XTerm*color0:      #000000
@@ -18,6 +19,28 @@ XTerm*color12:     #4186be
 XTerm*color13:     #cf9ebe
 XTerm*color14:     #71bebe
 XTerm*color15:     #ffffff
+
+! uxterm
+UXTerm*faceName: x:fixed, xft:Droid Sans Mono
+UXTerm*faceSize: 12.0
+UXTerm*background:  #000000
+UXTerm*foreground:  #9f9f9f
+UXTerm*color0:      #000000
+UXTerm*color1:      #9e1828
+UXTerm*color2:      #aece92
+UXTerm*color3:      #968a38
+UXTerm*color4:      #414171
+UXTerm*color5:      #963c59
+UXTerm*color6:      #418179
+UXTerm*color7:      #bebebe
+UXTerm*color8:      #666666
+UXTerm*color9:      #cf6171
+UXTerm*color10:     #c5f779
+UXTerm*color11:     #fff796
+UXTerm*color12:     #4186be
+UXTerm*color13:     #cf9ebe
+UXTerm*color14:     #71bebe
+UXTerm*color15:     #ffffff
 
 ! dmenu
 dmenu.font: Droid Sans Mono:pixelsize=14
