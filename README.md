@@ -2,7 +2,7 @@
 
 ## Installation
 Run install.sh for a full installation.<br>
-Dependencies: git, base-devel.<br>
+Dependencies: git, base-devel, fontconfig.<br>
 Do not move/rename/delete the repo after installing, as it relies on symlinks!
 <br><br>
 

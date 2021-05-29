@@ -22,8 +22,5 @@ cp $1/system/lightdm-gtk-greeter.conf /etc/lightdm/
 # vimrc for root user
 cp $1/home/.vimrc /root/
 
-# add personal repo
-echo -e "\n" >> /etc/pacman.conf
-echo "[arch-repo]" >> /etc/pacman.conf
-echo "SigLevel = Optional DatabaseOptional" >> /etc/pacman.conf
-echo "Server = https://gitlab.com/Alexian123/\$repo/-/raw/main/\$arch" >> /etc/pacman.conf
+# pacman config
+cp $1/system/pacman.conf /etc/

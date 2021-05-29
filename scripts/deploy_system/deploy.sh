@@ -16,11 +16,16 @@ DOTFILES_DIR="$(dirname "$SCRIPTS_DIR")"
 DOTFILES_DIR="$(dirname "$DOTFILES_DIR")"
 
 # install yay (rquires git and base-devel)
-mkdir $HOME/.cache && cd $HOME/.cache
+if [ ! -d "$HOME/.cache" ]
+    mkdir $HOME/.cache
+    echo "Created .cache dir."
+fi
+cd $HOME/.cache
+rm -rf yay
 git clone https://aur.archlinux.org/yay.git
 cd yay && makepkg -si
 
-# $HOME config
+# $HOME config (requires fontconfig)
 $DOTFILES_DIR/scripts/deploy_system/home.sh $DOTFILES_DIR
 
 # System config
