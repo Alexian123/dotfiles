@@ -16,6 +16,7 @@ DOTFILES_DIR="$(dirname "$SCRIPTS_DIR")"
 DOTFILES_DIR="$(dirname "$DOTFILES_DIR")"
 
 # install yay (rquires git and base-devel)
+echo "Installing yay..." && sleep 2
 if [ ! -d "$HOME/.cache" ]; then
     mkdir $HOME/.cache
     echo "Created .cache dir."
@@ -23,7 +24,7 @@ fi
 cd $HOME/.cache
 rm -rf yay
 git clone https://aur.archlinux.org/yay.git
-cd yay && makepkg -si
+cd yay && makepkg -si && echo "Done."
 
 # $HOME config
 $DOTFILES_DIR/scripts/deploy_system/home.sh $DOTFILES_DIR
