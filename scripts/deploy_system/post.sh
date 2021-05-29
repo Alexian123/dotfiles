@@ -9,8 +9,8 @@ fc-cache -f && echo "Done."
 # enable servies
 echo "Enabling systemd servies..." && sleep 2
 sudo systemctl enable lightdm.service && \
-    sudo systemctl enable NetworkManager.servce && \
-    sudo systemctl enable bluetooth.servce && echo "Done."
+    sudo systemctl enable NetworkManager.service && \
+    sudo systemctl enable bluetooth.service && echo "Done."
 
 # mlocate db
 echo "Updating mlocale database..."
