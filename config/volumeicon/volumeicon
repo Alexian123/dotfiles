@@ -1,5 +1,6 @@
 [Alsa]
 card=default
+channel=Master
 
 [Notification]
 show_notification=true
@@ -12,7 +13,7 @@ theme=Default
 use_panel_specific_icons=false
 lmb_slider=true
 mmb_mute=true
-use_horizontal_slider=false
+use_horizontal_slider=true
 show_sound_level=true
 use_transparent_background=true
 

@@ -14,7 +14,15 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
+-- Auto menu
 local freedesktop = require("freedesktop")
+
+-- Widgets
+local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
+local ram_widget = require("awesome-wm-widgets.ram-widget.ram-widget")
+local fs_widget = require("awesome-wm-widgets.fs-widget.fs-widget")
+
+
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
@@ -258,6 +266,9 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
+            cpu_widget(),
+            ram_widget(),
+            fs_widget(),
             mykeyboardlayout,
             wibox.widget.systray(),
             mytextclock,
@@ -583,6 +594,8 @@ awful.rules.rules = {
 
     -- Launch programs on specific desktops
     { rule = { class = "firefox" },
+      properties = { tag = desktops[2] } },
+    { rule = { class = "Tor Browser" },
       properties = { tag = desktops[2] } },
     { rule = { class = "Brave" },
       properties = { tag = desktops[2] } },
