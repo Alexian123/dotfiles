@@ -65,17 +65,6 @@ ln -sfv $DOTFILES_DIR/scripts/xrandr/extend_right_and_top.sh ~/.screenlayout/
 echo "Done."
 
 
-# link fonts
-echo "Making symlinks of fonts..." && sleep 2
-if [ ! -d "$HOME/.local/share/fonts" ]; then
-    mkdir $HOME/.local/share/fonts -p
-    echo "Created fonts dir."
-fi
-
-ln -sfv $DOTFILES_DIR/fonts/NerdFonts/Droid\ Sans\ Mono\ Nerd\ Font\ Complete\ Mono.otf ~/.local/share/fonts/
-echo "Done."
-
-
 # create undodir for nvim/vim
 if [ ! -d "$HOME/.vim/undodir" ]; then
     mkdir $HOME/.vim/undodir -p
