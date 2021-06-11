@@ -58,14 +58,13 @@ autorun = true
 autorunApps = 
 { 
    "detect_monitors",
-   "/usr/lib/mate-polkit/polkit-mate-authentication-agent-1",
+   "lxpolkit",
+   "xss-lock i3lock-fancy-multimonitor",
    "xrdb -merge ~/.Xresources",
-   "xss-lock -- i3lock-fancy-multimonitor",
    "picom --experimental-backends",
    "nm-applet",
    "blueman-tray",
    "launch_volumeicon",
-   "pamac-tray",
    "xfce4-power-manager",
 }
 if autorun then
@@ -85,7 +84,7 @@ terminal = "alacritty"
 editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 user_home = "/home/alexian"
-desktops = { "", "爵", "", "", "", "", "", "", "" }
+desktops = { "¹", "²爵", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹" }
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -240,7 +239,7 @@ awful.screen.connect_for_each_screen(function(s)
     -- Create a taglist widget
     s.mytaglist = awful.widget.taglist {
         screen  = s,
-        filter  = awful.widget.taglist.filter.all,
+        filter  = awful.widget.taglist.filter.noempty,
         buttons = taglist_buttons
     }
 
@@ -310,6 +309,8 @@ globalkeys = gears.table.join(
         {description = "focus previous by index", group = "client"}
     ),
     awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
+              {description = "show main menu", group = "awesome"}),
+    awful.key({}, "Menu", function () mymainmenu:show() end,
               {description = "show main menu", group = "awesome"}),
 
     -- Layout manipulation
@@ -416,7 +417,7 @@ globalkeys = gears.table.join(
               {description = "open power menu", group = "XF86"}),
 
     -- Screenshot
-    awful.key({}, "Print", function() awful.util.spawn("xfce4-screenshooter -f -s Pictures/screenshots", false) end,
+    awful.key({}, "Print", function() awful.util.spawn("screengrab", false) end,
               {description = "take a screenshot", group = "screen"})
 )
 
@@ -598,6 +599,8 @@ awful.rules.rules = {
     { rule = { class = "Tor Browser" },
       properties = { tag = desktops[2] } },
     { rule = { class = "Brave" },
+      properties = { tag = desktops[2] } },
+    { rule = { class = "LibreWolf" },
       properties = { tag = desktops[2] } },
     { rule = { class = "Thunderbird" },
       properties = { tag = desktops[3] } },

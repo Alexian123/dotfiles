@@ -1,5 +1,5 @@
 ! xterm
-XTerm*faceName: x:fixed, xft:Droid Sans Mono
+XTerm*faceName: x:fixed, xft:DroidSansMono Nerd Font Mono
 XTerm*faceSize: 12.0
 XTerm*background:  #000000
 XTerm*foreground:  #9f9f9f
@@ -21,7 +21,7 @@ XTerm*color14:     #71bebe
 XTerm*color15:     #ffffff
 
 ! uxterm
-UXTerm*faceName: x:fixed, xft:Droid Sans Mono
+UXTerm*faceName: x:fixed, xft:DroidSansMono Nerd Font Mono
 UXTerm*faceSize: 12.0
 UXTerm*background:  #000000
 UXTerm*foreground:  #9f9f9f
@@ -48,7 +48,3 @@ dmenu.background: #1f6275
 dmenu.foreground: #cccccc
 dmenu.selbackground: #023141
 dmenu.selforeground: #ffffff
-dmenu.hibackground: #cccccc
-dmenu.hiforeground: #023141
-dmenu.selhibackground: #033F54
-dmenu.selhiforeground: #cccccc

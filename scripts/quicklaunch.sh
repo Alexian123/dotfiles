@@ -4,8 +4,8 @@
 
 BROWSER=brave
 EMAIL=thunderbird
-FILE_MANAGER=thunar
-EDITOR=mousepad
+FILE_MANAGER=pcmanfm
+EDITOR=notepadqq
 MONITOR="$TERMINAL -e htop"
 
 OPTIONS="Web Browser\nEmail Client\nFile Manager\nText Editor\nSystem Monitor"

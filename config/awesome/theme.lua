@@ -11,7 +11,7 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = {}
 
-theme.font          = "Droid Sans Mono 10"
+theme.font          = "DroidSansMono Nerd Font Mono 10"
 
 theme.bg_normal     = "#1F6275"
 theme.bg_focus      = "#023141"
@@ -30,7 +30,7 @@ theme.border_normal = "#000000"
 theme.border_focus  = "#35BF5C"
 theme.border_marked = "#91231c"
 
-theme.taglist_font = "Droid Sans Mono 20"
+theme.taglist_font = "DroidSansMono Nerd Font Mono 15"
 
 -- There are other variable sets
 -- overriding the default one when
@@ -99,7 +99,7 @@ theme.titlebar_maximized_button_focus_inactive  = themes_path.."default/titlebar
 theme.titlebar_maximized_button_normal_active = themes_path.."default/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/maximized_focus_active.png"
 
-theme.wallpaper = "/usr/share/backgrounds/wallpapers-2018/palm-wave.jpg"
+theme.wallpaper = "/usr/share/backgrounds/archlinux/svalbard.jpg"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."default/layouts/fairhw.png"
