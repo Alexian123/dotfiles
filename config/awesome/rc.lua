@@ -146,7 +146,7 @@ mymainmenu = freedesktop.menu.build({
 
 -- mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
 --                                     menu = mymainmenu })
-mylauncher = awful.widget.launcher({ image = user_home .. "/.config/awesome/manjaro_logo.svg",
+mylauncher = awful.widget.launcher({ image = user_home .. "/.config/awesome/archlinux-icon.svg",
                                      menu = mymainmenu })
 
 -- Menubar configuration
@@ -610,6 +610,8 @@ awful.rules.rules = {
     { rule = { class = "VirtualBox Manager" },
       properties = { tag = desktops[5] } },
     { rule = { class = "VirtualBox Machine" },
+      properties = { tag = desktops[5] } },
+    { rule = { class = "Virt-manager" },
       properties = { tag = desktops[5] } },
     { rule = { class = "Blender" },
       properties = { tag = desktops[6] } },

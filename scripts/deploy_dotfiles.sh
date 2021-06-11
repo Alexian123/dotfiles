@@ -4,7 +4,7 @@
 
 # DO NOT RUN INDIVIDUALLY!
 
-DOTFILES_DIR=$1
+DOTFILES_DIR="$HOME/Documents/dotfiles"
 
 # link $HOME dotfiles
 echo "Making \$HOME symlinks..." && sleep 2
