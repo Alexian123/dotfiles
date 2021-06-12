@@ -10,3 +10,5 @@ elif [[ "$monitor" == "connected" ]]; then
 else
     ~/.screenlayout/default.sh
 fi
+
+exit 0

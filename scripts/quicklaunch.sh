@@ -35,3 +35,5 @@ case $CHOICE in
         ;;
 
 esac
+
+exit 0

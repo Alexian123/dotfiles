@@ -15,7 +15,7 @@ do
 done
 
 if [[ "$CHOICE" == "." ]]; then
-    exit
+    exit 0
 fi
 
 if /usr/bin/file $(/usr/bin/readlink -f "$FULL_PATH") | grep -q text$; then
@@ -23,3 +23,5 @@ if /usr/bin/file $(/usr/bin/readlink -f "$FULL_PATH") | grep -q text$; then
 else
     /usr/bin/xdg-open $FULL_PATH
 fi
+
+exit 0
