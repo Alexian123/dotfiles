@@ -393,6 +393,8 @@ globalkeys = gears.table.join(
               {description = "show the menubar", group = "launcher"}),
     awful.key({ modkey }, "d", function() awful.util.spawn('dmenu_run -i -c -l 12', false) end,
               {description = "run dmenu", group = "launcher"}),
+    awful.key({ modkey, "Shift" }, "d", function() awful.util.spawn('open_files', false) end,
+              {description = "open files with dmenu script", group = "launcher"}),
 
     -- Switch kbd layout
     awful.key({ modkey, "Shift" }, "a", function() awful.util.spawn("setxkbmap us", false) end,

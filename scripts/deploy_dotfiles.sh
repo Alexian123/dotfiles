@@ -49,6 +49,7 @@ ln -sfv $DOTFILES_DIR/scripts/detect_monitors.sh ~/.local/bin/detect_monitors
 ln -sfv $DOTFILES_DIR/scripts/launch_volumeicon.sh ~/.local/bin/launch_volumeicon
 ln -sfv $DOTFILES_DIR/scripts/power_options.sh ~/.local/bin/power_options
 ln -sfv $DOTFILES_DIR/scripts/quicklaunch.sh ~/.local/bin/quicklaunch
+ln -sfv $DOTFILES_DIR/scripts/open_files.sh ~/.local/bin/open_files
 echo "Done."
 
 

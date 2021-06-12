@@ -1,4 +1,4 @@
-# !/bin/bash
+#! /bin/bash
 
 monitor=$(xrandr -q | grep 'DP2' | awk '{print $2}')
 tv=$(xrandr -q | grep 'DP1-1' | awk '{print $2}')
