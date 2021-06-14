@@ -118,8 +118,8 @@ awful.layout.layouts = {
 -- {{{ Menu
 -- Create a launcher widget and a main menu
 configmenu = {
-   { "rc.lua", editor_cmd .. " " .. awesome.conffile },
-   { "theme", editor_cmd .. " " .. user_home .. "/.config/awesome/theme.lua" },
+   { "awsm rc", editor_cmd .. " " .. awesome.conffile },
+   { "awsm theme", editor_cmd .. " " .. user_home .. "/.config/awesome/theme.lua" },
    { "alacritty", editor_cmd .. " " .. user_home .. "/.config/alacritty/alacritty.yml" },
    { "neovim", editor_cmd .. " " .. user_home .. "/.config/nvim/init.vim" },
    { "zsh", editor_cmd .. " " .. user_home .. "/.zshrc" },
