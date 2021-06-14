@@ -636,6 +636,8 @@ awful.rules.rules = {
       properties = { tag = desktops[8] } },
     { rule = { class = "qBittorrent" },
       properties = { tag = desktops[9] } },
+    { rule = { class = "Transmission-gtk" },
+      properties = { tag = desktops[9] } },
 }
 -- }}}
 
