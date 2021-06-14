@@ -578,6 +578,7 @@ awful.rules.rules = {
           "Galculator",
           "veromix",
           "Xfce4-terminal",
+          "Lxterminal",
           "xtightvncviewer"},
 
         -- Note that the name property shown in xprop might be set slightly after creation of the client
@@ -609,6 +610,8 @@ awful.rules.rules = {
     { rule = { class = "Thunderbird" },
       properties = { tag = desktops[3] } },
     { rule = { class = "code-oss" },
+      properties = { tag = desktops[4] } },
+    { rule = { class = "VSCodium" },
       properties = { tag = desktops[4] } },
     { rule = { class = "Codeblocks" },
       properties = { tag = desktops[4] } },
