@@ -96,11 +96,6 @@ if !exists('g:vscode')
 
   " === Auto commands ===
   "
-  " Always enter terminal buffer in insert mode
-  autocmd BufWinEnter,WinEnter term://* startinsert
-  "
-  " Always exit terminal buffer in normal mode
-  autocmd BufLeave term://* stopinsert
   "
   " Relative line numbers in normal mode and regular ones in insert mode
   augroup numbertoggle
