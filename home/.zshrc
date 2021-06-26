@@ -84,3 +84,4 @@ eval "$(starship init zsh)"
 
 # launch script
 paleofetch
+#botsay -c `date`
