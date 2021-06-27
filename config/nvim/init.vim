@@ -17,7 +17,7 @@ if !exists('g:vscode')
   " === Plugins ===
   call plug#begin('~/.local/share/nvim/plugged')
       Plug 'joshdick/onedark.vim'
-      Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"      Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
       Plug 'vim-airline/vim-airline'
       Plug 'vim-airline/vim-airline-themes'
       Plug 'preservim/nerdtree' |
@@ -51,7 +51,7 @@ if !exists('g:vscode')
 
   " === Constants ===
   let mapleader = " "
-  let g:deoplete#enable_at_startup = 1
+"  let g:deoplete#enable_at_startup = 1
   let g:airline_powerline_fonts = 1
   let g:airline_theme = 'owo'
   let g:NERDTreeGitStatusIndicatorMapCustom = {
@@ -84,8 +84,8 @@ if !exists('g:vscode')
   nmap <silent> <c-l> :wincmd l<CR>
   "
   " Deoplete
-  inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
-  inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
+"  inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
+"  inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
   "
   " NERDTree
   nnoremap <leader>n :NERDTreeFocus<CR>
@@ -113,6 +113,6 @@ if !exists('g:vscode')
       \ quit | endif
   "
   " Fix Alacritty window size bug
-  autocmd VimEnter * :silent exec "!kill -s SIGWINCH $PPID"
+"  autocmd VimEnter * :silent exec "!kill -s SIGWINCH $PPID"
 
 endif

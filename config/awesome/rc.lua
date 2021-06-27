@@ -59,13 +59,12 @@ autorunApps =
 { 
    "detect_monitors",
    "lxpolkit",
-   "xss-lock i3lock-fancy-multimonitor",
    "xrdb -merge ~/.Xresources",
-   "picom --experimental-backends",
-   "nm-applet",
-   "blueman-tray",
-   "launch_volumeicon",
+   "launch_compton",
+   "launch_wicd",
+   "blueman-applet",
    "xfce4-power-manager",
+   "launch_volumeicon",
    "/usr/lib/geoclue-2.0/demos/agent",
 }
 if autorun then
@@ -81,7 +80,7 @@ end
 beautiful.init("~/.config/awesome/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "alacritty"
+terminal = "kitty"
 editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 user_home = "/home/alexian"
@@ -146,7 +145,7 @@ mymainmenu = freedesktop.menu.build({
 
 -- mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
 --                                     menu = mymainmenu })
-mylauncher = awful.widget.launcher({ image = user_home .. "/.config/awesome/archlinux-icon.svg",
+mylauncher = awful.widget.launcher({ image = user_home .. "/.config/awesome/debian-icon.svg",
                                      menu = mymainmenu })
 
 -- Menubar configuration
@@ -578,7 +577,8 @@ awful.rules.rules = {
           "Galculator",
           "veromix",
           "Xfce4-terminal",
-          "Lxterminal",
+          "XTerm",
+          "UXTerm",
           "xtightvncviewer"},
 
         -- Note that the name property shown in xprop might be set slightly after creation of the client
@@ -607,7 +607,7 @@ awful.rules.rules = {
       properties = { tag = desktops[2] } },
     { rule = { class = "LibreWolf" },
       properties = { tag = desktops[2] } },
-    { rule = { class = "Thunderbird" },
+    { rule = { class = "thunderbird" },
       properties = { tag = desktops[3] } },
     { rule = { class = "code-oss" },
       properties = { tag = desktops[4] } },
@@ -638,6 +638,8 @@ awful.rules.rules = {
     { rule = { class = "obs" },
       properties = { tag = desktops[8] } },
     { rule = { class = "qBittorrent" },
+      properties = { tag = desktops[9] } },
+    { rule = { class = "Deluge" },
       properties = { tag = desktops[9] } },
     { rule = { class = "Transmission-gtk" },
       properties = { tag = desktops[9] } },

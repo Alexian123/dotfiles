@@ -2,10 +2,10 @@
 
 # Simple dmenu prompt for launching programs
 
-BROWSER=brave
+BROWSER=brave-browser
 EMAIL=thunderbird
 FILE_MANAGER=pcmanfm
-EDITOR=notepadqq
+EDITOR=mousepad
 MONITOR="$TERMINAL -e htop"
 
 OPTIONS="Web Browser\nEmail Client\nFile Manager\nText Editor\nSystem Monitor"

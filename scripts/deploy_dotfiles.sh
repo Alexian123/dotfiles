@@ -1,18 +1,16 @@
-# !/bin/bash
+# !/bin/sh
 
 # Symlink dotfiles and create required dirs in $HOME
-
-# DO NOT RUN INDIVIDUALLY!
 
 DOTFILES_DIR="$HOME/Documents/dotfiles"
 
 # simulate loading for nicer output
-function load_with_msg () {
+load_with_msg () {
     echo -n "$1"
     for i in 1 2 3
     do
         echo -n "."
-        sleep 0.5
+        sleep 0.1
     done
     echo ""
 }
@@ -22,7 +20,7 @@ load_with_msg "Making \$HOME symlinks"
 ln -sfv $DOTFILES_DIR/home/.aliasrc $HOME/
 ln -sfv $DOTFILES_DIR/home/.bashrc $HOME/
 ln -sfv $DOTFILES_DIR/home/.profile $HOME/
-ln -sfv $DOTFILES_DIR/home/.vimrc $HOME/
+#ln -sfv $DOTFILES_DIR/home/.vimrc $HOME/
 ln -sfv $DOTFILES_DIR/home/.Xresources $HOME/
 ln -sfv $DOTFILES_DIR/home/.zshrc $HOME/
 echo "Done."
@@ -36,11 +34,12 @@ if [ ! -d "$HOME/.config" ]; then
 fi
 
 ln -sfv $DOTFILES_DIR/config/nvim ~/.config/
-ln -sfv $DOTFILES_DIR/config/alacritty ~/.config/
+#ln -sfv $DOTFILES_DIR/config/alacritty ~/.config/
+ln -sfv $DOTFILES_DIR/config/kitty ~/.config/
 ln -sfv $DOTFILES_DIR/config/awesome ~/.config/
 ln -sfv $DOTFILES_DIR/config/codeblocks ~/.config/
 ln -sfv $DOTFILES_DIR/config/htop ~/.config/
-ln -sfv $DOTFILES_DIR/config/picom.conf ~/.config/
+#ln -sfv $DOTFILES_DIR/config/picom.conf ~/.config/
 ln -sfv $DOTFILES_DIR/config/starship.toml ~/.config/
 ln -sfv $DOTFILES_DIR/config/volumeicon ~/.config/
 echo "Done."
@@ -55,6 +54,8 @@ fi
 
 ln -sfv $DOTFILES_DIR/scripts/detect_monitors.sh ~/.local/bin/detect_monitors
 ln -sfv $DOTFILES_DIR/scripts/launch_volumeicon.sh ~/.local/bin/launch_volumeicon
+ln -sfv $DOTFILES_DIR/scripts/launch_wicd.sh ~/.local/bin/launch_wicd
+ln -sfv $DOTFILES_DIR/scripts/launch_compton.sh ~/.local/bin/launch_compton
 ln -sfv $DOTFILES_DIR/scripts/power_options.sh ~/.local/bin/power_options
 ln -sfv $DOTFILES_DIR/scripts/quicklaunch.sh ~/.local/bin/quicklaunch
 ln -sfv $DOTFILES_DIR/scripts/open_files.sh ~/.local/bin/open_files
@@ -75,10 +76,10 @@ echo "Done."
 
 
 # create undodir for nvim/vim
-if [ ! -d "$HOME/.vim/undodir" ]; then
-    mkdir $HOME/.vim/undodir -p
-    echo "Created vim undodir"
-fi
+#if [ ! -d "$HOME/.vim/undodir" ]; then
+#    mkdir $HOME/.vim/undodir -p
+#    echo "Created vim undodir"
+#fi
 
 if [ ! -d "$HOME/.cache/nvim/undodir" ]; then
     mkdir $HOME/.cache/nvim/undodir -p

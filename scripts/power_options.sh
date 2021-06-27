@@ -14,11 +14,11 @@ case $CHOICE in
         ;;
 
     "Power Off")
-        poweroff
+        sudo poweroff
         ;;
 
     "Reboot")
-        reboot
+        sudo reboot
         ;;
 
 esac
