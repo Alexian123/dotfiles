@@ -29,20 +29,20 @@ alias aptsi="apt list --installed | grep" # search installed packages
 #alias pacqdt="pacman -Qdt" # list unneeded packages
 #
 # snap
-#alias snfi="snap find"
-#alias snfo="snap info"
-#alias snin="sudo snap install"
-#alias snli="snap list"
-#alias snrm="sudo snap remove"
-#alias snre="sudo snap refresh"
+alias snfi="snap find"
+alias snfo="snap info"
+alias snin="sudo snap install"
+alias snli="snap list"
+alias snrm="sudo snap remove"
+alias snre="sudo snap refresh"
 #
 # flatpak
-alias flatin="flatpak install"
-alias flatun="flatpak uninstall"
-alias flatup="flatpak update"
-alias flats="flatpak search"
-alias flatl="flatpak list"
-alias flatinf="flatpak info"
+#alias flatin="flatpak install"
+#alias flatun="flatpak uninstall"
+#alias flatup="flatpak update"
+#alias flats="flatpak search"
+#alias flatl="flatpak list"
+#alias flatinf="flatpak info"
 #
 # replace ls with exa
 alias ls="exa --color=always --group-directories-first" # basic listing

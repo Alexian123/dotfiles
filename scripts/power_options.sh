@@ -3,7 +3,7 @@
 # poweroff or restart the computer
 
 OPTIONS="Lock Screen\nPower Off\nReboot"
-LOCK_CMD="i3lock-fancy-multimonitor"
+LOCK_CMD="i3lock-fancy"
 
 CHOICE=$(echo -e $OPTIONS | dmenu -bw 3 -h 20 -i -p "Power Menu")
 
@@ -14,11 +14,11 @@ case $CHOICE in
         ;;
 
     "Power Off")
-        sudo poweroff
+        poweroff
         ;;
 
     "Reboot")
-        sudo reboot
+        reboot
         ;;
 
 esac

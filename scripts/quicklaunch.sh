@@ -4,7 +4,7 @@
 
 BROWSER=brave-browser
 EMAIL=thunderbird
-FILE_MANAGER=pcmanfm
+FILE_MANAGER=thunar
 EDITOR=mousepad
 MONITOR="$TERMINAL -e htop"
 

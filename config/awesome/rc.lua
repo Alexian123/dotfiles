@@ -61,11 +61,10 @@ autorunApps =
    "lxpolkit",
    "xrdb -merge ~/.Xresources",
    "launch_compton",
-   "launch_wicd",
+   "nm-applet",
    "blueman-applet",
    "xfce4-power-manager",
    "launch_volumeicon",
-   "/usr/lib/geoclue-2.0/demos/agent",
 }
 if autorun then
    for app = 1, #autorunApps do
@@ -80,8 +79,8 @@ end
 beautiful.init("~/.config/awesome/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "kitty"
-editor = os.getenv("EDITOR") or "nvim"
+terminal = "alacritty"
+editor = os.getenv("EDITOR") or "vi"
 editor_cmd = terminal .. " -e " .. editor
 user_home = "/home/alexian"
 desktops = { "¹", "²爵", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹" }
@@ -607,7 +606,7 @@ awful.rules.rules = {
       properties = { tag = desktops[2] } },
     { rule = { class = "LibreWolf" },
       properties = { tag = desktops[2] } },
-    { rule = { class = "thunderbird" },
+    { rule = { class = "Thunderbird" },
       properties = { tag = desktops[3] } },
     { rule = { class = "code-oss" },
       properties = { tag = desktops[4] } },

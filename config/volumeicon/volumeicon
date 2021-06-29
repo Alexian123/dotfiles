@@ -1,6 +1,7 @@
 [Alsa]
 card=default
 channel=Master
+logarithmic_scale=false
 
 [Notification]
 show_notification=true
@@ -11,11 +12,12 @@ stepsize=5
 onclick=pavucontrol
 theme=Default
 use_panel_specific_icons=false
+reverse_scroll_direction=false
 lmb_slider=true
 mmb_mute=true
 use_horizontal_slider=true
 show_sound_level=true
-use_transparent_background=true
+use_transparent_background=false
 
 [Hotkeys]
 up_enabled=true

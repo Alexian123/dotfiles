@@ -1,11 +1,9 @@
 export EDITOR=/usr/bin/nvim
-export TERMINAL=/usr/bin/kitty
-export QT_QPA_PLATFORMTHEME="qt5ct"
-export QT_AUTO_SCREEN_SCALE_FACTOR=0
+export TERMINAL="$HOME/.cargo/bin/alacritty"
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 export DOTFILES="$HOME/Documents/dotfiles"
 export QT_STYLE_OVERRIDE=kvantum
-export XDG_DATA_DIRS="/home/alexian/.local/share/flatpak/exports/share:$XDG_DATA_DIRS"
+#export XDG_DATA_DIRS="/home/alexian/.local/share/flatpak/exports/share:$XDG_DATA_DIRS"
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
@@ -15,6 +13,11 @@ fi
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
+fi
+
+# set PATH so it includes cargo bins
+if [ -d "$HOME/.cargo/bin" ] ; then
+    PATH="$HOME/.cargo/bin:$PATH"
 fi
 
 # keyring

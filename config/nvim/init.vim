@@ -113,6 +113,6 @@ if !exists('g:vscode')
       \ quit | endif
   "
   " Fix Alacritty window size bug
-"  autocmd VimEnter * :silent exec "!kill -s SIGWINCH $PPID"
+  autocmd VimEnter * :silent exec "!kill -s SIGWINCH $PPID"
 
 endif
