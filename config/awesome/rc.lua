@@ -144,7 +144,7 @@ mymainmenu = freedesktop.menu.build({
 
 -- mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
 --                                     menu = mymainmenu })
-mylauncher = awful.widget.launcher({ image = user_home .. "/.config/awesome/debian-icon.svg",
+mylauncher = awful.widget.launcher({ image = user_home .. "/.config/awesome/ubuntu-icon.svg",
                                      menu = mymainmenu })
 
 -- Menubar configuration
