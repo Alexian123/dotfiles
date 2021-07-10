@@ -16,8 +16,9 @@ if !exists('g:vscode')
 
     " === Plugins ===
     call plug#begin('~/.local/share/nvim/plugged')
-      Plug 'joshdick/onedark.vim'
-    "      Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+      "Plug 'joshdick/onedark.vim'
+      Plug 'morhetz/gruvbox'
+      "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
       Plug 'neoclide/coc.nvim', {'branch': 'release'}
       Plug 'vim-airline/vim-airline'
       Plug 'vim-airline/vim-airline-themes'
@@ -48,7 +49,7 @@ if !exists('g:vscode')
     set colorcolumn=80
     set termguicolors
     highlight ColorColumn ctermbg=0 guibg=lightgrey
-    colorscheme onedark
+    colorscheme gruvbox
     "
     " Add (Neo)Vim's native statusline support.
     " NOTE: Please see `:h coc-status` for integrations with external plugins that
@@ -60,7 +61,7 @@ if !exists('g:vscode')
     let mapleader = " "
     "  let g:deoplete#enable_at_startup = 1
     let g:airline_powerline_fonts = 1
-    let g:airline_theme = 'owo'
+    let g:airline_theme = 'gruvbox'
     let g:NERDTreeGitStatusIndicatorMapCustom = {
                   \ 'Modified'  :'✹',
                   \ 'Staged'    :'✚',
