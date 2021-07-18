@@ -1,10 +1,11 @@
 export EDITOR=/usr/bin/nvim
-#export TERMINAL="$HOME/.cargo/bin/alacritty"
-#export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+export VISUAL=/usr/bin/nvim
+export TERMINAL=/usr/bin/alacritty
+export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 export DOTFILES="$HOME/Documents/dotfiles"
-#export QT_STYLE_OVERRIDE=kvantum
+export QT_STYLE_OVERRIDE=kvantum
 #export XDG_DATA_DIRS="/home/alexian/.local/share/flatpak/exports/share:$XDG_DATA_DIRS"
-export PF_INFO="ascii title os host kernel uptime memory"
+#export PF_INFO="ascii title os host kernel uptime memory"
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
@@ -22,7 +23,7 @@ if [ -d "$HOME/.cargo/bin" ] ; then
 fi
 
 # keyring
-#if [ -n "$DESKTOP_SESSION" ];then
-#    eval $(gnome-keyring-daemon --start)
-#    export SSH_AUTH_SOCK
-#fi
+if [ -n "$DESKTOP_SESSION" ];then
+    eval $(gnome-keyring-daemon --start)
+    export SSH_AUTH_SOCK
+fi

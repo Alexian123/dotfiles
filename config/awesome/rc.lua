@@ -57,10 +57,13 @@ end
 autorun = true
 autorunApps = 
 { 
+   "/usr/lib/geoclue-2.0/demos/agent",
+   "systemctl --user restart redshift-gtk.service",
    "detect_monitors",
-   "lxpolkit",
+   "xss-lock i3lock-fancy-multimonitor",
+   "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1",
    "xrdb -merge ~/.Xresources",
-   "launch_compton",
+   "picom --experimental-backends",
    "nm-applet",
    "blueman-applet",
    "xfce4-power-manager",
@@ -144,7 +147,7 @@ mymainmenu = freedesktop.menu.build({
 
 -- mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
 --                                     menu = mymainmenu })
-mylauncher = awful.widget.launcher({ image = user_home .. "/.config/awesome/ubuntu-icon.svg",
+mylauncher = awful.widget.launcher({ image = user_home .. "/.config/awesome/Awesome_logo.png",
                                      menu = mymainmenu })
 
 -- Menubar configuration
@@ -608,6 +611,8 @@ awful.rules.rules = {
       properties = { tag = desktops[2] } },
     { rule = { class = "Thunderbird" },
       properties = { tag = desktops[3] } },
+    { rule = { class = "Code" },
+      properties = { tag = desktops[4] } },
     { rule = { class = "code-oss" },
       properties = { tag = desktops[4] } },
     { rule = { class = "VSCodium" },
@@ -615,6 +620,8 @@ awful.rules.rules = {
     { rule = { class = "Codeblocks" },
       properties = { tag = desktops[4] } },
     { rule = { class = "Eclipse" },
+      properties = { tag = desktops[4] } },
+    { rule = { class = "jetbrains-idea-ce" },
       properties = { tag = desktops[4] } },
     { rule = { class = "VirtualBox Manager" },
       properties = { tag = desktops[5] } },

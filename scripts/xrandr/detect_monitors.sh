@@ -1,7 +1,7 @@
 #! /bin/sh
 
-monitor=$(xrandr -q | grep 'DP-2' | awk '{print $2}')
-tv=$(xrandr -q | grep 'DP-1-1' | awk '{print $2}')
+monitor=$(xrandr -q | grep 'DP2' | awk '{print $2}')
+tv=$(xrandr -q | grep 'DP1-1' | awk '{print $2}')
 
 if [ "$tv" = "connected" ] && [ "$monitor" = "connected" ]
 then

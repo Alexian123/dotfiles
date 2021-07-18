@@ -15,18 +15,18 @@ alias vim="nvim"
 #alias aptsi="apt list --installed | grep" # search installed packages
 #
 # pacman/yay
-#alias pacss="pacman -Ss" # search for standard package
-#alias yayssa="yay -Ssa" # search for aur package
-#alias yayss="yay -Ss" # search for any package
-#alias pacs="sudo pacman -S" # install standard package
-#alias yays="yay -S" # install any package
-#alias pacrns="sudo pacman -Rns" # remove package
-#alias yayrns="yay -Rns" # remove any package
-#alias pacsyu="sudo pacman -Syu" # update standard packages
-#alias yaysyua="yay -Syua" # update aur packages
-#alias yaysyu="yay -Syu" # update all packages
-#alias pacqs="pacman -Qs" # search installed packages
-#alias pacqdt="pacman -Qdt" # list unneeded packages
+alias pacss="pacman -Ss" # search for standard package
+alias yayssa="yay -Ssa" # search for aur package
+alias yayss="yay -Ss" # search for any package
+alias pacs="sudo pacman -S" # install standard package
+alias yays="yay -S" # install any package
+alias pacrns="sudo pacman -Rns" # remove package
+alias yayrns="yay -Rns" # remove any package
+alias pacsyu="sudo pacman -Syu" # update standard packages
+alias yaysyua="yay -Syua" # update aur packages
+alias yaysyu="yay -Syu" # update all packages
+alias pacqs="pacman -Qs" # search installed packages
+alias pacqdt="pacman -Qdt" # list unneeded packages
 #
 # snap
 #alias snfi="snap find"
@@ -37,12 +37,12 @@ alias vim="nvim"
 #alias snre="sudo snap refresh"
 #
 # flatpak
-alias flatin="flatpak install"
-alias flatun="flatpak uninstall"
-alias flatup="flatpak update"
-alias flats="flatpak search"
-alias flatl="flatpak list"
-alias flatinf="flatpak info"
+#alias flatin="flatpak install"
+#alias flatun="flatpak uninstall"
+#alias flatup="flatpak update"
+#alias flats="flatpak search"
+#alias flatl="flatpak list"
+#alias flatinf="flatpak info"
 #
 # replace ls with exa
 alias ls="exa --color=always --group-directories-first" # basic listing
