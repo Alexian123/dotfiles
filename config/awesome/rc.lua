@@ -147,7 +147,7 @@ mymainmenu = freedesktop.menu.build({
 
 -- mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
 --                                     menu = mymainmenu })
-mylauncher = awful.widget.launcher({ image = user_home .. "/.config/awesome/Awesome_logo.png",
+mylauncher = awful.widget.launcher({ image = user_home .. "/.config/awesome/tux.svg",
                                      menu = mymainmenu })
 
 -- Menubar configuration

@@ -27,6 +27,7 @@ if !exists('g:vscode')
               \ Plug 'ryanoasis/vim-devicons'
       Plug 'scrooloose/nerdtree-project-plugin'
       Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+      Plug 'jackguo380/vim-lsp-cxx-highlight'
     call plug#end()
 
 
