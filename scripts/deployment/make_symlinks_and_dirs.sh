@@ -8,7 +8,7 @@ DOTFILES_DIR="$HOME/Documents/dotfiles"
 echo "Making \$HOME symlinks"
 ln -sfv $DOTFILES_DIR/home/.aliasrc $HOME/
 #ln -sfv $DOTFILES_DIR/home/.bashrc $HOME/
-ln -sfv $DOTFILES_DIR/home/.profile $HOME/
+#ln -sfv $DOTFILES_DIR/home/.profile $HOME/
 ln -sfv $DOTFILES_DIR/home/.vimrc $HOME/
 #ln -sfv $DOTFILES_DIR/home/.Xresources $HOME/
 ln -sfv $DOTFILES_DIR/home/.zshrc $HOME/
