@@ -1,6 +1,5 @@
 # .bashrc
 
-# Prompt
 # get current branch in git repo
 function parse_git_branch() {
 	BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
@@ -53,7 +52,9 @@ function nonzero_return() {
 	[ $RETVAL -ne 0 ] && echo "$RETVAL"
 }
 
+# prompt
 export PS1="\`nonzero_return\`\[\e[31m\][\[\e[m\]\[\e[33m\]\u\[\e[m\]\[\e[34m\]@\[\e[m\]\[\e[35m\]\h\[\e[m\] \[\e[36m\]\W\[\e[m\]\[\e[31m\]]\[\e[m\]\[\e[32m\]\`parse_git_branch\`\[\e[m\]\[\e[34m\]\\$\[\e[m\] "
+
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -70,4 +71,5 @@ export PATH
 # aliases
 source /home/alexian/.aliasrc
 
+# vi mode
 #set -o vi
