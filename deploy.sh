@@ -1,7 +1,8 @@
 #!/bin/sh
 
-DOTFILES_DIR="$(dirname "$(realpath "$0")")/configs"
-DEPLOY_CONFIG_FILE="deploy_config.cfg"
+DOTFILES="$(dirname "$(realpath "$0")")"
+DOTFILES_DIR="$DOTFILES/configs"
+DEPLOY_CONFIG_FILE="$DOTFILES/deploy_config.cfg"
 
 FALSE="false"
 TRUE="true"
