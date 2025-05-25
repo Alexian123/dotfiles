@@ -2,7 +2,7 @@
 
 DOTFILES="$(dirname "$(realpath "$0")")"
 DOTFILES_DIR="$DOTFILES/configs"
-DEPLOY_CONFIG_FILE="$DOTFILES/deploy_config.cfg"
+DEPLOY_CONFIG_FILE="$DOTFILES/deploy.cfg"
 
 FALSE="false"
 TRUE="true"
@@ -41,6 +41,21 @@ VIMRC=$(read_config "VIMRC" "$FALSE")
 VOLUMEICON=$(read_config "VOLUMEICON" "$FALSE")
 XRESOURCES=$(read_config "XRESOURCES" "$FALSE")
 ZSHRC=$(read_config "ZSHRC" "$FALSE")
+DMENU=$(read_config "DMENU" "$FALSE")
+WICD=$(read_config "WICD" "$FALSE")
+REDSHIFT=$(read_config "REDSHIFT" "$FALSE")
+
+# Create .local/bin dir
+if [ ! -d "$HOME/.local/bin" ]; then
+    mkdir -p $HOME/.local/bin
+    echo "Created .local/bin dir"
+fi
+
+# Create .local/src dir
+if [ ! -d "$HOME/.local/src" ]; then
+    mkdir $HOME/.local/src
+    echo "Created .local/src dir"
+fi
 
 # Install starship prompt
 if [ "$STARSHIP" = "$TRUE" ]; then
@@ -52,16 +67,9 @@ fi
 # Install pfetch
 if [ "$PFETCH" = "$TRUE" ]; then
     echo "Installing pfetch"
-
-    if [ ! -d "$HOME/.local/src" ]; then
-        mkdir $HOME/.local/src
-        echo "Created .local/src dir"
-    fi
-
     git clone "https://github.com/dylanaraps/pfetch" $HOME/.local/src/pfetch
     cd $HOME/.local/src/pfetch && sudo make install
     cd -
-
     echo "Done."
 fi
 
@@ -130,6 +138,8 @@ fi
 
 if [ "$PICOM" = "$TRUE" ]; then
     ln -sfv $DOTFILES_DIR/user/.config/picom.conf $HOME/.config/
+    # Link picom launch script
+    ln -sfv $DOTFILES/launchers/launch_compton.sh $HOME/.local/bin/launch_compton
 fi
 
 if [ "$STARSHIP" = "$TRUE" ]; then
@@ -139,6 +149,8 @@ fi
 if [ "$VOLUMEICON" = "$TRUE" ]; then
     rm -rf $HOME/.config/volumeicon
     ln -sfv $DOTFILES_DIR/user/.config/volumeicon $HOME/.config/
+    # Link volumeicon launch script
+    ln -sfv $DOTFILES/launchers/launch_volumeicon.sh $HOME/.local/bin/launch_volumeicon
 fi
 
 echo "Done."
@@ -157,6 +169,23 @@ if [ "$NEOVIM" = "$TRUE" ]; then
         mkdir $HOME/.cache/nvim/undodir -p
         echo "Created nvim undodir"
     fi
+fi
+
+# Link wicd launch script
+if [ "$WICD" = "$TRUE" ]; then
+    ln -sfv $DOTFILES/launchers/launch_wicd.sh $HOME/.local/bin/launch_wicd
+fi
+
+# Link redshift launch script
+if [ "$REDSHIFT" = "$TRUE" ]; then
+    ln -sfv $DOTFILES/launchers/launch_redshift.sh $HOME/.local/bin/launch_redshift
+fi
+
+# Link dmenu scripts
+if [ "$DMENU" = "$TRUE" ]; then
+    ln -sfv $DOTFILES/dmenu_scripts/open_files.sh $HOME/.local/bin/open_files
+    ln -sfv $DOTFILES/dmenu_scripts/power_options.sh $HOME/.local/bin/power_options
+    ln -sfv $DOTFILES/dmenu_scripts/quicklaunch.sh $HOME/.local/bin/quicklaunch
 fi
 
 exit 0

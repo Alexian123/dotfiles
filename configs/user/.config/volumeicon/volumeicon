@@ -10,7 +10,7 @@ notification_type=0
 [StatusIcon]
 stepsize=5
 onclick=pavucontrol
-theme=Default
+theme=White Gnome
 use_panel_specific_icons=false
 reverse_scroll_direction=false
 lmb_slider=true

@@ -57,17 +57,18 @@ end
 autorun = true
 autorunApps = 
 { 
-   "/usr/lib/geoclue-2.0/demos/agent",
+   "/usr/libexec/geoclue-2.0/demos/agent",
    "systemctl --user restart redshift-gtk.service",
-   "detect_monitors",
-   "xss-lock i3lock-fancy-multimonitor",
-   "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1",
+   "xss-lock i3lock-fancy",
+   "lxpolkit",
+   --"/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1",
    "xrdb -merge ~/.Xresources",
-   "picom --experimental-backends",
+   "launch_compton",
    "nm-applet",
    "blueman-applet",
-   "xfce4-power-manager",
+   "xfce4-power-manager --daemon",
    "launch_volumeicon",
+   "launch_redshift"
 }
 if autorun then
    for app = 1, #autorunApps do
@@ -82,11 +83,11 @@ end
 beautiful.init("~/.config/awesome/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "alacritty"
+terminal = os.getenv("TERMINAL") or "xterm"
 editor = os.getenv("EDITOR") or "vi"
-editor_cmd = terminal .. " -e " .. editor
+editor_cmd = os.getenv("GEDITOR") or terminal .. " -e " .. editor
 user_home = "/home/alexian"
-desktops = { "¹", "²爵", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹" }
+desktops = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -121,7 +122,7 @@ awful.layout.layouts = {
 configmenu = {
    { "awsm rc", editor_cmd .. " " .. awesome.conffile },
    { "awsm theme", editor_cmd .. " " .. user_home .. "/.config/awesome/theme.lua" },
-   { "alacritty", editor_cmd .. " " .. user_home .. "/.config/alacritty/alacritty.yml" },
+   --{ "alacritty", editor_cmd .. " " .. user_home .. "/.config/alacritty/alacritty.yml" },
    { "neovim", editor_cmd .. " " .. user_home .. "/.config/nvim/init.vim" },
    { "zsh", editor_cmd .. " " .. user_home .. "/.zshrc" },
    { "aliases", editor_cmd .. " " .. user_home .. "/.aliasrc" },
@@ -223,7 +224,6 @@ awful.screen.connect_for_each_screen(function(s)
 
     -- Each screen has its own tag table.
     -- awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
-    -- local names = { "", "爵", "", "", "", "", "", "", "" }
     local l = awful.layout.suit  -- Just to save some typing: use an alias.
     local layouts = { l.tile, l.tile, l.max, l.tile, l.floating,
         l.max, l.max, l.floating, l.max }
@@ -392,16 +392,16 @@ globalkeys = gears.table.join(
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"}),
-    awful.key({ modkey }, "d", function() awful.util.spawn('dmenu_run -i -c -l 12', false) end,
+    awful.key({ modkey }, "d", function() awful.util.spawn('dmenu_run -i -l 12', false) end,
               {description = "run dmenu", group = "launcher"}),
     awful.key({ modkey, "Shift" }, "d", function() awful.util.spawn('open_files', false) end,
               {description = "open files with dmenu script", group = "launcher"}),
 
     -- Switch kbd layout
-    awful.key({ modkey, "Shift" }, "a", function() awful.util.spawn("setxkbmap us", false) end,
-              {description = "us layout", group = "keyboard"}),
-    awful.key({ modkey, "Shift" }, "s", function() awful.util.spawn("setxkbmap ro std", false) end,
-              {description = "ro std layout", group = "keyboard"}),
+    --awful.key({ modkey, "Shift" }, "a", function() awful.util.spawn("setxkbmap us", false) end,
+     --         {description = "us layout", group = "keyboard"}),
+    --awful.key({ modkey, "Shift" }, "s", function() awful.util.spawn("setxkbmap ro std", false) end,
+     --         {description = "ro std layout", group = "keyboard"}),
 
     -- XF86 keys
 --    awful.key( {}, "XF86AudioRaiseVolume", function() awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ +10%", false) end,
@@ -420,6 +420,10 @@ globalkeys = gears.table.join(
               {description = "open arandr", group = "XF86"}),
     awful.key( {}, "XF86Sleep", function() awful.util.spawn("power_options", false) end,
               {description = "open power menu", group = "XF86"}),
+    awful.key( {}, "XF86ScreenSaver", function() awful.util.spawn("i3lock-fancy", false) end,
+              {description = "lock screen", group = "XF86"}),
+    awful.key( {}, "XF86Launch1", function() awful.util.spawn(terminal, false) end,
+              {description = "open terminal", group = "XF86"}),
 
     -- Screenshot
     awful.key({}, "Print", function() awful.util.spawn("screengrab", false) end,
@@ -579,8 +583,6 @@ awful.rules.rules = {
           "Galculator",
           "veromix",
           "Xfce4-terminal",
-          "XTerm",
-          "UXTerm",
           "xtightvncviewer"},
 
         -- Note that the name property shown in xprop might be set slightly after creation of the client
@@ -601,56 +603,8 @@ awful.rules.rules = {
     },
 
     -- Launch programs on specific desktops
-    { rule = { class = "firefox" },
-      properties = { tag = desktops[2] } },
-    { rule = { class = "Tor Browser" },
-      properties = { tag = desktops[2] } },
-    { rule = { class = "Brave" },
-      properties = { tag = desktops[2] } },
-    { rule = { class = "LibreWolf" },
-      properties = { tag = desktops[2] } },
-    { rule = { class = "Thunderbird" },
-      properties = { tag = desktops[3] } },
-    { rule = { class = "Code" },
-      properties = { tag = desktops[4] } },
-    { rule = { class = "code-oss" },
-      properties = { tag = desktops[4] } },
-    { rule = { class = "VSCodium" },
-      properties = { tag = desktops[4] } },
-    { rule = { class = "Codeblocks" },
-      properties = { tag = desktops[4] } },
-    { rule = { class = "Eclipse" },
-      properties = { tag = desktops[4] } },
-    { rule = { class = "jetbrains-idea-ce" },
-      properties = { tag = desktops[4] } },
-    { rule = { class = "VirtualBox Manager" },
-      properties = { tag = desktops[5] } },
-    { rule = { class = "VirtualBox Machine" },
-      properties = { tag = desktops[5] } },
-    { rule = { class = "Virt-manager" },
-      properties = { tag = desktops[5] } },
-    { rule = { class = "Blender" },
-      properties = { tag = desktops[6] } },
-    { rule = { class = "Gimp" },
-      properties = { tag = desktops[6] } },
-    { rule = { class = "kdenlive" },
-      properties = { tag = desktops[6] } },
-    { rule = { class = "Audacity" },
-      properties = { tag = desktops[6] } },
-    { rule = { class = "krita" },
-      properties = { tag = desktops[6] } },
-    { rule = { class = "libreoffice" },
-      properties = { tag = desktops[7] } },
-    { rule = { class = "obs" },
-      properties = { tag = desktops[8] } },
-    { rule = { class = "Popcorn-Time" },
-      properties = { tag = desktops[8] } },
-    { rule = { class = "qBittorrent" },
-      properties = { tag = desktops[9] } },
-    { rule = { class = "Deluge" },
-      properties = { tag = desktops[9] } },
-    { rule = { class = "Transmission-gtk" },
-      properties = { tag = desktops[9] } },
+--    { rule = { class = "firefox" },
+--      properties = { tag = desktops[2] } },
 }
 -- }}}
 
