@@ -11,12 +11,12 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = {}
 
-theme.font          = "DroidSansMono Nerd Font Mono 10"
+theme.font          = "DroidSansM Nerd Font Mono Regular 10"
 
-theme.bg_normal     = "#1F6275"
-theme.bg_focus      = "#023141"
-theme.bg_urgent     = "#35BF5C"
-theme.bg_minimize   = "#4F96AA"
+theme.bg_normal     = "#840f0c"
+theme.bg_focus      = "#D3A325"
+theme.bg_urgent     = "#FDD880"
+theme.bg_minimize   = "#B96A49"
 theme.bg_systray    = theme.bg_normal
 
 theme.fg_normal     = "#cccccc"
@@ -28,10 +28,11 @@ theme.useless_gap   = dpi(3)
 theme.gap_single_client = false
 theme.border_width  = dpi(1)
 theme.border_normal = "#000000"
-theme.border_focus  = "#35BF5C"
+theme.border_focus  = "#D3A325"
 theme.border_marked = "#91231c"
 
-theme.taglist_font = "DroidSansMono Nerd Font Mono 15"
+theme.taglist_font = "DroidSansM Nerd Font Mono Regular 15"
+theme.taglist_bg_focus = "#a41013"
 
 -- There are other variable sets
 -- overriding the default one when
@@ -100,7 +101,7 @@ theme.titlebar_maximized_button_focus_inactive  = themes_path.."default/titlebar
 theme.titlebar_maximized_button_normal_active = themes_path.."default/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/maximized_focus_active.png"
 
-theme.wallpaper = "~/Pictures/wallpapers/3aidcebr7v471.jpg"
+theme.wallpaper = "~/Pictures/beautiful_china_night_scene_wallpaper_background___by_netsay_dgy4wss-fullview.jpg"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."default/layouts/fairhw.png"

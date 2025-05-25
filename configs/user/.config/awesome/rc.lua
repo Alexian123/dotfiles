@@ -87,7 +87,8 @@ terminal = os.getenv("TERMINAL") or "xterm"
 editor = os.getenv("EDITOR") or "vi"
 editor_cmd = os.getenv("GEDITOR") or terminal .. " -e " .. editor
 user_home = "/home/alexian"
-desktops = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }
+--desktops = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }
+desktops = { "一", "二", "三", "四", "五", "六", "七", "八", "九" }
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -122,8 +123,9 @@ awful.layout.layouts = {
 configmenu = {
    { "awsm rc", editor_cmd .. " " .. awesome.conffile },
    { "awsm theme", editor_cmd .. " " .. user_home .. "/.config/awesome/theme.lua" },
-   --{ "alacritty", editor_cmd .. " " .. user_home .. "/.config/alacritty/alacritty.yml" },
-   { "neovim", editor_cmd .. " " .. user_home .. "/.config/nvim/init.vim" },
+--   { "alacritty", editor_cmd .. " " .. user_home .. "/.config/alacritty/alacritty.yml" },
+--   { "neovim", editor_cmd .. " " .. user_home .. "/.config/nvim/init.vim" },
+   { "vim", editor_cmd .. " " .. user_home .. "/.vimrc" },
    { "zsh", editor_cmd .. " " .. user_home .. "/.zshrc" },
    { "aliases", editor_cmd .. " " .. user_home .. "/.aliasrc" },
    { "profile", editor_cmd .. " " .. user_home .. "/.profile" },
@@ -148,7 +150,7 @@ mymainmenu = freedesktop.menu.build({
 
 -- mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
 --                                     menu = mymainmenu })
-mylauncher = awful.widget.launcher({ image = user_home .. "/.config/awesome/tux.svg",
+mylauncher = awful.widget.launcher({ image = user_home .. "/.config/awesome/Star.svg",
                                      menu = mymainmenu })
 
 -- Menubar configuration
@@ -254,7 +256,11 @@ awful.screen.connect_for_each_screen(function(s)
     }
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s })
+    s.mywibox = awful.wibar({ 
+        position = "top", 
+        screen = s,
+        border_width = 6
+    })
 
     -- Add widgets to the wibox
     s.mywibox:setup {
