@@ -148,10 +148,10 @@ mymainmenu = freedesktop.menu.build({
     }
 })
 
--- mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
+mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
+                                   menu = mymainmenu })
+--mylauncher = awful.widget.launcher({ image = user_home .. "/.config/awesome/gnu-icon.svg",
 --                                     menu = mymainmenu })
-mylauncher = awful.widget.launcher({ image = user_home .. "/.config/awesome/Star.svg",
-                                     menu = mymainmenu })
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
@@ -227,8 +227,8 @@ awful.screen.connect_for_each_screen(function(s)
     -- Each screen has its own tag table.
     -- awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
     local l = awful.layout.suit  -- Just to save some typing: use an alias.
-    local layouts = { l.tile, l.tile, l.max, l.tile, l.floating,
-        l.max, l.max, l.floating, l.max }
+    local layouts = { l.tile, l.tile, l.tile, l.tile, l.tile,
+        l.tile, l.tile, l.tile, l.tile }
     awful.tag(desktops, s, layouts)
 
     -- Create a promptbox for each screen
@@ -259,7 +259,7 @@ awful.screen.connect_for_each_screen(function(s)
     s.mywibox = awful.wibar({ 
         position = "top", 
         screen = s,
-        border_width = 6
+        border_width = 5
     })
 
     -- Add widgets to the wibox
