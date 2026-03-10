@@ -15,7 +15,7 @@ local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
 -- Auto menu
-local freedesktop = require("freedesktop")
+--local freedesktop = require("freedesktop")
 
 -- Widgets
 local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
@@ -57,17 +57,17 @@ end
 autorun = true
 autorunApps = 
 { 
-   "/usr/libexec/geoclue-2.0/demos/agent",
-   "systemctl --user restart redshift-gtk.service",
+   "/usr/lib64/geoclue-2.0/demos/agent",
+   --"systemctl --user restart redshift-gtk.service",
    "xss-lock i3lock-fancy",
-   "lxpolkit",
-   --"/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1",
+   --"lxpolkit",
+   "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1",
    "xrdb -merge ~/.Xresources",
    "launch_compton",
-   "nm-applet",
-   "blueman-applet",
-   "xfce4-power-manager --daemon",
-   "launch_volumeicon",
+   --"nm-applet",
+   --"blueman-applet",
+   --"xfce4-power-manager --daemon",
+   --"launch_volumeicon",
    "launch_redshift"
 }
 if autorun then
@@ -87,8 +87,7 @@ terminal = os.getenv("TERMINAL") or "xterm"
 editor = os.getenv("EDITOR") or "vi"
 editor_cmd = os.getenv("GEDITOR") or terminal .. " -e " .. editor
 user_home = "/home/alexian"
---desktops = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }
-desktops = { "一", "二", "三", "四", "五", "六", "七", "八", "九" }
+desktops = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -137,16 +136,12 @@ myawesomemenu = {
     { "restart", awesome.restart },
     { "quit", function() awesome.quit() end }
 }
--- freedesktop menu
-mymainmenu = freedesktop.menu.build({
-    before = {
-        { "Awesome", myawesomemenu, beautiful.awesome_icon },
-        { "Configs", configmenu, user_home .. "/.config/awesome/configmenu.svg"},
-    },
-    after = {
-        { "Open terminal", terminal },
-    }
-})
+
+mymainmenu = awful.menu({ items = {
+    { "Awesome", myawesomemenu, beautiful.awesome_icon },
+    { "Configs", configmenu, user_home .. "/.config/awesome/configmenu.svg"},
+    { "Open terminal", terminal }
+}})
 
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                    menu = mymainmenu })
@@ -259,7 +254,7 @@ awful.screen.connect_for_each_screen(function(s)
     s.mywibox = awful.wibar({ 
         position = "top", 
         screen = s,
-        border_width = 5
+        border_width = 0
     })
 
     -- Add widgets to the wibox
@@ -410,12 +405,12 @@ globalkeys = gears.table.join(
      --         {description = "ro std layout", group = "keyboard"}),
 
     -- XF86 keys
---    awful.key( {}, "XF86AudioRaiseVolume", function() awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ +10%", false) end,
---              {description = "raise volume", group = "XF86"}),
---    awful.key( {}, "XF86AudioLowerVolume", function() awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ -10%", false) end,
---              {description = "lower volume", group = "XF86"}),
---    awful.key( {}, "XF86AudioMute", function() awful.util.spawn("amixer set Master toggle", false) end,
---              {description = "mute volume", group = "XF86"}),
+    awful.key( {}, "XF86AudioRaiseVolume", function() awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ +10%", false) end,
+              {description = "raise volume", group = "XF86"}),
+    awful.key( {}, "XF86AudioLowerVolume", function() awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ -10%", false) end,
+              {description = "lower volume", group = "XF86"}),
+    awful.key( {}, "XF86AudioMute", function() awful.util.spawn("pamixer -m", false) end,
+              {description = "mute volume", group = "XF86"}),
     awful.key( {}, "XF86AudioMicMute", function() awful.util.spawn("pactl set-source-mute @DEFAULT_SOURCE@ toggle", false) end,
               {description = "mute mic", group = "XF86"}),
     awful.key( {}, "XF86AudioPlay", function() awful.util.spawn("playerctl play-pause", false) end,

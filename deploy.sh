@@ -26,6 +26,9 @@ read_config() {
 }
 
 # Read variables
+INSTALL_STARSHIP=$(read_config "INSTALL_STARSHIP" "$FALSE")
+INSTALL_PFETCH=$(read_config "INSTALL_PFETCH" "$FALSE")
+INSTALL_YAY=$(read_config "INSTALL_YAY" "$FALSE")
 ALACRITTY=$(read_config "ALACRITTY" "$FALSE")
 ALIASRC=$(read_config "ALIASRC" "$FALSE")
 AWESOME=$(read_config "AWESOME" "$FALSE")
@@ -41,9 +44,9 @@ VIMRC=$(read_config "VIMRC" "$FALSE")
 VOLUMEICON=$(read_config "VOLUMEICON" "$FALSE")
 XRESOURCES=$(read_config "XRESOURCES" "$FALSE")
 ZSHRC=$(read_config "ZSHRC" "$FALSE")
-DMENU=$(read_config "DMENU" "$FALSE")
-WICD=$(read_config "WICD" "$FALSE")
-REDSHIFT=$(read_config "REDSHIFT" "$FALSE")
+DMENU_SCRIPTS=$(read_config "DMENU_SCRIPTS" "$FALSE")
+WICD_LAUNCHER=$(read_config "WICD_LAUNCHER" "$FALSE")
+REDSHIFT_LAUNCHER=$(read_config "REDSHIFT_LAUNCHER" "$FALSE")
 
 # Create .local/bin dir
 if [ ! -d "$HOME/.local/bin" ]; then
@@ -58,17 +61,26 @@ if [ ! -d "$HOME/.local/src" ]; then
 fi
 
 # Install starship prompt
-if [ "$STARSHIP" = "$TRUE" ]; then
+if [ "$INSTALL_STARSHIP" = "$TRUE" ]; then
     echo "Installing starship"
     sh -c "$(curl -fsSL https://starship.rs/install.sh)"
     echo "Done."
 fi
 
 # Install pfetch
-if [ "$PFETCH" = "$TRUE" ]; then
+if [ "$INSTALL_PFETCH" = "$TRUE" ]; then
     echo "Installing pfetch"
     git clone "https://github.com/dylanaraps/pfetch" $HOME/.local/src/pfetch
     cd $HOME/.local/src/pfetch && sudo make install
+    cd -
+    echo "Done."
+fi
+
+# Install yay
+if [ "$INSTALL_YAY" = "$TRUE" ]; then
+    echo "Installing yay"
+    git clone "https://aur.archlinux.org/yay.git" $HOME/.local/src/yay
+    cd $HOME/.local/src/yay && makepkg -si
     cd -
     echo "Done."
 fi
@@ -172,17 +184,17 @@ if [ "$NEOVIM" = "$TRUE" ]; then
 fi
 
 # Link wicd launch script
-if [ "$WICD" = "$TRUE" ]; then
+if [ "$WICD_LAUNCHER" = "$TRUE" ]; then
     ln -sfv $DOTFILES/launchers/launch_wicd.sh $HOME/.local/bin/launch_wicd
 fi
 
 # Link redshift launch script
-if [ "$REDSHIFT" = "$TRUE" ]; then
+if [ "$REDSHIFT_LAUNCHER" = "$TRUE" ]; then
     ln -sfv $DOTFILES/launchers/launch_redshift.sh $HOME/.local/bin/launch_redshift
 fi
 
 # Link dmenu scripts
-if [ "$DMENU" = "$TRUE" ]; then
+if [ "$DMENU_SCRIPTS" = "$TRUE" ]; then
     ln -sfv $DOTFILES/dmenu_scripts/open_files.sh $HOME/.local/bin/open_files
     ln -sfv $DOTFILES/dmenu_scripts/power_options.sh $HOME/.local/bin/power_options
     ln -sfv $DOTFILES/dmenu_scripts/quicklaunch.sh $HOME/.local/bin/quicklaunch
