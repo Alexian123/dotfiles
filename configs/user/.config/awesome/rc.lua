@@ -21,7 +21,9 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
 local ram_widget = require("awesome-wm-widgets.ram-widget.ram-widget")
 local fs_widget = require("awesome-wm-widgets.fs-widget.fs-widget")
-
+local calendar_widget = require("awesome-wm-widgets.calendar-widget.calendar")
+local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
+local volume_widget = require('awesome-wm-widgets.pactl-widget.volume')
 
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
@@ -85,6 +87,7 @@ editor = os.getenv("EDITOR") or "vi"
 editor_cmd = os.getenv("GEDITOR") or terminal .. " -e " .. editor
 user_home = "/home/alexian"
 desktops = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }
+--desktops = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -137,7 +140,7 @@ myawesomemenu = {
 mymainmenu = awful.menu({ items = {
     { "Awesome", myawesomemenu, beautiful.awesome_icon },
     { "Configs", configmenu, user_home .. "/.config/awesome/configmenu.svg"},
-    { "Open terminal", terminal }
+    { "Terminal", terminal }
 }})
 
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
@@ -155,6 +158,18 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 -- {{{ Wibar
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
+local cw = calendar_widget({
+    theme = 'naughty',
+    placement = 'top_right',
+    start_sunday = false,
+    radius = 8,
+    previous_month_button = 1,
+    next_month_button = 3
+})
+mytextclock:connect_signal("button::press",
+    function(_, _, _, button)
+        if button == 1 then cw.toggle() end
+    end)
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -268,8 +283,9 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
             cpu_widget(),
             ram_widget(),
-            fs_widget(),
-            mykeyboardlayout,
+            fs_widget({ mounts = { '/', '/home' } }),
+            volume_widget(),
+            battery_widget(),
             wibox.widget.systray(),
             mytextclock,
             s.mylayoutbox,
@@ -406,7 +422,7 @@ globalkeys = gears.table.join(
               {description = "raise volume", group = "XF86"}),
     awful.key( {}, "XF86AudioLowerVolume", function() awful.util.spawn("pactl set-sink-volume @DEFAULT_SINK@ -10%", false) end,
               {description = "lower volume", group = "XF86"}),
-    awful.key( {}, "XF86AudioMute", function() awful.util.spawn("pamixer -m", false) end,
+    awful.key( {}, "XF86AudioMute", function() awful.util.spawn("pamixer -t", false) end,
               {description = "mute volume", group = "XF86"}),
     awful.key( {}, "XF86AudioMicMute", function() awful.util.spawn("pactl set-source-mute @DEFAULT_SOURCE@ toggle", false) end,
               {description = "mute mic", group = "XF86"}),
