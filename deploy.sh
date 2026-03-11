@@ -46,7 +46,6 @@ XRESOURCES=$(read_config "XRESOURCES" "$FALSE")
 ZSHRC=$(read_config "ZSHRC" "$FALSE")
 DMENU_SCRIPTS=$(read_config "DMENU_SCRIPTS" "$FALSE")
 WICD_LAUNCHER=$(read_config "WICD_LAUNCHER" "$FALSE")
-REDSHIFT_LAUNCHER=$(read_config "REDSHIFT_LAUNCHER" "$FALSE")
 
 # Create .local/bin dir
 if [ ! -d "$HOME/.local/bin" ]; then
@@ -186,11 +185,6 @@ fi
 # Link wicd launch script
 if [ "$WICD_LAUNCHER" = "$TRUE" ]; then
     ln -sfv $DOTFILES/launchers/launch_wicd.sh $HOME/.local/bin/launch_wicd
-fi
-
-# Link redshift launch script
-if [ "$REDSHIFT_LAUNCHER" = "$TRUE" ]; then
-    ln -sfv $DOTFILES/launchers/launch_redshift.sh $HOME/.local/bin/launch_redshift
 fi
 
 # Link dmenu scripts

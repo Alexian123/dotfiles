@@ -2,7 +2,7 @@
 
 # Simple dmenu prompt for launching programs
 
-BROWSER=abrowser
+BROWSER=brave
 FILE_MANAGER=pcmanfm
 EDITOR=mousepad
 MONITOR="$TERMINAL -e htop"

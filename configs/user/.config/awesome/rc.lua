@@ -57,8 +57,6 @@ end
 autorun = true
 autorunApps = 
 { 
-   "/usr/lib64/geoclue-2.0/demos/agent",
-   --"systemctl --user restart redshift-gtk.service",
    "xss-lock i3lock-fancy",
    --"lxpolkit",
    "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1",
@@ -68,7 +66,6 @@ autorunApps =
    --"blueman-applet",
    --"xfce4-power-manager --daemon",
    --"launch_volumeicon",
-   "launch_redshift"
 }
 if autorun then
    for app = 1, #autorunApps do
@@ -419,7 +416,7 @@ globalkeys = gears.table.join(
               {description = "open calculator", group = "XF86"}),
     awful.key( {}, "XF86Display", function() awful.spawn("arandr") end,
               {description = "open arandr", group = "XF86"}),
-    awful.key( {}, "XF86Sleep", function() awful.util.spawn("power_options", false) end,
+    awful.key( {}, "XF86Battery", function() awful.util.spawn("power_options", false) end,
               {description = "open power menu", group = "XF86"}),
     awful.key( {}, "XF86ScreenSaver", function() awful.util.spawn("i3lock-fancy", false) end,
               {description = "lock screen", group = "XF86"}),
