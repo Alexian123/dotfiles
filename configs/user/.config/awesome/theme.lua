@@ -13,10 +13,14 @@ local theme = {}
 
 theme.font          = "DroidSansM Nerd Font Mono Regular 10"
 
-theme.bg_normal     = "#840f0c"
-theme.bg_focus      = "#D3A325"
-theme.bg_urgent     = "#FDD880"
-theme.bg_minimize   = "#B96A49"
+--theme.bg_normal     = "#840f0c"
+--theme.bg_focus      = "#D3A325"
+--theme.bg_urgent     = "#FDD880"
+--theme.bg_minimize   = "#B96A49"
+theme.bg_normal     = "#383c4a"
+theme.bg_focus      = "#404552"
+theme.bg_urgent     = "#cc575d"
+theme.bg_minimize   = "#2f343f"
 theme.bg_systray    = theme.bg_normal
 
 theme.fg_normal     = "#cccccc"
@@ -24,15 +28,18 @@ theme.fg_focus      = "#ffffff"
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#ffffff"
 
-theme.useless_gap   = dpi(3)
+theme.useless_gap   = dpi(2)
 theme.gap_single_client = false
-theme.border_width  = dpi(1)
+theme.border_width  = dpi(2)
 theme.border_normal = "#000000"
-theme.border_focus  = "#D3A325"
-theme.border_marked = "#91231c"
+--theme.border_focus  = "#D3A325"
+theme.border_focus  = "#5294e2"
+--theme.border_marked = "#91231c"
+theme.border_marked = "#cc575d"
 
 theme.taglist_font = "DroidSansM Nerd Font Mono Regular 15"
-theme.taglist_bg_focus = "#a41013"
+--theme.taglist_bg_focus = "#a41013"
+theme.taglist_bg_focus = "#5294e2"
 
 -- There are other variable sets
 -- overriding the default one when

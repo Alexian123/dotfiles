@@ -2,7 +2,7 @@
 
 # Simple dmenu script for opening files
 
-DMENU_CMD="dmenu -p Open: -i -l 20"
+DMENU_CMD="$DMENU -p Open: -i -l 20"
 EDIT_CMD="$TERMINAL -e $EDITOR"
 
 CHOICE=$(/usr/bin/ls -a $HOME | $DMENU_CMD)

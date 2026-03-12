@@ -54,6 +54,10 @@ do
 end
 -- }}}
 
+-- Environment variables
+dmenu_run = os.getenv("DMENU_RUN")
+-- }}}
+
 
 -- Autorun programs
 autorun = true
@@ -406,7 +410,7 @@ globalkeys = gears.table.join(
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"}),
-    awful.key({ modkey }, "d", function() awful.util.spawn('dmenu_run -i -l 12', false) end,
+    awful.key({ modkey }, "d", function() awful.util.spawn(dmenu_run, false) end,
               {description = "run dmenu", group = "launcher"}),
     awful.key({ modkey, "Shift" }, "d", function() awful.util.spawn('open_files', false) end,
               {description = "open files with dmenu script", group = "launcher"}),

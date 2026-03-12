@@ -2,31 +2,26 @@
 
 # Simple dmenu prompt for launching programs
 
-BROWSER=brave
-FILE_MANAGER=pcmanfm
-EDITOR=mousepad
-MONITOR="$TERMINAL -e htop"
-
 OPTIONS="Web Browser\nFile Manager\nText Editor\nSystem Monitor"
 
-CHOICE=$(echo -e $OPTIONS | dmenu -b -l 10 -i -p "Quick Launch")
+CHOICE=$(echo -e $OPTIONS | $DMENU -l 4 -i -p "Quick Launch")
 
 case $CHOICE in
 
     "Web Browser")
-        $BROWSER
+        $WEB_BROWSER
         ;;
 
     "File Manager")
-        $FILE_MANAGER
+        $GUI_FILE_MANAGER
         ;;
 
     "Text Editor")
-        $EDITOR
+        $GEDITOR
         ;;
 
     "System Monitor")
-        $MONITOR
+        $TERMINAL -e $SYS_MONITOR
         ;;
 
 esac

@@ -22,6 +22,7 @@ alias yaysyua="yay -Syua" # update aur packages
 alias yaysyu="yay -Syu" # update all packages
 alias pacqs="pacman -Qs" # search installed packages
 alias pacqdt="pacman -Qdt" # list unneeded packages
+alias pacqeq="pacman -Qeq" # list manually installed packages
 
 # snap
 #alias snfi="snap find"
