@@ -4,7 +4,7 @@
 
 OPTIONS="Lock Screen\nPower Off\nReboot"
 
-CHOICE=$(echo -e $OPTIONS | $DMENU -i -p "Power Menu")
+CHOICE=$(echo -e $OPTIONS | $DMENU -l 3 -i -p "Power Menu")
 
 case $CHOICE in
 
