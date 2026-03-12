@@ -69,7 +69,7 @@ autorunApps =
    "xrdb -merge ~/.Xresources",
    "launch_compton",
    --"nm-applet",
-   --"blueman-applet",
+   "blueman-applet",
    --"xfce4-power-manager --daemon",
    --"launch_volumeicon",
 }
